@@ -5,7 +5,8 @@
 @import 'font';
 
 // vendors
-@import 'vendor/normalize-scss/normalize';
+// @import 'vendor/normalize-scss/normalize';
+@import 'vendor/default-clean-journal/clean-journal';
 
 // mixins
 @import 'mixin/breakpoint';
@@ -16,3 +17,4 @@
 // modules
 @import 'module/header';
 @import 'module/footer';
+@import 'module/button';
