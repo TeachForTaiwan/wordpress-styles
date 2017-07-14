@@ -23,7 +23,7 @@
                         position: absolute;
                         right: 0;
                         top: 0;
-                        background: $c-grey;
+                        background: transparent;
                         transition: .3s ease-in-out;
                         height: 100%;
                         width: 0;
@@ -37,9 +37,8 @@
                         top: 0;
                         bottom: 0;
                         border-radius: 0;
-                        background: transparent;
+                        background-color: $c-grey--light-2;
                         &.is-active {
-                            color: $c-base;
                             +.search-box {
                                 width: 100%;
                                 opacity: 1;
@@ -47,12 +46,13 @@
                         }
                     }
                     .input-search {
+                        position: absolute;
                         width: 90%;
-                        padding-right: 0;
-                        padding-top: 8px;
-                        padding-bottom: 7px;
+                        top: 50%;
+                        transform: translateY(-50%);
                         border: none;
-                        border-radius: 0;
+                        border-radius: 15px;
+                        padding: 3px 0 3px 16px;
                         &:focus {
                             font-size: inherit;
                         }
@@ -106,6 +106,7 @@
                 padding: .8em 1.4em;
                 font-size: 1.25rem;
                 letter-spacing: 1.6px;
+                border-radius: 20px;
             }
         }
     }
