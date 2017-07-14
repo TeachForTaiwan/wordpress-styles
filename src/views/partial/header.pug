@@ -1,0 +1,47 @@
+header.header
+  nav.header-top
+    ul.header-top__list
+      li.item
+        a.link(href="?page_id=46") 最新消息
+      li.item
+        a.link(href="?page_id=148") 常見問題集
+      li.item
+        a.link(href="?page_id=150") 訂閱電子報
+      li.item
+        a.link(href="?page_id=152") 教師故事棧
+      li.item
+        a.link(href="?page_id=278") 年度報告
+      li.item
+        a.link(href="?page_id=281") 網站地圖
+      li.item.item--funcs
+        button.btn.btn-search.btn--transparent
+          i.fa.fa-search
+        .search-box
+          form#search.search(role="search", method="get", action="//beta.teach4taiwan.org/")
+            label(for="search")
+              input#input-search.input-search(name="search", type="search", placeholder="搜尋更多", )
+
+  nav.header-fixed
+    .logo-container
+      a.link(href="/")
+        img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_200px.png", alt="logo")
+    .row
+      ul.header-fixed__list
+        li.item
+          a.link(href="?page_id=111") 要解決的問題
+        li.item
+          a.link(href="javascript:;") 關於我們
+        li.item
+          a.link(href="?page_id=120") 計畫內容
+        li.item
+          a.link(href="#") 我們的影響力
+        li.item
+          a.link(href="?page_id=124") 加入我們
+      ul.header-fixed__funcs
+        li.item
+          a.link(href="javascript:;", target="_blank", rel="noopener")
+            button.btn.btn--donate.btn--red 捐款
+        li.item
+          a.link(href="javascript:;", target="_blank", rel="noopener")
+            button.btn.btn--teacher.btn--red 成為教師
+script(src="js/header.js")

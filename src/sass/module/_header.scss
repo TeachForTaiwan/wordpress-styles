@@ -1,1 +1,110 @@
 /* module/header */
+
+.header {
+    width: 100%;
+    letter-spacing: 1.15px;
+    .header-top {
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+        background-color: $c-grey--light-2;
+        font-size: .8em;
+        &__list {
+            position: relative;
+            display: flex;
+            .item {
+                .link {
+                    padding: .6em 1em;
+                    display: block;
+                }
+                &--funcs {
+                    padding-right: 40px;
+                    .search-box {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        background: $c-grey;
+                        transition: .3s ease-in-out;
+                        height: 100%;
+                        width: 0;
+                        opacity: 0;
+                    }
+                    .btn-search {
+                        position: absolute;
+                        width: 40px;
+                        right: 0;
+                        z-index: 9;
+                        top: 0;
+                        bottom: 0;
+                        border-radius: 0;
+                        background: transparent;
+                        &.is-active {
+                            color: $c-base;
+                            +.search-box {
+                                width: 100%;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .input-search {
+                        width: 90%;
+                        padding-right: 0;
+                        padding-top: 8px;
+                        padding-bottom: 7px;
+                        border: none;
+                        border-radius: 0;
+                        &:focus {
+                            font-size: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-fixed {
+        display: flex;
+        flex-direction: column;
+        .logo-container {
+            text-align: center;
+            .link {
+                display: flex;
+                padding: 16px;
+            }
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        &__list {
+            display: flex;
+            color: $c-red;
+            font-weight: bold;
+            .item {
+                .link {
+                    padding: .6em 1em;
+                    display: block;
+                }
+            }
+        }
+        &__funcs {
+            position: absolute;
+            display: flex;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            .item {
+                padding: 0 1em;
+                .link {
+                    display: block;
+                }
+            }
+            .btn {
+                font-weight: bold;
+                padding: .8em 1.4em;
+                font-size: 1.25rem;
+                letter-spacing: 1.6px;
+            }
+        }
+    }
+}
