@@ -1,0 +1,7 @@
+.salon-item {
+    transition: .1s ease-in-out;
+    padding-bottom: 1em;
+    &:hover {
+        box-shadow: 2px 2px 3px $c-grey;
+    }
+}

@@ -1,20 +1,22 @@
-const btnSearch = document.querySelector('.btn-search');
-const searchInput = document.querySelector('#input-search');
-const focusElem = (el) => {
-  el.focus();
-};
-const submitSearch = () => {
-  document.getElementById('search').submit();
-};
-const toggleSearchBox = () => {
-  btnSearch.classList.toggle('is-active');
-};
-btnSearch.addEventListener('click', (e) => {
-  if (e.currentTarget.classList.contains('is-active')) {
-    return (searchInput.value !== '') ? submitSearch() : toggleSearchBox();
+const header = document.querySelector('.header');
+const btnMenu = document.querySelector('#m-btn-menu');
+const toggleNavbar = (func) => {
+  if (func === 'hide') {
+    header.classList.remove('is-active');
   }
-  setTimeout(() => {
-    focusElem(searchInput);
-  }, 300);
-  toggleSearchBox();
+  if (func === 'show') {
+    header.classList.add('is-active');
+  }
+};
+
+btnMenu.addEventListener('click', () => {
+  header.classList.toggle('is-open');
+});
+
+window.addEventListener('scroll', () => {
+  if (document.body.scrollTop <= 100) {
+    toggleNavbar('hide');
+  } else {
+    toggleNavbar('show');
+  }
 });

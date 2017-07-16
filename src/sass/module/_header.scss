@@ -1,112 +1,78 @@
 /* module/header */
 
+#masthead {
+    display: none;
+}
+
 .header {
     width: 100%;
-    letter-spacing: 1.15px;
-    .header-top {
-        display: flex;
-        justify-content: flex-end;
-        overflow: hidden;
-        background-color: $c-grey--light-2;
-        font-size: .8em;
-        &__list {
-            position: relative;
-            display: flex;
-            .item {
-                .link {
-                    padding: .6em 1em;
-                    display: block;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    background: $c-base;
+    box-shadow: 2px 2px 2px $c-grey--light;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height .7s ease-in-out, opacity .3s ease-in-out;
+    @include for-phone-only {
+        max-height: 0;
+    }
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+    }
+    &.is-open {
+        max-height: 1000px;
+        .menu {
+            .list {
+                @include for-phone-only {
+                    max-height: 1000px;
                 }
-                &--funcs {
-                    padding-right: 40px;
-                    .search-box {
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        background: transparent;
-                        transition: .3s ease-in-out;
-                        height: 100%;
-                        width: 0;
-                        opacity: 0;
-                    }
-                    .btn-search {
-                        position: absolute;
-                        width: 40px;
-                        right: 0;
-                        z-index: 9;
-                        top: 0;
-                        bottom: 0;
-                        border-radius: 0;
-                        background-color: $c-grey--light-2;
-                        &.is-active {
-                            +.search-box {
-                                width: 100%;
-                                opacity: 1;
-                            }
-                        }
-                    }
-                    .input-search {
-                        position: absolute;
-                        width: 90%;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        border: none;
-                        border-radius: 15px;
-                        padding: 3px 0 3px 16px;
-                        &:focus {
-                            font-size: inherit;
-                        }
-                    }
-                }
+                .item {}
             }
         }
     }
-    .header-fixed {
-        display: flex;
-        flex-direction: column;
-        .logo-container {
+    .menu {
+        .m-btn-menu {
+            width: 100%;
+            text-align: right;
+            background: $c-base;
+            color: $c-grey;
+            @include for-tablet-portrait-up {
+                display: none;
+            }
+        }
+        .list {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            .link {
-                display: flex;
-                padding: 16px;
+            overflow: hidden;
+            transition: max-height .7s ease-in-out;
+            @include for-phone-only {
+                max-height: 0;
             }
-        }
-        .row {
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-        &__list {
-            display: flex;
-            color: $c-red;
-            font-weight: bold;
+            @include for-tablet-portrait-up {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
             .item {
-                .link {
-                    padding: .6em 1em;
-                    display: block;
-                }
-            }
-        }
-        &__funcs {
-            position: absolute;
-            display: flex;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            .item {
-                padding: 0 1em;
-                .link {
-                    display: block;
-                }
-            }
-            .btn {
+                font-size: 14px;
                 font-weight: bold;
-                padding: .8em 1.4em;
-                font-size: 1.25rem;
-                letter-spacing: 1.6px;
-                border-radius: 20px;
+                background: $c-base;
+                color: $c-blue;
+                &:hover {
+                    color: $c-base;
+                    background: $c-blue;
+                }
+            }
+            .link {
+                display: block;
+                padding: 1em;
+                transition: .3s ease-in-out;
+                &:hover {
+                    color: $c-base;
+                }
             }
         }
     }

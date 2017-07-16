@@ -1,22 +1,24 @@
 'use strict';
 
-var btnSearch = document.querySelector('.btn-search');
-var searchInput = document.querySelector('#input-search');
-var focusElem = function focusElem(el) {
-  el.focus();
-};
-var submitSearch = function submitSearch() {
-  document.getElementById('search').submit();
-};
-var toggleSearchBox = function toggleSearchBox() {
-  btnSearch.classList.toggle('is-active');
-};
-btnSearch.addEventListener('click', function (e) {
-  if (e.currentTarget.classList.contains('is-active')) {
-    return searchInput.value !== '' ? submitSearch() : toggleSearchBox();
+var header = document.querySelector('.header');
+var btnMenu = document.querySelector('#m-btn-menu');
+var toggleNavbar = function toggleNavbar(func) {
+  if (func === 'hide') {
+    header.classList.remove('is-active');
   }
-  setTimeout(function () {
-    focusElem(searchInput);
-  }, 300);
-  toggleSearchBox();
+  if (func === 'show') {
+    header.classList.add('is-active');
+  }
+};
+
+btnMenu.addEventListener('click', function () {
+  header.classList.toggle('is-open');
+});
+
+window.addEventListener('scroll', function () {
+  if (document.body.scrollTop <= 100) {
+    toggleNavbar('hide');
+  } else {
+    toggleNavbar('show');
+  }
 });

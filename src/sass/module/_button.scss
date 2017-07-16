@@ -19,7 +19,14 @@
         background-color: $c-red;
         color: $c-base;
         &:hover {
-            background-color: lighten($c-red, 10%);
+            background-color: lighten($c-blue, 10%);
+        }
+    }
+    &.btn--blue {
+        background-color: $c-blue;
+        color: $c-base;
+        &:hover {
+            background-color: lighten($c-blue, 10%);
         }
     }
 }

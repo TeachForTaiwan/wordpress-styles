@@ -6,7 +6,7 @@
 
 // vendors
 // @import 'vendor/normalize-scss/normalize';
-@import 'vendor/default-clean-journal/clean-journal';
+@import 'vendor/default-septera/septera';
 
 // mixins
 @import 'mixin/breakpoint';
@@ -18,3 +18,7 @@
 @import 'module/header';
 @import 'module/footer';
 @import 'module/button';
+@import 'module/widget';
+@import 'module/salon';
+@import 'module/lightbox';
+@import 'module/slider';
