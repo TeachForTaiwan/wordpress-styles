@@ -1,55 +1,15 @@
 /* module/footer */
 
-.footer {
-    &__block {
-        padding: 1.5rem;
-        background-color: $c-grey;
-        color: $c-base;
-    }
-    .social-list {
-        display: flex;
-        justify-content: center;
-        .list-item {
-            margin: 15px;
-            .btn {
-                font-size: 18px;
-                min-height: 4rem;
-                min-width: 4rem;
-                &--round {
-                    height: 4rem;
-                    width: 4rem;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-        }
-    }
-    .contact-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        .list-item {
-            padding: 0 0.5em;
-            font-size: .8em;
-        }
-    }
-    .address-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .list-item {
-            font-size: .8em;
-        }
-    }
-    .copyright {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $c-base;
-        color: $c-grey;
-        min-height: 50px;
-        font-size: .8em;
-    }
+#footer-separator {
+    background: transparent!important;
+}
+
+#site-copyright {
+    float: none;
+    text-align: center;
+}
+
+// POWERED BY SEPTERA & WORDPRESS.
+#site-copyright+div {
+    display: none!important;
 }

@@ -1,0 +1,33 @@
+.lity {
+    overflow: auto;
+}
+
+.lity-wrap {
+    position: absolute;
+    padding: 100px 10% 100px;
+    overflow: auto;
+}
+
+.lity-container {
+    max-width: 100%!important;
+    @include for-tablet-landscape-up {
+        max-width: 80%!important;
+    }
+}
+
+.lity-content {
+    .content-container {
+        max-height: none!important;
+        background: $c-base;
+        padding: 2em 2em 4em;
+        margin-bottom: 4em;
+    }
+    .img-container {
+        &.full {
+            margin: -2em -2em 2em;
+        }
+    }
+    p {
+        margin-bottom: 2em;
+    }
+}

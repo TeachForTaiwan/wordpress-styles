@@ -14,9 +14,6 @@
     visibility: hidden;
     opacity: 0;
     transition: max-height .7s ease-in-out, opacity .3s ease-in-out;
-    @include for-phone-only {
-        max-height: 0;
-    }
     &.is-active {
         visibility: visible;
         opacity: 1;
@@ -25,20 +22,36 @@
         max-height: 1000px;
         .menu {
             .list {
-                @include for-phone-only {
-                    max-height: 1000px;
+                max-height: 1000px;
+                @include for-tablet-landscape-up {
+                    max-height: none;
                 }
                 .item {}
             }
         }
     }
     .menu {
-        .m-btn-menu {
-            width: 100%;
-            text-align: right;
-            background: $c-base;
-            color: $c-grey;
-            @include for-tablet-portrait-up {
+        .m-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5em;
+            >.link {
+                flex: 1;
+                max-width: 300px;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+            .m-btn-menu {
+                background: $c-base;
+                color: $c-grey;
+                cursor: pointer;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+            @include for-tablet-landscape-up {
                 display: none;
             }
         }
@@ -49,10 +62,9 @@
             align-items: center;
             overflow: hidden;
             transition: max-height .7s ease-in-out;
-            @include for-phone-only {
-                max-height: 0;
-            }
-            @include for-tablet-portrait-up {
+            max-height: 0;
+            @include for-tablet-landscape-up {
+                max-height: none;
                 flex-direction: row;
                 justify-content: flex-end;
             }
@@ -61,6 +73,33 @@
                 font-weight: bold;
                 background: $c-base;
                 color: $c-blue;
+                width: 100%;
+                text-align: center;
+                @include for-tablet-landscape-up {
+                    width: auto;
+                }
+                &:first-child {
+                    flex: 1;
+                    text-align: left;
+                    display: none;
+                    .link {
+                        &:hover {
+                            opacity: .7;
+                        }
+                    }
+                    .logo {
+                        max-width: 300px;
+                        @include for-tablet-landscape-up {
+                            width: 300px;
+                        }
+                    }
+                    &:hover {
+                        background: $c-base;
+                    }
+                    @include for-tablet-landscape-up {
+                        display: block;
+                    }
+                }
                 &:hover {
                     color: $c-base;
                     background: $c-blue;
