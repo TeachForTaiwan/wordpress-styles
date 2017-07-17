@@ -1,0 +1,24 @@
+@mixin triangle($color) {
+    position: relative;
+    &:after {
+        position: absolute;
+        left: 50%;
+        bottom: -49px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 75px 0 75px;
+        border-color: $color transparent transparent transparent;
+        transform: translateX(-50%);
+    }
+}
+
+.siteorigin-panels-stretch.panel-row-style {
+    &.panel-row-style-for-111-1 {
+        @include triangle($c-base);
+    }
+    &.panel-row-style-for-111-4 {
+        @include triangle(#E87D92);
+    }
+}

@@ -16,6 +16,9 @@
                 .link {
                     padding: .6em 1em;
                     display: block;
+                    &:hover{
+                      color: $c-grey--dark;
+                    }
                 }
                 &--funcs {
                     padding-right: 40px;
