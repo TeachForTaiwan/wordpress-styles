@@ -4009,8 +4009,12 @@ ol {
   margin-left: 30px !important;
   margin-right: 0 !important; }
 
+.swiper-pagination-bullet-active {
+  background: #47B7D3 !important; }
+
 .lity {
-  overflow: auto; }
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7) !important; }
 
 .lity-wrap {
   position: absolute;
