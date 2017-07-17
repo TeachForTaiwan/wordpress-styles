@@ -28,7 +28,7 @@ gulp.task('css', () => {
   gulp.src('src/sass/**/*.scss')
     .pipe($.plumber())
     .pipe($.sass.sync({
-      outputStyle: 'nested', // expanded, nested, compact, compressed
+      outputStyle: 'compressed', // expanded, nested, compact, compressed
       precision: 10,
       includePath: ['.'],
     }).on('error', $.sass.logError))
