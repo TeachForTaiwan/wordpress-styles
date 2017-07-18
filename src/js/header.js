@@ -1,5 +1,6 @@
 const header = document.querySelector('.header');
 const btnMenu = document.querySelector('#m-btn-menu');
+const navItemList = header.querySelectorAll('.item');
 const toggleNavbar = (func) => {
   if (func === 'hide') {
     header.classList.remove('is-active');
@@ -11,6 +12,15 @@ const toggleNavbar = (func) => {
 
 btnMenu.addEventListener('click', () => {
   header.classList.toggle('is-open');
+});
+
+[].forEach.call(navItemList, (item) => {
+  item.addEventListener('click', (e) => {
+    const curLink = e.currentTarget.querySelector('.link');
+    if (curLink.href !== 'javascript:;') {
+      header.classList.remove('is-open');
+    }
+  });
 });
 
 window.addEventListener('scroll', () => {
