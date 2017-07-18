@@ -78,7 +78,7 @@
                 @include for-tablet-landscape-up {
                     width: auto;
                 }
-                &:first-child {
+                &.item-logo {
                     flex: 1;
                     text-align: left;
                     display: none;
@@ -100,9 +100,15 @@
                         display: block;
                     }
                 }
-                &:hover {
+                &:hover,
+                &:focus {
                     color: $c-base;
                     background: $c-blue;
+                    .sub-list {
+                        visibility: visible;
+                        opacity: 1;
+                        max-height: 200px;
+                    }
                 }
             }
             .link {
@@ -112,6 +118,27 @@
                 &:hover {
                     color: $c-base;
                 }
+            }
+        }
+        .sub-list {
+            list-style: none;
+            max-height: 0;
+            left: auto;
+            margin-left: 0;
+            box-shadow: 2px 2px 2px $c-grey--light;
+            width: 100%;
+            transition: max-height .7s ease-in-out;
+            .item {
+                &:hover {
+                    background: darken($c-blue, 20%);
+                }
+            }
+            @include for-tablet-landscape-up {
+                position: absolute;
+                width: auto;
+                visibility: hidden;
+                opacity: 0;
+                transition: .3s ease-in-out;
             }
         }
     }
