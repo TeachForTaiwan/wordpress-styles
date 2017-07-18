@@ -26,6 +26,9 @@
     .img-container {
         &.full {
             margin: -2em -2em 2em;
+            img {
+                width: 100%;
+            }
         }
     }
     p {
