@@ -1,0 +1,11 @@
+.feature-nav {
+    .link {
+        transition: .1s ease-in-out;
+        &:hover {
+            box-shadow: 1px 1px 5px $c-grey;
+        }
+        p {
+            text-align: justify!important;
+        }
+    }
+}

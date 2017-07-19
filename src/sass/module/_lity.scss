@@ -5,8 +5,11 @@
 
 .lity-wrap {
     position: absolute;
-    padding: 100px 10% 100px;
+    padding: 100px 5% 100px;
     overflow: auto;
+    @include for-tablet-landscape-up{
+      padding: 100px 10% 100px;
+    }
 }
 
 .lity-container {
