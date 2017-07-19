@@ -1,5 +1,6 @@
 .feature-nav {
     .link {
+        padding: 1em;
         transition: .1s ease-in-out;
         &:hover {
             box-shadow: 1px 1px 5px $c-grey;
@@ -8,4 +9,8 @@
             text-align: justify!important;
         }
     }
+}
+
+.sow-features-list .sow-features-feature {
+    padding: 0!important;
 }

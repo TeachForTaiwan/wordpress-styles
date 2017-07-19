@@ -3,6 +3,11 @@ body {
     letter-spacing: 1.15px;
 }
 
+::selection {
+    background-color: $c-primary;
+    color: $c-base;
+}
+
 a {
     color: inherit;
     &:link,
@@ -15,6 +20,18 @@ a {
     &.link {
         display: block;
     }
+}
+
+p {
+    a:link {
+        border-bottom: 1px dashed rgba($c-grey, .3);
+    }
+}
+
+a:hover,
+.entry-meta span a:hover,
+.comments-link a:hover {
+    color: inherit!important;
 }
 
 ul,

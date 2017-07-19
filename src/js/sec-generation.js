@@ -8,14 +8,14 @@ const swiperConfig1 = {
 
 const swiperConfig2 = {
   pagination: '.swiper-pagination',
-  slidesPerView: 1,
+  slidesPerView: 3,
   paginationClickable: true,
   spaceBetween: 30,
   grabcursor: true,
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth < 900) {
+  if (window.innerWidth < 600) {
     const swiper = new Swiper('.swiper-container', swiperConfig1);
     console.log('teste1');
   } else {

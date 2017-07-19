@@ -13,3 +13,20 @@
 #site-copyright+div {
     display: none!important;
 }
+
+#footer-inside {
+    padding-top: 0!important;
+}
+
+#colophon {
+    .panel-row-style {
+        flex-direction: row!important;
+        padding: 0!important;
+        @include for-tablet-landscape-up {
+            padding: 0 20%!important;
+        }
+        .panel-grid-cell {
+            margin: 0!important;
+        }
+    }
+}

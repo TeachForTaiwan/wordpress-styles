@@ -17,7 +17,7 @@ var swiperConfig2 = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (window.innerWidth < 900) {
+  if (window.innerWidth < 600) {
     var swiper = new Swiper('.swiper-container', swiperConfig1);
     console.log('teste1');
   } else {

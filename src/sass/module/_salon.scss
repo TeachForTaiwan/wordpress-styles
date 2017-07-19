@@ -8,5 +8,13 @@
     }
     .sow-sub-headline {
         padding: 0 .5em;
+        text-align: center!important;
+        @media (min-width: 769px) {
+            text-align: left!important;
+        }
     }
+}
+
+.so-widget-image {
+    margin: 0 auto!important;
 }
