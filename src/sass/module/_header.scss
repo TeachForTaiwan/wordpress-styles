@@ -1,5 +1,14 @@
 /* module/header */
 
+// hide default modules
+#masthead {
+    display: none;
+}
+
+.nav-primary {
+    display: none;
+}
+
 .header {
     width: 100%;
     letter-spacing: 1.15px;
@@ -16,8 +25,8 @@
                 .link {
                     padding: .6em 1em;
                     display: block;
-                    &:hover{
-                      color: $c-grey--dark;
+                    &:hover {
+                        color: $c-grey--dark;
                     }
                 }
                 &--funcs {

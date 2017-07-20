@@ -1,5 +1,10 @@
 /* module/footer */
 
+// deafult modules
+.site-footer {
+    display: none;
+}
+
 .footer {
     &__block {
         padding: 3rem;
