@@ -22,10 +22,33 @@
         overflow: hidden;
         background-color: $c-grey--light-2;
         font-size: .8em;
+        @include for-phone-only {
+            position: fixed;
+            width: 80%;
+            height: 100%;
+            z-index: 9999;
+            transition: .7s ease-in-out;
+            transform: translateX(-100%);
+            &.is-active {
+                transform: translateX(0);
+            }
+        }
         &__list {
             position: relative;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            @include for-tablet-portrait-up {
+                flex-direction: row;
+                width: auto;
+            }
             .item {
+                @include for-phone-only {
+                    width: 100%;
+                    text-align: center;
+                }
                 .link {
                     padding: .6em 1em;
                     display: block;
@@ -34,9 +57,12 @@
                     }
                 }
                 &--funcs {
-                    padding-right: 40px;
+                    position: relative;
+                    @include for-tablet-portrait-up {
+                        position: static;
+                        padding-right: 40px;
+                    }
                     .search-box {
-                        position: absolute;
                         right: 0;
                         top: 0;
                         background: transparent;
@@ -44,9 +70,12 @@
                         height: 100%;
                         width: 0;
                         opacity: 0;
+                        position: relative;
+                        @include for-tablet-portrait-up {
+                            position: absolute;
+                        }
                     }
                     .btn-search {
-                        position: absolute;
                         width: 40px;
                         right: 0;
                         z-index: 9;
@@ -54,6 +83,10 @@
                         bottom: 0;
                         border-radius: 0;
                         background-color: $c-grey--light-2;
+                        position: relative;
+                        @include for-tablet-portrait-up {
+                            position: absolute;
+                        }
                         &.is-active {
                             +.search-box {
                                 width: 100%;
