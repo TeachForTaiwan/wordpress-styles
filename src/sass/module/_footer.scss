@@ -7,13 +7,18 @@
 
 .footer {
     &__block {
-        padding: 3rem;
+        padding: 2rem;
         background-color: $c-grey;
         color: $c-base;
     }
     .social-list {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        @include for-tablet-portrait-up {
+            flex-direction: row;
+        }
         .list-item {
             margin: 15px;
             .btn {
@@ -32,18 +37,27 @@
     .contact-list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         margin: 0 auto;
+        @include for-tablet-portrait-up {
+            justify-content: center;
+        }
         .list-item {
-            padding: 0 0.5em;
+            padding: 0;
             font-size: .8em;
+            @include for-tablet-portrait-up {
+                padding: 0 0.5em;
+            }
         }
     }
     .address-list {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        @include for-tablet-portrait-up {
+            justify-content: center;
+        }
         .list-item {
             font-size: .8em;
         }
@@ -56,5 +70,6 @@
         color: $c-grey;
         min-height: 50px;
         font-size: .8em;
+        padding: 0 2rem;
     }
 }

@@ -1,0 +1,12 @@
+.sec-slogan {
+    padding: 50px 2rem!important;
+    @include for-tablet-landscape-up {
+        padding: 50px 0!important;
+    }
+}
+
+.sec-block {
+    padding: 50px 2rem!important;
+}
+
+.sec-hero {}

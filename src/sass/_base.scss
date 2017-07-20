@@ -3,6 +3,11 @@ body {
     letter-spacing: 1.15px;
 }
 
+::selection {
+    background-color: $c-red;
+    color: $c-base;
+}
+
 a {
     color: inherit;
     &:hover {

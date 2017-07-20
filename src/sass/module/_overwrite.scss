@@ -29,3 +29,30 @@
     background-color: $c-base;
     padding: 0;
 }
+
+.sow-headline {
+    line-height: 2!important;
+}
+
+.sow-slider-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem!important;
+    h2 {
+        font-size: calc(4vw + 10px)!important;
+        text-align: justify!important;
+        @include for-tablet-portrait-up {
+            font-size: 4rem!important;
+        }
+    }
+}
+
+.sow-features-list {
+    margin: 0!important;
+}
+
+.sow-features-feature {
+    padding: 0!important;
+}
