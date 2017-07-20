@@ -9,6 +9,10 @@
     display: none;
 }
 
+.logo {
+    object-fit: contain;
+}
+
 .header {
     width: 100%;
     letter-spacing: 1.15px;
@@ -89,11 +93,24 @@
             display: flex;
             justify-content: center;
             position: relative;
+            flex-direction: column;
+            @include for-tablet-landscape-up {
+                flex-direction: row;
+            }
         }
         &__list {
             display: flex;
             color: $c-red;
             font-weight: bold;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            box-shadow: 1px 1px 3px grey;
+            z-index: 999;
+            @include for-tablet-landscape-up {
+                flex-direction: row;
+                justify-content: center;
+            }
             .item {
                 .link {
                     padding: .6em 1em;
@@ -102,23 +119,45 @@
             }
         }
         &__funcs {
-            position: absolute;
             display: flex;
-            right: 10px;
+            right: 0;
             top: 50%;
-            transform: translateY(-50%);
+            z-index: 999;
+            position: relative;
+            flex-direction: column;
+            @include for-tablet-landscape-up {
+                right: 10px;
+                flex-direction: row;
+                position: absolute;
+                top: calc(50% - 2.5em);
+                transform: translateY(-50%);
+            }
+            @include for-desktop-up {
+                top: 50%;
+            }
             .item {
-                padding: 0 1em;
+                padding: 0;
+                width: 100%;
+                @include for-tablet-landscape-up {
+                    padding: 0 1em;
+                    width: auto;
+                }
                 .link {
                     display: block;
                 }
             }
             .btn {
                 font-weight: bold;
+                font-size: inherit;
                 padding: .8em 1.4em;
-                font-size: 1.25rem;
                 letter-spacing: 1.6px;
-                border-radius: 20px;
+                width: 100%;
+                border-radius: 0;
+                @include for-tablet-landscape-up {
+                    font-size: 1.25rem;
+                    border-radius: 20px;
+                    width: auto;
+                }
             }
         }
     }
