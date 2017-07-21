@@ -3,26 +3,42 @@
     &:after {
         position: absolute;
         left: 50%;
-        bottom: -49px;
+        bottom: -34px;
         content: "";
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 50px 75px 0 75px;
+        border-width: 35px 100px 0 100px;
         border-color: $color transparent transparent transparent;
         transform: translateX(-50%);
     }
 }
 
 .siteorigin-panels-stretch.panel-row-style {
-    &.panel-row-style-for-111-1 {
-        @include triangle($c-base);
-    }
-    &.panel-row-style-for-111-4 {
-        @include triangle(#E87D92);
-    }
-    &.panel-row-style-for-118-2 {
-        // 關於我們：願景
-        @include triangle($c-red);
-    }
+    // &.panel-row-style-for-111-1 {
+    //     @include triangle($c-base);
+    // }
+    // &.panel-row-style-for-111-4 {
+    //     @include triangle(#E87D92);
+    // }
+    // &.panel-row-style-for-118-2 {
+    //     // 關於我們：願景
+    //     @include triangle($c-red);
+    // }
+}
+
+.sec-tri {
+    @include triangle($c-red);
+}
+
+.sec-tri--base {
+    @include triangle($-base);
+}
+
+.sec-tri--grey {
+    @include triangle($c-grey--light-2);
+}
+
+.sec-tri--pink {
+    @include triangle($c-red--light);
 }

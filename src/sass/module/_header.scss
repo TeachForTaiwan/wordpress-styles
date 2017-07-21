@@ -148,6 +148,10 @@
                 .link {
                     padding: .6em 1em;
                     display: block;
+                    &:hover {
+                        color: $c-base;
+                        background: $c-primary;
+                    }
                 }
             }
         }

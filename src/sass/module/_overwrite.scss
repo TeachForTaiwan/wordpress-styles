@@ -49,6 +49,22 @@
     }
 }
 
+.sec-hero {
+    .sow-slider-image {
+        padding-bottom: 60%!important;
+    }
+}
+
+.sec-kv {
+    .sow-slider-image {
+        padding-bottom: 40%!important;
+    }
+    .sow-slider-image-container,
+    .sow-slider-image-wrapper {
+        height: 100%!important;
+    }
+}
+
 .sow-features-list {
     margin: 0!important;
 }
