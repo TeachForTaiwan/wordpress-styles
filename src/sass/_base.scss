@@ -1,6 +1,8 @@
 body {
     font-family: $ff-base;
     letter-spacing: 1.15px;
+    max-width: 3840px;
+    margin: 0 auto;
 }
 
 ::selection {

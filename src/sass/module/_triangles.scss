@@ -1,6 +1,7 @@
 @mixin triangle($color) {
     position: relative;
     &:after {
+        z-index: 1;
         position: absolute;
         left: 50%;
         bottom: -34px;
@@ -32,7 +33,7 @@
 }
 
 .sec-tri--base {
-    @include triangle($-base);
+    @include triangle($c-base);
 }
 
 .sec-tri--grey {
