@@ -179,6 +179,11 @@
                     padding: 0 1em;
                     width: auto;
                 }
+                &__mobile {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
                 .link {
                     display: block;
                 }
