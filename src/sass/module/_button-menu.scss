@@ -4,9 +4,9 @@
     height: 40px;
     .line {
         position: absolute;
-        left: 0;
+        left: 10%;
         top: 0;
-        width: 100%;
+        width: 80%;
         background-color: $c-red;
         height: 2px;
         &:nth-child(1) {
