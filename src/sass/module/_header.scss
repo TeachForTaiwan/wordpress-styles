@@ -22,6 +22,8 @@
         overflow: hidden;
         background-color: $c-grey--light-2;
         font-size: .8em;
+        z-index: 9999;
+        position: relative;
         @include for-phone-only {
             position: fixed;
             width: 80%;
@@ -113,21 +115,43 @@
     .header-fixed {
         display: flex;
         flex-direction: column;
+        position: relative;
+        width: 100%;
+        top: 0;
+        z-index: 999;
+        @include for-tablet-landscape-up {
+            top: auto;
+        }
+        &.is-active {
+            .row {
+                top: 93px;
+                transform: translateY(0);
+            }
+        }
         .logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 999;
+            background-color: $c-base;
             .link {
                 display: flex;
                 padding: 16px;
             }
         }
         .row {
+            position: absolute;
+            width: 100%;
+            background-color: $c-base;
+            z-index: 1;
             display: flex;
             justify-content: center;
-            position: relative;
             flex-direction: column;
+            top: 133px;
+            transition: .7s ease-in-out;
+            transform: translateY(-100%);
             @include for-tablet-landscape-up {
+                position: relative;
                 flex-direction: row;
             }
         }
@@ -183,6 +207,9 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    @include for-tablet-landscape-up {
+                        display: none;
+                    }
                 }
                 .link {
                     display: block;
