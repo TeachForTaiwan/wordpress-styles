@@ -1,4 +1,4 @@
-header.header
+header#header.header
   .header-container
     nav.nav-desktop
       ul.menu-secondary--desktop
@@ -28,8 +28,11 @@ header.header
       span.line
       span.line
       span.line
-    nav#nav.nav
-      ul.menu-primary
+    nav#nav-menu.nav
+      ul#menu-primary.menu-primary
+        li.item.item--logo
+          a.link(href="#")
+            img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_200px.png", alt="logo")
         li.item
           a.link(href="?page_id=111") 要解決的問題
         li.item
@@ -39,10 +42,17 @@ header.header
         li.item
           a.link(href="?page_id=122") 我們的影響力
         li.item
-          a.link(href="?page_id=124") 加入我們
+          a.link(href="javascript:;") 加入我們
           ul.sub-menu
             li.item
               a.link(href="javascript:;") test
+        li.item.item--btn
+          a.link(href="javascript:;", target="_blank", rel="noopener")
+            button.btn.btn--donate.btn--red 捐款
+        li.item.item--btn
+          a.link(href="javascript:;", target="_blank", rel="noopener")
+            button.btn.btn--teacher.btn--red 成為教師
+
       ul.menu-funcs
         li.item
           a.link(href="javascript:;", target="_blank", rel="noopener")
@@ -70,4 +80,5 @@ header.header
             form#search.search(role="search", method="get", action="//beta.teach4taiwan.org/")
               label(for="s")
                 input#input-search.input-search(name="s", type="search", placeholder="搜尋更多", )
+  #menu-mask.mask
 script(src="js/header.js")

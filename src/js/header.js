@@ -1,7 +1,10 @@
 const btnSearch = document.querySelector('.btn-search');
 const searchInput = document.querySelector('#input-search');
 const btnMenu = document.querySelector('#btn-menu');
-const headerNav = document.querySelector('#nav');
+const header = document.querySelector('#header');
+const headerNav = document.querySelector('#nav-menu');
+const menuPrimary = document.querySelector('#menu-primary');
+const menuMask = document.querySelector('#menu-mask');
 const focusElem = (el) => {
   el.focus();
 };
@@ -14,6 +17,27 @@ const toggleSearchBox = () => {
 const toggleMenu = () => {
   headerNav.classList.toggle('is-active');
 };
+const fixMenuPrimary = () => {
+  menuPrimary.classList.add('is-fixed');
+  headerNav.classList.add('is-fixed');
+  document.body.classList.add('has-fixed-top');
+};
+const unfixMenuPrimary = () => {
+  menuPrimary.classList.remove('is-fixed');
+  headerNav.classList.remove('is-fixed');
+  document.body.classList.remove('has-fixed-top');
+};
+const toggleMask = () => {
+  menuMask.classList.toggle('is-active');
+};
+const fixHeader = () => {
+  header.classList.add('is-fixed');
+  document.body.classList.add('has-fixed-top');
+};
+const unfixHeader = () => {
+  header.classList.remove('is-fixed');
+  document.body.classList.remove('has-fixed-top');
+}
 
 
 // search button
@@ -30,4 +54,22 @@ btnSearch.addEventListener('click', (e) => {
 // 手機版 menu button
 btnMenu.addEventListener('click', (e) => {
   toggleMenu();
+  toggleMask();
+});
+
+window.addEventListener('scroll', () => {
+
+  if (window.innerWidth >= 900) {
+    if (document.body.scrollTop > 100) {
+      fixMenuPrimary();
+    } else {
+      unfixMenuPrimary();
+    }
+    return;
+  }
+  if (document.body.scrollTop > 100) {
+    fixHeader();
+  } else {
+    unfixHeader();
+  }
 });

@@ -3,7 +3,10 @@
 var btnSearch = document.querySelector('.btn-search');
 var searchInput = document.querySelector('#input-search');
 var btnMenu = document.querySelector('#btn-menu');
-var headerNav = document.querySelector('#nav');
+var header = document.querySelector('#header');
+var headerNav = document.querySelector('#nav-menu');
+var menuPrimary = document.querySelector('#menu-primary');
+var menuMask = document.querySelector('#menu-mask');
 var focusElem = function focusElem(el) {
   el.focus();
 };
@@ -15,6 +18,27 @@ var toggleSearchBox = function toggleSearchBox() {
 };
 var toggleMenu = function toggleMenu() {
   headerNav.classList.toggle('is-active');
+};
+var fixMenuPrimary = function fixMenuPrimary() {
+  menuPrimary.classList.add('is-fixed');
+  headerNav.classList.add('is-fixed');
+  document.body.classList.add('has-fixed-top');
+};
+var unfixMenuPrimary = function unfixMenuPrimary() {
+  menuPrimary.classList.remove('is-fixed');
+  headerNav.classList.remove('is-fixed');
+  document.body.classList.remove('has-fixed-top');
+};
+var toggleMask = function toggleMask() {
+  menuMask.classList.toggle('is-active');
+};
+var fixHeader = function fixHeader() {
+  header.classList.add('is-fixed');
+  document.body.classList.add('has-fixed-top');
+};
+var unfixHeader = function unfixHeader() {
+  header.classList.remove('is-fixed');
+  document.body.classList.remove('has-fixed-top');
 };
 
 // search button
@@ -31,4 +55,22 @@ btnSearch.addEventListener('click', function (e) {
 // 手機版 menu button
 btnMenu.addEventListener('click', function (e) {
   toggleMenu();
+  toggleMask();
+});
+
+window.addEventListener('scroll', function () {
+
+  if (window.innerWidth >= 900) {
+    if (document.body.scrollTop > 100) {
+      fixMenuPrimary();
+    } else {
+      unfixMenuPrimary();
+    }
+    return;
+  }
+  if (document.body.scrollTop > 100) {
+    fixHeader();
+  } else {
+    unfixHeader();
+  }
 });

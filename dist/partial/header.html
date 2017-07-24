@@ -1,5 +1,5 @@
 
-<header class="header">
+<header class="header" id="header">
   <div class="header-container">
     <nav class="nav-desktop">
       <ul class="menu-secondary--desktop">
@@ -23,17 +23,22 @@
     </nav>
     <div class="logo-container"><a class="link" href="/"><img class="logo" src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_200px.png" alt="logo"/></a></div>
     <button class="btn btn-menu" id="btn-menu"><span class="line"></span><span class="line"></span><span class="line"></span></button>
-    <nav class="nav" id="nav">
-      <ul class="menu-primary">
+    <nav class="nav" id="nav-menu">
+      <ul class="menu-primary" id="menu-primary">
+        <li class="item item--logo"><a class="link" href="#"><img class="logo" src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_200px.png" alt="logo"/></a></li>
         <li class="item"><a class="link" href="?page_id=111">要解決的問題</a></li>
         <li class="item"><a class="link" href="?page_id=118">關於我們</a></li>
         <li class="item"><a class="link" href="?page_id=120">計畫內容</a></li>
         <li class="item"><a class="link" href="?page_id=122">我們的影響力</a></li>
-        <li class="item"><a class="link" href="?page_id=124">加入我們</a>
+        <li class="item"><a class="link" href="javascript:;">加入我們</a>
           <ul class="sub-menu">
             <li class="item"><a class="link" href="javascript:;">test</a></li>
           </ul>
         </li>
+        <li class="item item--btn"><a class="link" href="javascript:;" target="_blank" rel="noopener">
+            <button class="btn btn--donate btn--red">捐款</button></a></li>
+        <li class="item item--btn"><a class="link" href="javascript:;" target="_blank" rel="noopener">
+            <button class="btn btn--teacher btn--red">成為教師</button></a></li>
       </ul>
       <ul class="menu-funcs">
         <li class="item"><a class="link" href="javascript:;" target="_blank" rel="noopener">
@@ -61,5 +66,6 @@
       </ul>
     </nav>
   </div>
+  <div class="mask" id="menu-mask"></div>
 </header>
 <script src="js/header.js"></script>
