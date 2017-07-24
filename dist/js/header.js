@@ -3,7 +3,7 @@
 var btnSearch = document.querySelector('.btn-search');
 var searchInput = document.querySelector('#input-search');
 var btnMenu = document.querySelector('#btn-menu');
-var headerFixed = document.querySelector('.header-fixed');
+var headerNav = document.querySelector('#nav');
 var focusElem = function focusElem(el) {
   el.focus();
 };
@@ -14,7 +14,7 @@ var toggleSearchBox = function toggleSearchBox() {
   btnSearch.classList.toggle('is-active');
 };
 var toggleMenu = function toggleMenu() {
-  headerFixed.classList.toggle('is-active');
+  headerNav.classList.toggle('is-active');
 };
 
 // search button

@@ -1,7 +1,7 @@
 const btnSearch = document.querySelector('.btn-search');
 const searchInput = document.querySelector('#input-search');
 const btnMenu = document.querySelector('#btn-menu');
-const headerFixed = document.querySelector('.header-fixed');
+const headerNav = document.querySelector('#nav');
 const focusElem = (el) => {
   el.focus();
 };
@@ -12,7 +12,7 @@ const toggleSearchBox = () => {
   btnSearch.classList.toggle('is-active');
 };
 const toggleMenu = () => {
-  headerFixed.classList.toggle('is-active');
+  headerNav.classList.toggle('is-active');
 };
 
 
