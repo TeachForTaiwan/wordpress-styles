@@ -57,6 +57,7 @@
     }
     .nav-desktop {
         width: 100%;
+        overflow: hidden;
         display: none;
         @include for-tablet-landscape-up {
             display: flex;
@@ -86,6 +87,9 @@
                             +.search-box {
                                 opacity: 1;
                                 width: 100%;
+                                .input-search {
+                                    padding: .3em 1em;
+                                }
                             }
                         }
                     }
@@ -102,10 +106,10 @@
                             width: calc(100% - 60px);
                             border-radius: 15px;
                             font-size: .8em;
-                            padding: 0.3em 1em;
                             top: 50%;
                             position: absolute;
                             transform: translateY(-50%);
+                            padding: 0;
                         }
                     }
                 }
@@ -124,19 +128,22 @@
         .item {
             width: 100%;
             text-align: center;
+            position: relative;
+            &:hover {
+                background-color: $c-red;
+                color: $c-base;
+                .sub-menu {
+                    max-height: 1000px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
             @include for-tablet-landscape-up {
                 width: auto;
             }
             .link {
                 display: block;
                 padding: .5em 2em;
-                &:hover {
-                    background-color: $c-red;
-                    color: $c-base;
-                    +.sub-menu {
-                        max-height: 1000px;
-                    }
-                }
             }
         }
         .sub-menu {
@@ -145,6 +152,17 @@
             background-color: lighten($c-red, 10%);
             color: $c-base;
             transition: .3s ease-in-out;
+            width: 100%;
+            overflow: hidden;
+            @include for-tablet-landscape-up {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                left: 0;
+            }
+            .item {
+                background: lighten($c-red, 10%);
+            }
         }
     }
     .menu-funcs {
@@ -152,27 +170,31 @@
         @include for-tablet-landscape-up {
             position: absolute;
             top: -100%;
-            right: 0;
+            right: 1em;
         }
         .item {
             width: 50%;
-            @include for-tablet-landscape-up {
-                padding: 0 1em;
-            }
         }
         .btn {
             width: 100%;
             border-radius: 0;
             border: 1px solid $c-base;
             padding: .8em 0;
-            &--donate {}
-            &--teacher {}
+            &--donate {
+                @include for-tablet-landscape-up {
+                    width: 7em;
+                }
+            }
+            &--teacher {
+                @include for-tablet-landscape-up {
+                    width: 10em;
+                }
+            }
             @include for-tablet-landscape-up {
                 font-weight: bold;
-                font-size: inherit;
+                font-size: 1rem;
                 padding: .8em 1.4em;
-                letter-spacing: 1.6px;
-                width: 100%;
+                letter-spacing: 1.6px; // width: 100%;
                 border-radius: 15px;
             }
         }
