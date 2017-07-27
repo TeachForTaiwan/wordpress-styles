@@ -1,0 +1,69 @@
+.tab-wrap
+  input#tab1.tab(type="radio", name="tabGroup1", checked)
+  label(for="tab1") 執行團隊
+  input#tab2.tab(type="radio", name="tabGroup1")
+  label(for="tab2") 董事
+  input#tab3.tab(type="radio", name="tabGroup1")
+  label(for="tab3") 老師
+  input#tab4.tab(type="radio", name="tabGroup1")
+  label(for="tab4") 顧問
+  input#tab5.tab(type="radio", name="tabGroup1")
+  label(for="tab5") 協力夥伴
+  .tab__content
+    .swiper-container
+      .swiper-wrapper
+        - for(let i = 0; i < 10; i++)
+          .swiper-slide
+            figure.item-set
+              figcaption.title-container
+                .title 執行長
+                .name 劉安婷
+              .img-container
+                img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
+      .swiper-pagination
+  .tab__content
+    h3 B
+    p Lorem ipsum dolor sit amet.
+  .tab__content
+    h3 C
+    p Lorem ipsum dolor sit amet.
+  .tab__content
+    h3 D
+    p Lorem ipsum dolor sit amet.
+  .tab__content
+    h3 E
+    p Lorem ipsum dolor sit amet.
+script.
+  const configMobile = {
+    pagination: '.swiper-pagination',
+    slidesPerView: 1,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    spaceBetween: 30
+  };
+  const configTablet = {
+    pagination: '.swiper-pagination',
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    spaceBetween: 30
+  };
+  const configDesktop = {
+    pagination: '.swiper-pagination',
+    slidesPerView: 4,
+    slidesPerColumn: 2,
+    paginationClickable: true,
+    spaceBetween: 30
+  };
+  const getSwiperConfig = (ww) => {
+    if(ww < 600){
+      return configMobile;
+    }
+    if(ww < 900){
+      return configTablet;
+    }
+    if(ww >= 900){
+      return configDesktop;
+    }
+  };
+  const swiper = new Swiper('.swiper-container', getSwiperConfig(window.innerWidth));

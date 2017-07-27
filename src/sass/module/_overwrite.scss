@@ -56,3 +56,17 @@
 .sow-features-feature {
     padding: 0!important;
 }
+
+.wpsm-show {
+    max-width: 100%;
+}
+
+.ow-button-base a {
+    max-width: 100%;
+}
+
+.sow-slider-base ul.sow-slider-images .sow-slider-image-wrapper h1 {
+    @include for-phone-only {
+        font-size: calc(6vw + 10px)
+    }
+}
