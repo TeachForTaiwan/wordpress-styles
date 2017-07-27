@@ -28,6 +28,7 @@ body {
     width: 100%;
     height: 100%;
     transition: .7s ease-in-out;
+    pointer-events: none;
     &.is-active {
         background-color: rgba($c-grey--dark, .7);
     }
