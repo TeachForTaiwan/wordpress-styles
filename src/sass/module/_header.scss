@@ -32,6 +32,9 @@ body {
     &.is-active {
         background-color: rgba($c-grey--dark, .7);
     }
+    @include for-tablet-landscape-up {
+        display: none;
+    }
 }
 
 .header {
@@ -213,14 +216,20 @@ body {
             transition: .3s ease-in-out;
             width: 100%;
             overflow: hidden;
+            font-size: .9em;
             @include for-tablet-landscape-up {
                 visibility: hidden;
                 opacity: 0;
                 position: absolute;
                 left: 0;
+                white-space: nowrap;
+                width: auto;
             }
             .item {
                 background: lighten($c-red, 10%);
+                &:hover {
+                    background-color: lighten($c-red, 15%);
+                }
             }
         }
         &.is-fixed {
