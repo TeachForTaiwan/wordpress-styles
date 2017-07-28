@@ -170,7 +170,7 @@ body {
             width: 100%;
             text-align: center;
             position: relative;
-            &:hover {
+            &:hover:not(.item--logo) {
                 background-color: $c-red;
                 color: $c-base;
                 .sub-menu {
@@ -206,6 +206,11 @@ body {
                 width: 0;
                 height: 0;
                 transition: .3s ease-in-out, width 0;
+                .btn {
+                    &:hover {
+                        background-color: inherit;
+                    }
+                }
             }
         }
         .sub-menu {
