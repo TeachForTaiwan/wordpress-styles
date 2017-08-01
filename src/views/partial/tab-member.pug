@@ -10,6 +10,7 @@
   input#tab5.tab(type="radio", name="tabGroup1")
   label(for="tab5") 協力夥伴
   .tab__content
+    //- 執行團隊
     .swiper-container
       .swiper-wrapper
         - for(let i = 0; i < 10; i++)
@@ -22,38 +23,63 @@
                 img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
       .swiper-pagination
   .tab__content
-    h3 B
-    p Lorem ipsum dolor sit amet.
+    //- 董事
+    .swiper-container
+      .swiper-wrapper
+        - for(let i = 0; i < 10; i++)
+          .swiper-slide
+            figure.item-set
+              figcaption.title-container
+                .title 董事
+                .name 董事A
+              .img-container
+                img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
+      .swiper-pagination
   .tab__content
+    //- 老師
     h3 C
     p Lorem ipsum dolor sit amet.
   .tab__content
+    //- 顧問
     h3 D
     p Lorem ipsum dolor sit amet.
   .tab__content
-    h3 E
-    p Lorem ipsum dolor sit amet.
+    //- 協力夥伴
+    .swiper-container
+      .swiper-wrapper
+        - for(let i = 0; i < 10; i++)
+          .swiper-slide
+            figure.item-set
+              figcaption.title-container
+                .title 協力夥伴
+                .name 夥伴
+              .img-container
+                img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
+      .swiper-pagination
 script.
   const configMobile = {
     pagination: '.swiper-pagination',
     slidesPerView: 1,
     slidesPerColumn: 2,
     paginationClickable: true,
-    spaceBetween: 30
+    spaceBetween: 30,
+    grabCursor: true
   };
   const configTablet = {
     pagination: '.swiper-pagination',
     slidesPerView: 3,
     slidesPerColumn: 2,
     paginationClickable: true,
-    spaceBetween: 30
+    spaceBetween: 30,
+    grabCursor: true
   };
   const configDesktop = {
     pagination: '.swiper-pagination',
     slidesPerView: 4,
     slidesPerColumn: 2,
     paginationClickable: true,
-    spaceBetween: 30
+    spaceBetween: 30,
+    grabCursor: true
   };
   const getSwiperConfig = (ww) => {
     if(ww < 600){
