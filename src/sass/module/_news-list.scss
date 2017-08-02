@@ -1,0 +1,42 @@
+.post {
+    margin: 1em 2em!important;
+}
+
+// 標題
+.entry-title {
+    color: $c-primary;
+    .link {
+        &:hover {
+            color: darken($c-primary, 10%);
+        }
+    }
+}
+
+.excerpt-image-left .archive-post-wrap .entry-meta {
+    color: #999;
+    font-size: .8em;
+}
+
+// Read More
+.more-link {
+    border-radius: 15px;
+    color: $c-base!important;
+    background-color: $c-primary;
+    margin: 1em 0;
+    font-size: .8em;
+    padding: 6px 10px;
+    display: block;
+    max-width: 10em;
+    transition: .1s ease-in-out;
+    &:hover {
+        background-color: lighten($c-primary, 10%);
+    }
+}
+
+.archive-post-wrap,
+.page-header .page-title {
+    // 分隔線
+    border-bottom: 1px solid rgba(#999, .5);
+    padding-bottom: 0;
+    margin-bottom: 3em;
+}
