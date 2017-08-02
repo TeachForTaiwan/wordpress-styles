@@ -149,6 +149,11 @@ $tab-wrap-border-radius: 6px;
         }
         .img-container {
             text-align: center;
+            &.square{
+              .img{
+                border-radius: 0;
+              }
+            }
             .img {
                 border-radius: 50%;
                 width: 80%;
