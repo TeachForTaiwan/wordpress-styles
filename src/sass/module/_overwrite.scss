@@ -70,3 +70,25 @@
         font-size: calc(6vw + 10px)
     }
 }
+
+// 了解更多
+.wpsm-show {
+    position: absolute;
+    left: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%);
+    transition: .1s ease-in-out;
+    &.wpsm-content-hide {
+        display: inline-block;
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.wpsm-hide {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
