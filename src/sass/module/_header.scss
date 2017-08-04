@@ -315,8 +315,10 @@ body {
             width: 100%;
             border-radius: 0;
             border: 1px solid $c-base;
+            font-size: 1em;
             padding: .8em 0;
             @include for-tablet-landscape-up {
+                font-size: .8em;
                 padding: .8em 1.4em;
                 letter-spacing: 1.6px;
                 border-radius: 15px;

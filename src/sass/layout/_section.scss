@@ -35,7 +35,9 @@
 
 .sec-kv {
     .sow-slider-image {
-        padding-bottom: 40%!important;
+        @include for-tablet-landscape-up {
+            padding-bottom: 40%!important;
+        }
     }
     .sow-slider-image-container,
     .sow-slider-image-wrapper {
