@@ -23,6 +23,9 @@ body {
     object-fit: contain;
     width: 280px;
     max-width: 80%;
+    @include for-phone-only {
+        padding: 5px 10px;
+    }
 }
 
 .mask {
@@ -79,6 +82,9 @@ body {
         align-items: center;
         .link {
             padding-top: 10px;
+            @include for-tablet-portrait-up {
+                text-align: center;
+            }
         }
     }
     .header-container {
@@ -194,7 +200,10 @@ body {
             }
             .link {
                 display: block;
-                padding: .5em 2em;
+                padding: .8em 2em;
+                @include for-tablet-landscape-up {
+                    padding: .5em 2em;
+                }
             }
             &--logo {
                 visibility: hidden;
@@ -340,7 +349,7 @@ body {
             text-align: center;
             .link {
                 display: block;
-                padding: .5em 2em;
+                padding: .8em 2em;
                 @include for-tablet-landscape-up {
                     padding: .5em 1em;
                 }
@@ -349,6 +358,7 @@ body {
                 display: flex;
                 flex-direction: row-reverse;
                 width: 100%;
+                padding-bottom: 5px;
             }
         }
         &.is-active {

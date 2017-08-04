@@ -13,8 +13,9 @@
     }
     .social-list {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         @include for-tablet-portrait-up {
             flex-direction: row;
