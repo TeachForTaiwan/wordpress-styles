@@ -1,0 +1,81 @@
+.faq {}
+
+.faq-bricks {
+    display: flex;
+    flex-wrap: wrap;
+    .brick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        min-height: 7em;
+        border: 1px solid $c-base;
+        cursor: pointer;
+        &:hover {
+            opacity: .7;
+        }
+        &:nth-child(3n+1) {
+            background-color: $c-primary;
+            color: $c-base;
+        }
+        &:nth-child(3n+2) {
+            background-color: $c-green;
+            color: $c-base;
+        }
+        &:nth-child(3n) {
+            background-color: $c-yellow;
+            color: $c-base;
+        }
+    }
+}
+
+.faq-type-container {
+    visibility: hidden;
+    opacity: 0;
+    transition: .7s ease-in-out,  height 0;
+    height: 0;
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+    }
+    &#faq-main {}
+    &#faq-teacher {}
+    &#faq-training {}
+    &#faq-influence {}
+    &#faq-support {}
+    &#faq-system {}
+}
+
+.faq-group {
+    border: 1px solid;
+    border-color: $c-grey--light;
+    margin: 1em;
+    .title-container {
+        position: relative;
+        padding: 1em;
+        padding-left: 3em;
+        line-height: 1;
+        cursor: pointer;
+        &:before {
+            content: "Q";
+            position: absolute;
+            font-size: 3em;
+            left: 0;
+            top: 0;
+            opacity: .6;
+        }
+    }
+    .content-container {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: .1s ease-in-out, .3s transform ease-in-out;
+        height: 0;
+        &.is-active {
+            opacity: 1;
+            transform: scaleY(1);
+            height: auto;
+        }
+    }
+}
