@@ -77,8 +77,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        .link{
-          padding-top: 10px;
+        .link {
+            padding-top: 10px;
         }
     }
     .header-container {
@@ -120,8 +120,8 @@ body {
                 .link {
                     display: block;
                     padding: .6em 1em;
-                    &:hover{
-                      background-color: $c-grey--light;
+                    &:hover {
+                        background-color: $c-grey--light;
                     }
                 }
                 &--funcs {
@@ -290,10 +290,14 @@ body {
     }
     .menu-funcs {
         display: flex;
+        transition: .3s ease-in-out;
         @include for-tablet-landscape-up {
             position: absolute;
             top: -100%;
             right: 1em;
+        }
+        @include for-desktop-up {
+            top: 0;
         }
         .item {
             width: 50%;
@@ -303,6 +307,11 @@ body {
             border-radius: 0;
             border: 1px solid $c-base;
             padding: .8em 0;
+            @include for-tablet-landscape-up {
+                padding: .8em 1.4em;
+                letter-spacing: 1.6px;
+                border-radius: 15px;
+            }
             &--donate {
                 @include for-tablet-landscape-up {
                     width: 7em;
@@ -312,13 +321,6 @@ body {
                 @include for-tablet-landscape-up {
                     width: 10em;
                 }
-            }
-            @include for-tablet-landscape-up {
-                font-weight: bold;
-                font-size: 1rem;
-                padding: .8em 1.4em;
-                letter-spacing: 1.6px; // width: 100%;
-                border-radius: 15px;
             }
         }
     }
