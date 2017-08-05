@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     brick.addEventListener('click', (e) => {
       const targetType = e.currentTarget.dataset.type;
       const targetEl = document.querySelector(`#faq-${targetType}`);
+
+      faqBricks.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+      e.currentTarget.classList.add('is-active');
       closeFAQs();
       targetEl.classList.toggle('is-active');
     });
