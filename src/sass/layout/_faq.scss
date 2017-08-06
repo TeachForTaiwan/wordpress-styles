@@ -54,23 +54,23 @@
             min-height: 7em;
             font-size: 1.6em;
             &:nth-child(odd) {
-                background-color: $c-primary;
-                color: $c-base;
+                background-color: $c-grey--light;
+                color: $c-grey;
                 &:hover,
                 &.is-active {
-                    background-color: $c-base;
-                    color: $c-primary;
-                    border-color: $c-primary;
+                    background-color: $c-grey;
+                    color: $c-grey--light;
+                    border-color: $c-grey--light;
                 }
             }
             &:nth-child(even) {
-                background-color: $c-green;
-                color: $c-base;
+                background-color: $c-yellow;
+                color: $c-grey;
                 &:hover,
                 &.is-active {
-                    background-color: $c-base;
-                    color: $c-green;
-                    border-color: $c-green;
+                    background-color: $c-grey;
+                    color: $c-yellow;
+                    border-color: $c-yellow;
                 }
             }
         }
