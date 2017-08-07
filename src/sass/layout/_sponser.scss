@@ -1,0 +1,49 @@
+.sponser {
+    .content-placeholder {
+        margin: 0 auto;
+        margin-top: 3em;
+        max-width: 1600px;
+    }
+    .red1 {
+        color: $c-red;
+        padding: 0 1.2em;
+    }
+    .partner-listing {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 10px solid transparent;
+        width: 50%;
+        margin: 1em 0;
+        padding: 0 .5em;
+        transition: .1s ease-in-out;
+        &:hover {
+            opacity: .7;
+        }
+        @include for-tablet-portrait-up {
+            width: 33%;
+        }
+        @include for-tablet-landscape-up {
+            width: 25%;
+        }
+        .partner-img {
+            img {
+                object-fit: contain;
+            }
+        }
+        .partner-name {
+            text-align: justify;
+            font-weight: bold;
+            font-size: .85em;
+            margin-top: .5em;
+            padding: .1em .3em;
+            border: 1px solid rgba(0, 0, 0, .1);
+        }
+    }
+}
