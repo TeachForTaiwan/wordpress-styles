@@ -37,7 +37,12 @@ const fixHeader = () => {
 const unfixHeader = () => {
   header.classList.remove('is-fixed');
   document.body.classList.remove('has-fixed-top');
-}
+};
+const removeLink = (className) => {
+  document.querySelectorAll(className).forEach((el) => {
+    el.removeAttribute('href');
+  });
+};
 
 
 // search button
@@ -71,5 +76,11 @@ window.addEventListener('scroll', () => {
     fixHeader();
   } else {
     unfixHeader();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 900) {
+    removeLink('.has-sub');
   }
 });

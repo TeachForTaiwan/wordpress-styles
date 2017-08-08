@@ -40,6 +40,11 @@ var unfixHeader = function unfixHeader() {
   header.classList.remove('is-fixed');
   document.body.classList.remove('has-fixed-top');
 };
+var removeLink = function removeLink(className) {
+  document.querySelectorAll(className).forEach(function (el) {
+    el.removeAttribute('href');
+  });
+};
 
 // search button
 btnSearch.addEventListener('click', function (e) {
@@ -72,5 +77,11 @@ window.addEventListener('scroll', function () {
     fixHeader();
   } else {
     unfixHeader();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth < 900) {
+    removeLink('.has-sub');
   }
 });
