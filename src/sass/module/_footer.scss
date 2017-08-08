@@ -21,19 +21,31 @@
             flex-direction: row;
         }
         .list-item {
-            margin: 15px;
+            margin: 12px;
             .btn {
                 font-size: 16px;
                 min-height: 2.5rem;
                 min-width: 4rem;
                 padding: .8em 1em;
                 letter-spacing: 1.44px;
+                position: relative;
                 &--round {
                     height: 4rem;
                     width: 4rem;
                     display: flex;
                     justify-content: center;
                 }
+                &--no-text {
+                    .fa {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                  span{
+                    padding-left: .6em;
+                  }
             }
         }
     }
