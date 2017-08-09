@@ -7,35 +7,53 @@ var removeActiveClass = function removeActiveClass() {
     el.parentNode.classList.remove('is-active', 'is-current');
   });
 };
-var spySections = document.querySelectorAll('.program');
-var spySection = {};
-var i = 0;
+
+window.addEventListener('load', function () {
+  var spySections = document.querySelectorAll('.program');
+  var spySection = {};
+  var spyElementOffsetTop = 600;
+  var spyElementOffsetBottom = document.body.scrollHeight - 1000;
+  var i = 0;
+
+  console.log(spySections);
+  spySections.forEach(function (e) {
+    spySection[e.id] = e.offsetTop;
+  });
+  console.log(spySection);
+
+  window.addEventListener('scroll', function () {
+    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollPosition > spyElementOffsetTop && scrollPosition < spyElementOffsetBottom) {
+      console.log(scrollPosition, spyElementOffsetTop, spyElementOffsetBottom);
+      document.querySelector('.scrollspy').classList.add('is-show');
+    } else {
+      console.log(scrollPosition, spyElementOffsetTop, spyElementOffsetBottom);
+      document.querySelector('.scrollspy').classList.remove('is-show');
+    }
+
+    // buggy for scrollSpy
+    // id(program-1~4)的位置有誤
+    for (i in spySection) {
+      if (spySection[i] <= scrollPosition) {
+        removeActiveClass();
+        document.querySelector('a[href*=' + i + ']').setAttribute('class', 'is-active');
+      }
+    }
+  });
+});
 
 document.addEventListener('DOMContentLoaded', function () {
+
   scrollSpyLink.forEach(function (link) {
     link.addEventListener('click', function (e) {
       var elem = e.currentTarget.parentNode;
       var curIndex = Array.from(elem.parentNode.children).indexOf(elem);
 
       removeActiveClass();
-      for (var _i = 0; _i < curIndex + 1; _i++) {
-        scrollSpyLink[_i].parentNode.classList.add('is-active');
+      for (var j = 0; j < curIndex + 1; j++) {
+        scrollSpyLink[j].parentNode.classList.add('is-active');
       }
       elem.classList.add('is-current');
     });
   });
-
-  [].forEach.call(spySections, function (e) {
-    spySection[e.id] = e.offsetTop;
-  });
-});
-
-window.addEventListener('scroll', function () {
-  var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-  for (i in spySection) {
-    if (spySection[i] <= scrollPosition) {
-      removeActiveClass();
-      document.querySelector('a[href*=' + i + ']').setAttribute('class', 'is-active');
-    }
-  }
 });
