@@ -1,0 +1,58 @@
+.scrollspy-container {
+    position: fixed;
+    right: 2em;
+    top: 50px;
+    z-index: 99;
+}
+
+.scrollspy {
+    $increse-height: 2em;
+    $lighten-primary: lighten($c-primary, 12%);
+    color: $lighten-primary;
+    >.item {
+        position: relative;
+        padding: .8em .5em;
+        padding-left: 1.2em;
+        margin-bottom: $increse-height;
+        transition: .3s ease-in-out;
+        line-height: 1.25;
+        &:before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            font-size: 1.4em;
+            transform: translateY(-50%);
+            transform-origin: top;
+            transition: .3s ease-in-out;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            left: 0;
+            top: calc(-50% - 30px);
+            transform: translateX(5px);
+            height: calc(100% + #{$increse-height});
+            background-color: $lighten-primary;
+            z-index: -1;
+        }
+        &:first-of-type:after {
+            display: none;
+        }
+        &.is-active {
+            color: $c-primary;
+            font-size: 1.1em;
+            &:before {
+                transform: scale(1.5) translateY(-50%);
+            }
+            &:after {
+                background-color: $c-primary;
+            }
+        }
+        .link {
+            display: block;
+            max-width: 3em;
+        }
+    }
+}
