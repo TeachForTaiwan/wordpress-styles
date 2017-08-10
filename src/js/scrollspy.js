@@ -1,5 +1,16 @@
 const scrollSpy = document.querySelector('.scrollspy');
 const scrollSpyLink = scrollSpy.querySelectorAll('.link');
+const scrollTo = (element, to, duration) => {
+  if (duration <= 0) return;
+  const difference = to - element.scrollTop;
+  const perTick = (difference / duration) * 10;
+
+  setTimeout(() => {
+    element.scrollTop += perTick;
+    if (element.scrollTop === to) return;
+    scrollTo(element, to, duration - 10);
+  }, 10);
+};
 const removeActiveClass = () => {
   scrollSpyLink.forEach((el) => {
     el.parentNode.classList.remove('is-active', 'is-current');
@@ -41,11 +52,14 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
   scrollSpyLink.forEach((link) => {
     link.addEventListener('click', (e) => {
       const elem = e.currentTarget.parentNode;
       const curIndex = Array.from(elem.parentNode.children).indexOf(elem);
+
+      // scroll anim
+      e.preventDefault();
+      scrollTo(document.body, elem, 300);
 
       removeActiveClass();
       for (let j = 0; j < curIndex + 1; j++) {
@@ -54,5 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
       elem.classList.add('is-current');
     });
   });
-
 });
