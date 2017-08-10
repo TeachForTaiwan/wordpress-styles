@@ -8,11 +8,13 @@
 .scrollspy {
     $increse-height: 2em;
     $lighten-primary: lighten($c-primary, 12%);
+    position: relative;
     color: $lighten-primary;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: .3s ease-in-out;
+    margin-left: 0;
     &.is-show {
         @include for-tablet-landscape-up {
             opacity: 1;
@@ -22,14 +24,14 @@
     >.item {
         position: relative;
         padding: .8em .5em;
-        padding-left: 1.2em;
+        padding-left: 1.4em;
         margin-bottom: $increse-height;
         transition: .3s ease-in-out;
         line-height: 1.25;
         &:before {
             content: '●';
             position: absolute;
-            left: 0;
+            left: 2px;
             top: 50%;
             font-size: 1.4em;
             transform: translateY(-50%);
@@ -40,7 +42,7 @@
             content: '';
             position: absolute;
             width: 3px;
-            left: 0;
+            left: 2px;
             top: calc(-50% - 30px);
             transform: translateX(5px);
             height: calc(100% + #{$increse-height});
