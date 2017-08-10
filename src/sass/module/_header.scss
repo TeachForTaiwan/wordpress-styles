@@ -63,6 +63,7 @@
             overflow: hidden;
             transition: max-height .7s ease-in-out;
             max-height: 0;
+            margin: 0;
             @include for-tablet-landscape-up {
                 max-height: none;
                 flex-direction: row;
