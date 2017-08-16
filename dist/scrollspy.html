@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>FAQ</title>
     <link href="css/main.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="header" id="header">
@@ -104,14 +105,18 @@
     <script src="js/header.js"></script>
     <div class="scrollspy-container">
       <ul class="scrollspy">
-        <li class="item"><a class="link" href="#program-0">計畫概覽</a></li>
         <li class="item"><a class="link" href="#program-1">招募甄選</a></li>
         <li class="item"><a class="link" href="#program-2">教師配對</a></li>
         <li class="item"><a class="link" href="#program-3">培訓支持</a></li>
         <li class="item"><a class="link" href="#program-4">校友發展</a></li>
       </ul>
     </div>
-    <main style="min-height:500vh;"></main><footer class="footer">
+    <main style="min-height:500vh;">
+      <div class="program" id="program-1" style="height: 1000px; background: red;"></div>
+      <div class="program" id="program-2" style="height: 1000px; background: yellow;"></div>
+      <div class="program" id="program-3" style="height: 1000px; background: green;"></div>
+      <div class="program" id="program-4" style="height: 1000px; background: blue;"></div>
+    </main><footer class="footer">
 <div class="footer__block">
 <ul class="social-list">
 <li class="list-item">

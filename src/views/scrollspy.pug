@@ -6,10 +6,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title FAQ
     link(href="css/main.css", rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")
   body
     include partial/header
     include partial/scrollspy
     main(style="min-height:500vh")
+      #program-1.program(style="height: 1000px; background: red", )
+      #program-2.program(style="height: 1000px; background: yellow")
+      #program-3.program(style="height: 1000px; background: green")
+      #program-4.program(style="height: 1000px; background: blue")
     include partial/footer
     script(src="js/scrollspy.js")
 

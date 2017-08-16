@@ -1,18 +1,19 @@
 'use strict';
 
+/* global $, jQuery */
 var scrollSpy = document.querySelector('.scrollspy');
 var scrollSpyLink = scrollSpy.querySelectorAll('.link');
-var scrollTo = function scrollTo(element, to, duration) {
-  if (duration <= 0) return;
-  var difference = to - element.scrollTop;
-  var perTick = difference / duration * 10;
+// const scrollTo = (element, to, duration) => {
+//   if (duration <= 0) return;
+//   const difference = to - element.scrollTop;
+//   const perTick = (difference / duration) * 2;
 
-  setTimeout(function () {
-    element.scrollTop += perTick;
-    if (element.scrollTop === to) return;
-    scrollTo(element, to, duration - 10);
-  }, 10);
-};
+//   setTimeout(() => {
+//     element.scrollTop += perTick;
+//     if (element.scrollTop === to) return;
+//     scrollTo(element, to, duration - 10);
+//   }, 10);
+// };
 var removeActiveClass = function removeActiveClass() {
   scrollSpyLink.forEach(function (el) {
     el.parentNode.classList.remove('is-active', 'is-current');
@@ -26,19 +27,15 @@ window.addEventListener('load', function () {
   var spyElementOffsetBottom = document.body.scrollHeight - 1000;
   var i = 0;
 
-  console.log(spySections);
   spySections.forEach(function (e) {
     spySection[e.id] = e.offsetTop;
   });
-  console.log(spySection);
 
   window.addEventListener('scroll', function () {
     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
     if (scrollPosition > spyElementOffsetTop && scrollPosition < spyElementOffsetBottom) {
-      console.log(scrollPosition, spyElementOffsetTop, spyElementOffsetBottom);
       document.querySelector('.scrollspy').classList.add('is-show');
     } else {
-      console.log(scrollPosition, spyElementOffsetTop, spyElementOffsetBottom);
       document.querySelector('.scrollspy').classList.remove('is-show');
     }
 
@@ -56,12 +53,13 @@ window.addEventListener('load', function () {
 document.addEventListener('DOMContentLoaded', function () {
   scrollSpyLink.forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var elem = e.currentTarget.parentNode;
+      var elemHref = e.currentTarget.getAttribute('href');
+      var elem = document.querySelector(elemHref);
       var curIndex = Array.from(elem.parentNode.children).indexOf(elem);
 
       // scroll anim
       e.preventDefault();
-      scrollTo(document.body, elem, 300);
+      jQuery('html,body').animate({ scrollTop: jQuery(elemHref).offset().top - 60 }, 800);
 
       removeActiveClass();
       for (var j = 0; j < curIndex + 1; j++) {
