@@ -1,7 +1,7 @@
 /* module/button */
 
 .btn {
-    border: none;
+    border: none!important;
     background-color: $c-base;
     color: $c-grey;
     text-shadow: none;
@@ -15,11 +15,21 @@
     &.btn--round {
         border-radius: 50%;
     }
+    &.btn--square {
+        border-radius: 0;
+    }
     &.btn--red {
-        background-color: $c-red;
-        color: $c-base;
+        background-color: $c-red!important;
+        color: $c-base!important;
         &:hover {
-            background-color: lighten($c-red, 10%);
+            background-color: lighten($c-red, 10%)!important;
+        }
+    }
+    &.btn--yellow {
+        background-color: $c-yellow!important;
+        color: $c-grey!important;
+        &:hover {
+            background-color: lighten($c-yellow, 10%)!important;
         }
     }
 }
