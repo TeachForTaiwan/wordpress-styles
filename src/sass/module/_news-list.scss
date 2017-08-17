@@ -50,32 +50,32 @@
     margin: 0 auto;
     max-width: 1024px;
     .page-title {
-        margin-bottom: 1em;
-        font-size: 16px;
-        border: 1px solid;
         display: inline-block;
-        padding: .2em .5em;
-        opacity: 0.7;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        color: #a3a3a3;
+        padding: .3em .5em;
+        margin: 5px 0;
+        transition: .1s ease-in-out;
     }
 }
 
 .archive-post-wrap,
 .page-header .page-title {
     // 分隔線
-    border-bottom: none;
-    padding-bottom: 0;
     margin: 0 auto;
     margin-bottom: 3em;
-    font-size: 1.2em;
+    font-size: 1em;
     max-width: 1024px;
-    @include for-desktop-up {
-        padding: 0;
-    }
 }
 
 .archive-post-wrap {
+    border-bottom: none;
     @include for-tablet-landscape-up {
         padding: 0 1.4em;
+    }
+    .entry-title {
+        font-size: 22px;
     }
 }
 
