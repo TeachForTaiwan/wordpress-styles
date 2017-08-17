@@ -1,0 +1,104 @@
+.org-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #FFF;
+    .org-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .org-block {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        width: 100%;
+        text-align: center;
+        .block-title {
+            color: $c-grey;
+            background-color: $c-base;
+            padding: .5em .2em;
+        }
+        &.row-block-left {
+            @include for-tablet-landscape-up {
+                flex: .45;
+            }
+        }
+        &.row-block-right {
+            @include for-tablet-landscape-up {
+                flex: .55;
+            }
+        }
+        .org-part {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            @include for-tablet-portrait-up {
+                flex-direction: row;
+            }
+            @include for-tablet-landscape-up {
+                flex-direction: row;
+            }
+            .item {
+                margin: .8em 0;
+                padding: 0;
+                &--4 {
+                    width: 100%;
+                    @include for-tablet-portrait-up {
+                        width: 50%;
+                    }
+                    @include for-tablet-landscape-up {
+                        width: 25%;
+                    }
+                }
+                &--5 {
+                    width: 100%;
+                    @include for-tablet-portrait-up {
+                        width: 50%;
+                    }
+                    @include for-tablet-landscape-up {
+                        width: 20%;
+                    }
+                }
+                &:first-of-type {
+                    margin-left: 0;
+                    .block-title {
+                        margin-left: 0;
+                    }
+                }
+                &:last-of-type {
+                    margin-right: 0;
+                    .block-title {
+                        margin-right: 0;
+                    }
+                }
+                &:hover {
+                    .block-title {
+                        background-color: $c-red;
+                        color: $c-base;
+                    }
+                }
+            }
+            .block-title {
+                line-height: 1.4;
+                height: 4em;
+                color: $c-grey;
+                cursor: pointer;
+                transition: .1s ease-in-out;
+                @include for-tablet-portrait-up {
+                    margin: 1em .5em;
+                }
+                &.oneline {
+                    position: relative;
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 100%;
+                        white-space: nowrap;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
