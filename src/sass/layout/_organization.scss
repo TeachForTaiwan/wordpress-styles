@@ -101,4 +101,23 @@
             }
         }
     }
+    .org-content-container {
+        .org-content {
+            visibility: hidden;
+            opacity: 0;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1em;
+            max-height: 0;
+            overflow: hidden;
+            will-change: max-height;
+            transition: .5s ease-in-out;
+            &.is-active {
+                opacity: 1;
+                visibility: visible;
+                max-height: 999px;
+                padding: 1em;
+            }
+        }
+    }
 }

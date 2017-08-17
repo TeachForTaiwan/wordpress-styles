@@ -11,49 +11,68 @@ h1.title 組織架構
     .org-block.row-block-left
       .block-title(style="background-color: #DDDDDD;") 營運管理部
       .org-part
-        .item.item--4
+        .item.item--4(data-id="org-hr")
           .block-title
             span 人資
             br
             span 行政組
-        .item.item--4
+        .item.item--4(data-id="org-er")
           .block-title
             span 對外
             br
             span 關係組
-        .item.item--4
+        .item.item--4(data-id="org-mkt")
           .block-title
             span 行銷
             br
             span 企劃組
-        .item.item--4
+        .item.item--4(data-id="org-fin")
           .block-title.oneline
             span 財務組
     .org-block.row-block-right
       .block-title(style="background-color: #DDDDDD;") 教學發展部
       .org-part
-        .item.item--5
+        .item.item--5(data-id="org-ra")
           .block-title
             span 招募
             br
             span 甄選組
-        .item.item--5
+        .item.item--5(data-id="org-pt")
           .block-title
             span 訪校
             br
             span 配對組
-        .item.item--5
+        .item.item--5(data-id="org-ts")
           .block-title
             span 培訓
             br
             span 支持組
-        .item.item--5
+        .item.item--5(data-id="org-ad")
           .block-title
             span 校友
             br
             span 發展組
-        .item.item--5
+        .item.item--5(data-id="org-re")
           .block-title
             span 研究
             br
             span 追蹤組
+  .org-content-container
+    .org-content#org-hr
+      p 人資行政組
+    .org-content#org-er
+      p 對外關係組
+    .org-content#org-mkt
+      p 行銷企劃組
+    .org-content#org-fin
+      p 財務組
+    .org-content#org-ra
+      p 招募甄選組
+    .org-content#org-pt
+      p 訪校配對組
+    .org-content#org-ts
+      p 培訓支持組
+    .org-content#org-ad
+      P 校友發展組
+    .org-content#org-re
+      p 研究追蹤組
