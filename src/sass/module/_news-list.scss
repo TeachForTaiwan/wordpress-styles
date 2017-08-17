@@ -3,7 +3,7 @@
     max-width: 1024px;
     padding: 0 1.4em;
     &:first-of-type {
-      padding-top: 2em!important;
+        padding-top: 2em!important;
     }
     @include for-tablet-landscape-up {
         padding: 0;
@@ -18,6 +18,10 @@
             color: darken($c-primary, 10%);
         }
     }
+}
+
+.entry-summary {
+    font-size: 16px;
 }
 
 .excerpt-image-left .archive-post-wrap .entry-meta {
@@ -51,7 +55,27 @@
     margin-bottom: 3em;
     font-size: 1.2em;
     max-width: 1024px;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
         padding: 0;
+    }
+}
+
+#nav-below {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.nav-previous,
+.nav-next {
+    a {
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        color: #a3a3a3;
+        padding: .3em .5em;
+        margin: 5px 0;
+        transition: .1s ease-in-out;
+        &:hover {
+            color: $c-grey;
+        }
     }
 }
