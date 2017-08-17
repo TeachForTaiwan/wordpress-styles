@@ -53,6 +53,9 @@ body {
         position: fixed;
         opacity: 1;
     }
+    .link {
+        transition: none;
+    }
     .nav {
         position: absolute;
         width: 100%;
