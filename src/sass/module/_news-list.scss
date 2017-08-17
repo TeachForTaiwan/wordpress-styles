@@ -49,6 +49,14 @@
     padding: 1em 1.4em 0;
     margin: 0 auto;
     max-width: 1024px;
+    .page-title {
+        margin-bottom: 1em;
+        font-size: 16px;
+        border: 1px solid;
+        display: inline-block;
+        padding: .2em .5em;
+        opacity: 0.7;
+    }
 }
 
 .archive-post-wrap,
@@ -76,6 +84,7 @@
     margin: 0 auto;
     padding-left: 1.4em;
     padding-right: 1.4em;
+    margin-bottom: 4em;
 }
 
 .nav-previous,
