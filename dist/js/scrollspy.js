@@ -1,6 +1,6 @@
 'use strict';
 
-/* global $, jQuery */
+/* global jQuery */
 var scrollSpy = document.querySelector('.scrollspy');
 var scrollSpyLink = scrollSpy.querySelectorAll('.link');
 // const scrollTo = (element, to, duration) => {
@@ -21,15 +21,15 @@ var removeActiveClass = function removeActiveClass() {
 };
 
 window.addEventListener('load', function () {
-  var spySections = document.querySelectorAll('.program');
+  var spyKey = document.querySelector('.scrollspy-container').dataset.key;
+  var spySections = document.querySelectorAll('.' + spyKey);
   var spySection = {};
-  var spyElementOffsetTop = 600;
   var spyElementOffsetBottom = document.body.scrollHeight - 1000;
   var i = 0;
-
   spySections.forEach(function (e) {
     spySection[e.id] = e.offsetTop;
   });
+  var spyElementOffsetTop = spySection[spyKey + '-1']; // first-section of scrollspy
 
   window.addEventListener('scroll', function () {
     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
@@ -39,14 +39,12 @@ window.addEventListener('load', function () {
       document.querySelector('.scrollspy').classList.remove('is-show');
     }
 
-    // buggy for scrollSpy
-    // id(program-1~4)的位置有誤
-    for (i in spySection) {
-      if (spySection[i] <= scrollPosition) {
+    jQuery.each(spySection, function (k, value) {
+      if (value <= scrollPosition + 150) {
         removeActiveClass();
-        document.querySelector('a[href*=' + i + ']').setAttribute('class', 'is-active');
+        document.querySelector('.scrollspy .link[href*="' + k + '"]').parentNode.classList.add('is-active');
       }
-    }
+    });
   });
 });
 
@@ -60,11 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // scroll anim
       e.preventDefault();
       jQuery('html,body').animate({ scrollTop: jQuery(elemHref).offset().top - 60 }, 800);
-
       removeActiveClass();
-      for (var j = 0; j < curIndex + 1; j++) {
-        scrollSpyLink[j].parentNode.classList.add('is-active');
-      }
+      scrollSpyLink[curIndex].parentNode.classList.add('is-active');
       elem.classList.add('is-current');
     });
   });

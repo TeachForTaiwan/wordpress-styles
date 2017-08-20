@@ -1,4 +1,4 @@
-/* global $, jQuery */
+/* global jQuery */
 const scrollSpy = document.querySelector('.scrollspy');
 const scrollSpyLink = scrollSpy.querySelectorAll('.link');
 // const scrollTo = (element, to, duration) => {
@@ -19,15 +19,15 @@ const removeActiveClass = () => {
 };
 
 window.addEventListener('load', () => {
-  const spySections = document.querySelectorAll('.program');
+  const spyKey = document.querySelector('.scrollspy-container').dataset.key;
+  const spySections = document.querySelectorAll(`.${spyKey}`);
   const spySection = {};
-  const spyElementOffsetTop = 600;
   const spyElementOffsetBottom = document.body.scrollHeight - 1000;
   let i = 0;
-
   spySections.forEach((e) => {
     spySection[e.id] = e.offsetTop;
   });
+  const spyElementOffsetTop = spySection[`${spyKey}-1`]; // first-section of scrollspy
 
   window.addEventListener('scroll', () => {
     const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
@@ -37,14 +37,12 @@ window.addEventListener('load', () => {
       document.querySelector('.scrollspy').classList.remove('is-show');
     }
 
-    // buggy for scrollSpy
-    // id(program-1~4)的位置有誤
-    for (i in spySection) {
-      if (spySection[i] <= scrollPosition) {
+    jQuery.each(spySection, (k, value) => {
+      if (value <= scrollPosition + 150) {
         removeActiveClass();
-        document.querySelector(`a[href*=${i}]`).setAttribute('class', 'is-active');
+        document.querySelector(`.scrollspy .link[href*="${k}"]`).parentNode.classList.add('is-active');
       }
-    }
+    });
   });
 });
 
@@ -58,11 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // scroll anim
       e.preventDefault();
       jQuery('html,body').animate({ scrollTop: jQuery(elemHref).offset().top - 60 }, 800);
-
       removeActiveClass();
-      for (let j = 0; j < curIndex + 1; j++) {
-        scrollSpyLink[j].parentNode.classList.add('is-active');
-      }
+      scrollSpyLink[curIndex].parentNode.classList.add('is-active');
       elem.classList.add('is-current');
     });
   });
