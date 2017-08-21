@@ -1,94 +1,113 @@
 .hentry {
-    margin: 0!important;
-    padding: 0;
+  margin: 0!important;
+  padding: 0;
 }
 
 .wrapper {
-    width: 100%;
-    padding: 0!important;
-    margin: 0 auto!important;
-    @include for-desktop-up {
-        max-width: 1280px;
-    }
-    @include for-big-desktop-up {
-        max-width: 1920px;
-    }
+  width: 100%;
+  padding: 0!important;
+  margin: 0 auto!important;
+  @include for-desktop-up {
+    max-width: 1280px;
+  }
+  @include for-big-desktop-up {
+    max-width: 1920px;
+  }
 }
 
 .entry-header {
-    padding: 0;
+  padding: 0;
 }
 
 .site-main {
-    margin: 0 auto!important;
-    padding: 0!important;
-    width: 100%!important;
+  margin: 0 auto!important;
+  padding: 0!important;
+  width: 100%!important;
 }
 
 .site-content {
-    background-color: $c-base;
-    padding: 0;
+  background-color: $c-base;
+  padding: 0;
 }
 
 .sow-headline {
-    line-height: 2!important;
+  line-height: 2!important;
 }
 
 .sow-slider-image-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem!important;
-    h2 {
-        font-size: calc(4vw + 10px)!important;
-        text-align: justify!important;
-        @include for-tablet-portrait-up {
-            font-size: 4rem!important;
-        }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem!important;
+  h2 {
+    font-size: calc(4vw + 10px)!important;
+    text-align: justify!important;
+    @include for-tablet-portrait-up {
+      font-size: 4rem!important;
     }
+  }
 }
 
 .sow-features-list {
-    margin: 0!important;
+  margin: 0!important;
 }
 
 .sow-features-feature {
-    padding: 0!important;
+  padding: 0!important;
 }
 
 .wpsm-show {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .ow-button-base a {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .sow-slider-base ul.sow-slider-images .sow-slider-image-wrapper h1 {
-    @include for-phone-only {
-        font-size: calc(6vw + 10px)
-    }
+  @include for-phone-only {
+    font-size: calc(6vw + 10px)
+  }
 }
 
 // 了解更多
-.wpsm-show {
-    position: absolute;
-    left: 50%;
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%);
-    transition: .1s ease-in-out;
-    &.wpsm-content-hide {
-        display: inline-block;
-        position: relative;
-        visibility: hidden;
-        opacity: 0;
-    }
+.show_more {
+  text-align: center;
 }
 
 .wpsm-hide {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wpsm-content {
+  position: relative;
+  transition: 1s ease;
+  overflow: hidden;
+  max-height: 5999px;
+  display: block;
+  text-align: justify;
+  padding-bottom: 3em;
+  &.wpsm-content-hide {
+    padding-bottom: 0;
+    max-height: 0;
+    display: block;
+  }
+}
+
+.wpsm-show {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  transition: .1s ease-in-out;
+  &.wpsm-content-hide {
+    display: inline-block;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+  }
 }

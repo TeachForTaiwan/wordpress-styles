@@ -4,6 +4,10 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 99;
+  display: none;
+  @include for-tablet-landscape-up {
+    display: block;
+  }
 }
 
 .scrollspy {
