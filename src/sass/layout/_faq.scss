@@ -88,11 +88,12 @@
         transition: .1s ease-in-out, .3s transform ease-in-out;
         height: 0;
         text-align: justify;
-        padding-top: .5em;
+        // padding-top: .5em;
         &.is-active {
             opacity: 1;
             transform: scaleY(1);
             height: auto;
+            padding-bottom: 20px;
         }
     }
 }
