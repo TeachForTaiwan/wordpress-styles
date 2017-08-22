@@ -1,99 +1,98 @@
 .faq {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .faq-bricks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+  .brick {
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2em;
-    .brick {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        min-height: 7em;
-        border: 2px solid $c-base;
-        font-weight: bold;
-        font-size: calc(2vw + 8px);
-        letter-spacing: 1.2px;
-        cursor: pointer;
-        transition: .3s ease-in-out;
-        background-color: $c-grey--light;
-        color: $c-grey;
-        &:hover,
-        &.is-active {
-            background-color: $c-primary;
-            color: $c-base;
-            border-color: $c-base;
-        }
-        @include for-tablet-portrait-up {
-            width: calc(100% / 3);
-            font-size: 1em;
-        }
-        @include for-tablet-landscape-up {
-            width: calc(100% / 6);
-            min-height: 7em;
-            font-size: 1em;
-        }
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-height: 7em;
+    border: 2px solid $c-base;
+    font-weight: bold;
+    font-size: calc(2vw + 8px);
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    background-color: $c-grey--light;
+    color: $c-grey;
+    &:hover,
+    &.is-active {
+      background-color: $c-primary;
+      color: $c-base;
+      border-color: $c-base;
     }
+    @include for-tablet-portrait-up {
+      width: calc(100% / 3);
+      font-size: 1em;
+    }
+    @include for-desktop-up {
+      width: calc(100% / 6);
+      min-height: 7em;
+      font-size: 1em;
+    }
+  }
 }
 
 .faq-type-container {
-    visibility: hidden;
-    opacity: 0;
-    transition: .7s ease-in-out, height 0s; // height: 0;
-    max-height: 0;
-    overflow: hidden;
-    &.is-active {
-        visibility: visible;
-        opacity: 1; // height: auto;
-        max-height: 9999px;
-    }
-    &#faq-main {}
-    &#faq-teacher {}
-    &#faq-training {}
-    &#faq-influence {}
-    &#faq-support {}
-    &#faq-system {}
+  visibility: hidden;
+  opacity: 0;
+  transition: .7s ease-in-out, height 0s; // height: 0;
+  max-height: 0;
+  overflow: hidden;
+  &.is-active {
+    visibility: visible;
+    opacity: 1; // height: auto;
+    max-height: 9999px;
+  }
+  &#faq-main {}
+  &#faq-teacher {}
+  &#faq-training {}
+  &#faq-influence {}
+  &#faq-support {}
+  &#faq-system {}
 }
 
 .faq-group {
-    border-bottom: 1px solid;
-    border-color: $c-grey--light;
-    margin: 1em;
-    .title-container {
-        position: relative;
-        padding-left: 1.4em;
-        line-height: 1;
-        cursor: pointer;
-        text-align: justify;
-        &:before {
-            content: "\f1db";
-            position: absolute;
-            font: normal normal normal 14px/1 FontAwesome;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: .6;
-        }
-        .q-title {
-            color: $c-grey;
-        }
+  border-bottom: 1px solid;
+  border-color: $c-grey--light;
+  margin: 1em;
+  .title-container {
+    position: relative;
+    padding-left: 1.4em;
+    line-height: 1;
+    cursor: pointer;
+    text-align: justify;
+    &:before {
+      content: "\f1db";
+      position: absolute;
+      font: normal normal normal 14px/1 FontAwesome;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: .6;
     }
-    .content-container {
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: .1s ease-in-out, .3s transform ease-in-out;
-        height: 0;
-        text-align: justify;
-        // padding-top: .5em;
-        &.is-active {
-            opacity: 1;
-            transform: scaleY(1);
-            height: auto;
-            padding-bottom: 20px;
-        }
+    .q-title {
+      color: $c-grey;
     }
+  }
+  .content-container {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .1s ease-in-out, .3s transform ease-in-out;
+    height: 0;
+    text-align: justify; // padding-top: .5em;
+    &.is-active {
+      opacity: 1;
+      transform: scaleY(1);
+      height: auto;
+      padding-bottom: 20px;
+    }
+  }
 }
