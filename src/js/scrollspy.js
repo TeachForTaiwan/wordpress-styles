@@ -1,17 +1,6 @@
 /* global jQuery */
 const scrollSpy = document.querySelector('.scrollspy');
 const scrollSpyLink = scrollSpy.querySelectorAll('.link');
-// const scrollTo = (element, to, duration) => {
-//   if (duration <= 0) return;
-//   const difference = to - element.scrollTop;
-//   const perTick = (difference / duration) * 2;
-
-//   setTimeout(() => {
-//     element.scrollTop += perTick;
-//     if (element.scrollTop === to) return;
-//     scrollTo(element, to, duration - 10);
-//   }, 10);
-// };
 const removeActiveClass = () => {
   scrollSpyLink.forEach((el) => {
     el.parentNode.classList.remove('is-active', 'is-current');
@@ -23,7 +12,6 @@ window.addEventListener('load', () => {
   const spySections = document.querySelectorAll(`.${spyKey}`);
   const spySection = {};
   const spyElementOffsetBottom = document.body.scrollHeight - 1000;
-  let i = 0;
   spySections.forEach((e) => {
     spySection[e.id] = e.offsetTop;
   });

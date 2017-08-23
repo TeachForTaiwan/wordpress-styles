@@ -3,17 +3,6 @@
 /* global jQuery */
 var scrollSpy = document.querySelector('.scrollspy');
 var scrollSpyLink = scrollSpy.querySelectorAll('.link');
-// const scrollTo = (element, to, duration) => {
-//   if (duration <= 0) return;
-//   const difference = to - element.scrollTop;
-//   const perTick = (difference / duration) * 2;
-
-//   setTimeout(() => {
-//     element.scrollTop += perTick;
-//     if (element.scrollTop === to) return;
-//     scrollTo(element, to, duration - 10);
-//   }, 10);
-// };
 var removeActiveClass = function removeActiveClass() {
   scrollSpyLink.forEach(function (el) {
     el.parentNode.classList.remove('is-active', 'is-current');
@@ -25,7 +14,6 @@ window.addEventListener('load', function () {
   var spySections = document.querySelectorAll('.' + spyKey);
   var spySection = {};
   var spyElementOffsetBottom = document.body.scrollHeight - 1000;
-  var i = 0;
   spySections.forEach(function (e) {
     spySection[e.id] = e.offsetTop;
   });
