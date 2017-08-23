@@ -2,364 +2,369 @@
 
 // body mt for menu fixed
 body {
-    &.has-fixed-top {
-        margin-top: 67px;
-        @include for-tablet-landscape-up {
-            margin-top: 45px;
-        }
+  &.has-fixed-top {
+    margin-top: 67px;
+    @include for-tablet-landscape-up {
+      margin-top: 45px;
     }
+  }
 }
 
 // hide default modules
 #masthead {
-    display: none;
+  display: none;
 }
 
 .nav-primary {
-    display: none;
+  display: none;
 }
 
 .logo {
-    object-fit: contain;
-    width: 280px;
-    max-width: 80%;
-    @include for-phone-only {
-        padding: 5px 10px;
-    }
+  object-fit: contain;
+  width: 280px;
+  max-width: 80%;
+  @include for-phone-only {
+    padding: 5px 10px;
+  }
 }
 
 .mask {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    transition: .7s ease-in-out;
-    pointer-events: none;
-    &.is-active {
-        background-color: rgba($c-grey--dark, .7);
-    }
-    @include for-tablet-landscape-up {
-        display: none;
-    }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transition: .7s ease-in-out;
+  pointer-events: none;
+  &.is-active {
+    background-color: rgba($c-grey--dark, .7);
+  }
+  @include for-tablet-landscape-up {
+    display: none;
+  }
 }
 
 .header {
-    position: relative;
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: .7s ease-in-out;
+  &.is-fixed {
+    position: fixed;
+    opacity: 1;
+  }
+  .link {
+    transition: none;
+  }
+  .nav {
+    position: absolute;
     width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 999;
+    bottom: 0;
+    background-color: $c-grey--light-2;
     transition: .7s ease-in-out;
+    overflow: auto;
+    max-height: calc(100vh - 71px);
+    @include for-tablet-landscape-up {
+      position: relative;
+      overflow: visible;
+      z-index: 999;
+    }
+    &.is-active {
+      transform: translateY(100%);
+    }
     &.is-fixed {
-        position: fixed;
-        opacity: 1;
-    }
-    .link {
-        transition: none;
-    }
-    .nav {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        background-color: $c-grey--light-2;
-        transition: .7s ease-in-out;
-        @include for-tablet-landscape-up {
-            position: relative;
-            z-index: 999;
-        }
-        &.is-active {
-            transform: translateY(100%);
-        }
-        &.is-fixed {
-            transform: none;
-            .menu-funcs {
-                display: none;
-            }
-        }
-    }
-    .logo-container {
-        z-index: 999;
-        background: $c-base;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .link {
-            padding-top: 10px;
-            @include for-tablet-portrait-up {
-                text-align: center;
-            }
-        }
-    }
-    .header-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: $c-base;
-        position: relative;
-        z-index: 2;
-    }
-    .btn-menu {
-        display: block;
-        position: absolute;
-        right: 0;
-        padding: 20px;
-        z-index: 999;
-        border-radius: 0;
-        @include for-tablet-landscape-up {
-            display: none;
-        }
-    }
-    .nav-desktop {
-        width: 100%;
-        overflow: hidden;
+      transform: none;
+      .menu-funcs {
         display: none;
-        background-color: #E8E8E8;
-        @include for-tablet-landscape-up {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            font-size: .8em;
-        }
-        .menu-secondary--desktop {
-            display: flex;
-            position: relative;
-            .item {
-                .link {
-                    display: block;
-                    padding: .6em 1em;
-                    &:hover {
-                        background-color: $c-grey--light;
-                    }
-                }
-                &--funcs {
-                    display: flex;
-                    flex-direction: row-reverse;
-                    .btn-search {
-                        right: 0;
-                        width: 35px;
-                        height: 100%;
-                        z-index: 9;
-                        background-color: transparent;
-                    }
-                    .search-box {
-                        background: transparent;
-                        transition: .3s ease-in-out;
-                        .input-search {
-                            transform: translateY(2px);
-                            font-size: .8em;
-                            border-radius: 5px;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
-    .menu-primary {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: $c-base;
-        @include for-tablet-landscape-up {
-            flex-direction: row;
-        }
-        .item {
-            width: 100%;
-            text-align: center;
-            position: relative;
-            &:hover:not(.item--logo) {
-                background-color: $c-red;
-                color: $c-base;
-                .sub-menu {
-                    max-height: 1000px;
-                    visibility: visible;
-                    opacity: 1;
-                }
-            }
-            @include for-tablet-landscape-up {
-                width: auto;
-            }
-            .link {
-                display: block;
-                padding: .8em 2em;
-                @include for-tablet-landscape-up {
-                    padding: .5em 2em;
-                }
-            }
-            &--logo {
-                visibility: hidden;
-                opacity: 0;
-                width: 0;
-                height: 0;
-                transition: .3s ease-in-out, width 0;
-                .link {
-                    padding: 0;
-                    .logo {
-                        display: inherit;
-                        height: 40px;
-                    }
-                }
-            }
-            &--btn {
-                visibility: hidden;
-                opacity: 0;
-                width: 0;
-                height: 0;
-                transition: .3s ease-in-out, width 0;
-                .btn {
-                    &:hover {
-                        background-color: inherit;
-                    }
-                }
-            }
-        }
-        .sub-menu {
-            margin: 0;
-            max-height: 0;
-            background-color: lighten($c-red, 10%);
-            color: $c-base;
-            transition: .3s ease-in-out;
-            width: 100%;
-            overflow: hidden;
-            font-size: .9em;
-            min-width: 100%;
-            @include for-tablet-landscape-up {
-                visibility: hidden;
-                opacity: 0;
-                position: absolute;
-                left: 0;
-                white-space: nowrap;
-                width: auto;
-            }
-            .item {
-                background: lighten($c-red, 10%);
-                text-align: left;
-                &:hover {
-                    background-color: lighten($c-red, 15%);
-                }
-            }
-        }
-        &.is-fixed {
-            position: fixed;
-            width: 100%;
-            z-index: 9999;
-            top: 0;
-            box-shadow: 1px 1px 3px rgba($c-grey, .5);
-            .link {
-                padding: .5em 1em;
-            }
-            .item {
-                &--logo {
-                    @include for-tablet-landscape-up {
-                        visibility: visible;
-                        opacity: 1;
-                        width: auto;
-                        height: auto;
-                        flex: 1;
-                    }
-                    .link {
-                        @include for-tablet-landscape-up {
-                            padding: 0;
-                        }
-                    }
-                }
-                &--btn {
-                    @include for-tablet-landscape-up {
-                        visibility: visible;
-                        opacity: 1;
-                        width: auto;
-                        height: auto;
-                    }
-                    .btn {
-                        @include for-tablet-landscape-up {
-                            padding: 8px 20px;
-                        }
-                    }
-                }
-            }
-        }
+  }
+  .logo-container {
+    z-index: 999;
+    background: $c-base;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .link {
+      padding-top: 10px;
+      @include for-tablet-portrait-up {
+        text-align: center;
+      }
     }
-    .menu-funcs {
-        display: flex;
-        transition: .3s ease-in-out;
-        @include for-tablet-landscape-up {
-            position: absolute;
-            top: -100%;
-            right: 1em;
-        }
-        @include for-desktop-up {
-            top: 0;
-        }
-        .item {
-            width: 50%;
-        }
-        .btn {
-            width: 100%;
-            border-radius: 0;
-            border: 1px solid $c-base;
-            font-size: 1em;
-            padding: .8em 0;
-            @include for-tablet-landscape-up {
-                font-size: .8em;
-                padding: .8em 1.4em;
-                letter-spacing: 1.6px;
-                border-radius: 15px;
-            }
-            &--donate {
-                @include for-tablet-landscape-up {
-                    width: 7em;
-                }
-            }
-            &--teacher {
-                @include for-tablet-landscape-up {
-                    width: 10em;
-                }
-            }
-        }
+  }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-base;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+    z-index: 999;
+    border-radius: 0;
+    @include for-tablet-landscape-up {
+      display: none;
     }
-    .menu-secondary {
-        font-size: .8em;
-        background-color: $c-grey--light-2;
-        display: flex;
-        flex-wrap: wrap;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        transition: .7s ease-in-out;
-        @include for-tablet-landscape-up {
-            display: none;
+  }
+  .nav-desktop {
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    background-color: #E8E8E8;
+    @include for-tablet-landscape-up {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: .8em;
+    }
+    .menu-secondary--desktop {
+      display: flex;
+      position: relative;
+      .item {
+        .link {
+          display: block;
+          padding: .6em 1em;
+          &:hover {
+            background-color: $c-grey--light;
+          }
         }
-        .item {
-            text-align: center;
-            .link {
-                display: block;
-                padding: .8em 2em;
-                @include for-tablet-landscape-up {
-                    padding: .5em 1em;
-                }
-            } // search
-            &--funcs {
-                display: flex;
-                flex-direction: row-reverse;
-                width: 100%;
-                padding-bottom: 5px;
-            }
-        }
-        &.is-active {
-            transform: translateX(0);
-        }
-        .btn-search {
-            border-radius: 0;
-            border: 1px solid $c-grey--light;
+        &--funcs {
+          display: flex;
+          flex-direction: row-reverse;
+          .btn-search {
+            right: 0;
+            width: 35px;
+            height: 100%;
+            z-index: 9;
             background-color: transparent;
-        }
-        .search-box {
-            flex: 1;
-            overflow: hidden;
+          }
+          .search-box {
+            background: transparent;
+            transition: .3s ease-in-out;
             .input-search {
-                width: 100%;
+              transform: translateY(2px);
+              font-size: .8em;
+              border-radius: 5px;
             }
+          }
         }
+      }
     }
+  }
+  .menu-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-base;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+    }
+    .item {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      &:hover:not(.item--logo) {
+        background-color: $c-red;
+        color: $c-base;
+        .sub-menu {
+          max-height: 1000px;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      @include for-tablet-landscape-up {
+        width: auto;
+      }
+      .link {
+        display: block;
+        padding: .8em 2em;
+        @include for-tablet-landscape-up {
+          padding: .5em 2em;
+        }
+      }
+      &--logo {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        transition: .3s ease-in-out, width 0;
+        .link {
+          padding: 0;
+          .logo {
+            display: inherit;
+            height: 40px;
+          }
+        }
+      }
+      &--btn {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        transition: .3s ease-in-out, width 0;
+        .btn {
+          &:hover {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+    .sub-menu {
+      margin: 0;
+      max-height: 0;
+      background-color: lighten($c-red, 10%);
+      color: $c-base;
+      transition: .3s ease-in-out;
+      width: 100%;
+      overflow: hidden;
+      font-size: .9em;
+      min-width: 100%;
+      @include for-tablet-landscape-up {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        white-space: nowrap;
+        width: auto;
+      }
+      .item {
+        background: lighten($c-red, 10%);
+        text-align: left;
+        &:hover {
+          background-color: lighten($c-red, 15%);
+        }
+      }
+    }
+    &.is-fixed {
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+      top: 0;
+      box-shadow: 1px 1px 3px rgba($c-grey, .5);
+      .link {
+        padding: .5em 1em;
+      }
+      .item {
+        &--logo {
+          @include for-tablet-landscape-up {
+            visibility: visible;
+            opacity: 1;
+            width: auto;
+            height: auto;
+            flex: 1;
+          }
+          .link {
+            @include for-tablet-landscape-up {
+              padding: 0;
+            }
+          }
+        }
+        &--btn {
+          @include for-tablet-landscape-up {
+            visibility: visible;
+            opacity: 1;
+            width: auto;
+            height: auto;
+          }
+          .btn {
+            @include for-tablet-landscape-up {
+              padding: 8px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu-funcs {
+    display: flex;
+    transition: .3s ease-in-out;
+    @include for-tablet-landscape-up {
+      position: absolute;
+      top: -100%;
+      right: 1em;
+    }
+    @include for-desktop-up {
+      top: 0;
+    }
+    .item {
+      width: 50%;
+    }
+    .btn {
+      width: 100%;
+      border-radius: 0;
+      border: 1px solid $c-base;
+      font-size: 1em;
+      padding: .8em 0;
+      @include for-tablet-landscape-up {
+        font-size: .8em;
+        padding: .8em 1.4em;
+        letter-spacing: 1.6px;
+        border-radius: 15px;
+      }
+      &--donate {
+        @include for-tablet-landscape-up {
+          width: 7em;
+        }
+      }
+      &--teacher {
+        @include for-tablet-landscape-up {
+          width: 10em;
+        }
+      }
+    }
+  }
+  .menu-secondary {
+    font-size: .8em;
+    background-color: $c-grey--light-2;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: .7s ease-in-out;
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+    .item {
+      text-align: center;
+      .link {
+        display: block;
+        padding: .8em 2em;
+        @include for-tablet-landscape-up {
+          padding: .5em 1em;
+        }
+      } // search
+      &--funcs {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding-bottom: 5px;
+      }
+    }
+    &.is-active {
+      transform: translateX(0);
+    }
+    .btn-search {
+      border-radius: 0;
+      border: 1px solid $c-grey--light;
+      background-color: transparent;
+    }
+    .search-box {
+      flex: 1;
+      overflow: hidden;
+      .input-search {
+        width: 100%;
+      }
+    }
+  }
 }

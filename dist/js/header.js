@@ -55,16 +55,16 @@ btnSearch.addEventListener('click', function (e) {
     focusElem(searchInput);
   }, 300);
   toggleSearchBox();
+  return true;
 });
 
 // 手機版 menu button
-btnMenu.addEventListener('click', function (e) {
+btnMenu.addEventListener('click', function () {
   toggleMenu();
   toggleMask();
 });
 
 window.addEventListener('scroll', function () {
-
   if (window.innerWidth >= 900) {
     if (document.body.scrollTop > 100) {
       fixMenuPrimary();
@@ -78,6 +78,10 @@ window.addEventListener('scroll', function () {
   } else {
     unfixHeader();
   }
+});
+
+window.addEventListener('resize', function () {
+  window.innerWidth < 900 ? unfixMenuPrimary() : unfixHeader();
 });
 
 document.addEventListener('DOMContentLoaded', function () {

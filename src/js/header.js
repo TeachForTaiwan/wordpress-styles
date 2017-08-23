@@ -44,7 +44,6 @@ const removeLink = (className) => {
   });
 };
 
-
 // search button
 btnSearch.addEventListener('click', (e) => {
   if (e.currentTarget.classList.contains('is-active')) {
@@ -54,16 +53,16 @@ btnSearch.addEventListener('click', (e) => {
     focusElem(searchInput);
   }, 300);
   toggleSearchBox();
+  return true;
 });
 
 // 手機版 menu button
-btnMenu.addEventListener('click', (e) => {
+btnMenu.addEventListener('click', () => {
   toggleMenu();
   toggleMask();
 });
 
 window.addEventListener('scroll', () => {
-
   if (window.innerWidth >= 900) {
     if (document.body.scrollTop > 100) {
       fixMenuPrimary();
@@ -77,6 +76,10 @@ window.addEventListener('scroll', () => {
   } else {
     unfixHeader();
   }
+});
+
+window.addEventListener('resize', () => {
+  window.innerWidth < 900 ? unfixMenuPrimary() : unfixHeader();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
