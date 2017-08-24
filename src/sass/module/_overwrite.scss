@@ -62,10 +62,9 @@
   max-width: 50%!important;
   .sow-icon-container.sow-container-round {
     width: 100%!important;
-    height: auto!important;
     justify-content: center;
     display: flex;
-    margin: 0!important;
+    margin: auto!important;
     &:before {
       content: '';
       padding-top: 100%;
@@ -73,6 +72,7 @@
   }
   .sow-icon-image {
     width: 90%!important;
+    max-width: 150px;
     background-color: white;
     border-radius: 50%;
     height: auto!important;
