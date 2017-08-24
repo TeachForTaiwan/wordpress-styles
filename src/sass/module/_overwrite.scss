@@ -51,10 +51,39 @@
 
 .sow-features-list {
   margin: 0!important;
+  flex-direction: row!important;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sow-features-feature {
   padding: 0!important;
+  margin: 0!important;
+  max-width: 50%!important;
+  .sow-icon-container.sow-container-round {
+    width: 100%!important;
+    height: auto!important;
+    justify-content: center;
+    display: flex;
+    margin: 0!important;
+    &:before {
+      content: '';
+      padding-top: 100%;
+    }
+  }
+  .sow-icon-image {
+    width: 90%!important;
+    background-color: white;
+    border-radius: 50%;
+    height: auto!important;
+    background-size: contain!important;
+    top: 50%!important;
+    transform: translateY(-50%);
+    &:before {
+      content: '';
+      padding-top: 100%;
+    }
+  }
 }
 
 .wpsm-show {
@@ -69,6 +98,31 @@
   @include for-phone-only {
     font-size: calc(6vw + 10px)
   }
+}
+
+.sow-icon-container {
+  transition: .3s ease-in-out;
+}
+
+// in lightbox trigger
+.pum-trigger {
+  &:hover {
+    .sow-icon-container {
+      transform: scale(1.05);
+    }
+  }
+  .sow-features-feature {
+    @include for-phone-only {
+      max-width: initial!important;
+    }
+    @include for-tablet-portrait-up {
+      max-width: 250px!important;
+    }
+  }
+}
+
+.panel-row-style {
+  flex-direction: row!important;
 }
 
 // 了解更多
@@ -118,4 +172,9 @@
     background: #fdd000!important;
     border: 1px solid #fdd000!important;
   }
+}
+
+// 展開看更多
+.collapseomatic {
+  background-position: 0 0.3em;
 }
