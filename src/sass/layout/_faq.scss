@@ -12,15 +12,19 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    min-height: 7em;
+    width: calc(100% / 3);
+    min-height: 3.5em;
     border: 2px solid $c-base;
+    border-radius: 15px;
     font-weight: bold;
-    font-size: calc(2vw + 8px);
+    font-size: calc(2vw + 6px);
     letter-spacing: 1.2px;
+    text-align: center;
     cursor: pointer;
     transition: .3s ease-in-out;
     background-color: $c-grey--light;
     color: $c-grey;
+    padding: .5em;
     &:hover,
     &.is-active {
       background-color: $c-primary;
@@ -32,8 +36,7 @@
       font-size: 1em;
     }
     @include for-desktop-up {
-      width: calc(100% / 6);
-      min-height: 7em;
+      width: calc(100% / 5);
       font-size: 1em;
     }
   }
