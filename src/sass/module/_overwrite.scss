@@ -60,6 +60,13 @@
   padding: 0!important;
   margin: 0!important;
   max-width: 50%!important;
+  min-width: 8.8em!important;
+  @include for-tablet-portrait-up {
+    max-width: 90%!important;
+  }
+  @include for-tablet-landscape-up {
+    max-width: initial!important;
+  }
   .sow-icon-container.sow-container-round {
     width: 100%!important;
     justify-content: center;
@@ -76,7 +83,7 @@
     background-color: white;
     border-radius: 50%;
     height: auto!important;
-    background-size: contain!important;
+    background-size: 90%!important;
     top: 50%!important;
     transform: translateY(-50%);
     &:before {
