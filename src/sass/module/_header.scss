@@ -313,12 +313,12 @@ body {
       }
       &--donate {
         @include for-tablet-landscape-up {
-          width: 7em;
+          width: 8em;
         }
       }
       &--teacher {
         @include for-tablet-landscape-up {
-          width: 10em;
+          width: 8em;
         }
       }
     }
