@@ -1,0 +1,28 @@
+// 我們怎麼做 TAB styles
+@import '../variable';
+@import '../mixin/breakpoint';
+.tab-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0;
+  .tab-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    &:hover,
+    &.is-active {
+      color: $c-primary;
+    }
+  }
+}
+
+.tab-content-container {}
+
+.tab-content {
+  display: none!important;
+  &.is-active {
+    display: block!important;
+  }
+}
