@@ -65,15 +65,16 @@ btnMenu.addEventListener('click', function () {
 });
 
 window.addEventListener('scroll', function () {
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
   if (window.innerWidth >= 900) {
-    if (document.body.scrollTop > 100) {
+    if (scrollTop > 100) {
       fixMenuPrimary();
     } else {
       unfixMenuPrimary();
     }
     return;
   }
-  if (document.body.scrollTop > 100) {
+  if (scrollTop > 100) {
     fixHeader();
   } else {
     unfixHeader();
