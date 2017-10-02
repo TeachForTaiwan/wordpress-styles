@@ -1,6 +1,7 @@
 const coreTeamWrapper = document.querySelector('#core-team');
+const boardWrapper = document.querySelector('#board');
 
-const obj2HTML = (obj) => {
+const obj2HTML = (obj, type) => {
   let output = '';
   obj.forEach((item, idx) => {
     let para = '';
@@ -9,7 +10,7 @@ const obj2HTML = (obj) => {
     });
     output += `
       <div class="swiper-slide">
-        <a href="#l-team-${idx + 1}" data-lity="data-lity">
+        <a href="#l-${type}-${idx + 1}" data-lity="data-lity">
           <figure class="item-set">
             <figcaption class="title-container">
               <div class="title">${item.label.title}</div>
@@ -20,7 +21,7 @@ const obj2HTML = (obj) => {
             </div>
           </figure>
         </a>
-        <div class="content-container lity-hide" id="l-team-${idx + 1}">
+        <div class="content-container lity-hide" id="l-${type}-${idx + 1}">
           <div class="text-container">
             <h5 class="title">${item.content.title}</h5>
             ${para}
@@ -39,4 +40,5 @@ const obj2HTML = (obj) => {
 //     coreTeamWrapper.innerHTML = obj2HTML(json);
 //   });
 
-coreTeamWrapper.innerHTML = obj2HTML(coreTeam);
+coreTeamWrapper.innerHTML = obj2HTML(coreTeam, 'team');
+boardWrapper.innerHTML = obj2HTML(boardOfDirectors, 'board');

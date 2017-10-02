@@ -1,5 +1,6 @@
 script
   include ../../js/data/core-team.js
+  include ../../js/data/board-of-directors.js
 .tab-wrap
   input#tab1.tab(type="radio", name="tabGroup1", checked)
   label(for="tab1") 執行團隊
@@ -37,25 +38,25 @@ script
   .tab__content
     //- 董事
     .swiper-container
-      .swiper-wrapper
-        - for(let i = 0; i < 10; i++)
-          .swiper-slide
-            a(href="#l-board-1", data-lity)
-              figure.item-set
-                figcaption.title-container
-                  .title 董事
-                  .name 董事A
-                .img-container
-                  img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
-            #l-board-1.content-container.lity-hide
-              .img-container.full
-                img(src="https://dummyimage.com/600x400/000/fff", alt="")
-              .text-container
-                h3.title 標題
-                p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
-                p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
-                p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
-                p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi unde neque maiores, consequuntur doloribus cumque sunt sint ipsam ducimus!
+      .swiper-wrapper#board
+        //- - for(let i = 0; i < 10; i++)
+        //-   .swiper-slide
+        //-     a(href="#l-board-1", data-lity)
+        //-       figure.item-set
+        //-         figcaption.title-container
+        //-           .title 董事
+        //-           .name 董事A
+        //-         .img-container
+        //-           img.img(src="https://dummyimage.com/150x150/000/fff", alt="")
+        //-     #l-board-1.content-container.lity-hide
+        //-       .img-container.full
+        //-         img(src="https://dummyimage.com/600x400/000/fff", alt="")
+        //-       .text-container
+        //-         h3.title 標題
+        //-         p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
+        //-         p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
+        //-         p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, cumque.
+        //-         p.p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi unde neque maiores, consequuntur doloribus cumque sunt sint ipsam ducimus!
       .swiper-pagination
   .tab__content
     //- 老師
