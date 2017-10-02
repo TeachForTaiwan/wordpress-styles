@@ -4,7 +4,7 @@ const browserSync = require('browser-sync').create(); // browser auto reload
 
 const $ = gulpLoadPlugins();
 
-gulp.task('default', ['css', 'js', 'views', 'data']);
+gulp.task('default', ['css', 'js', 'views', 'module']);
 
 gulp.task('browserSync', ['default'], () => {
   browserSync.init({
@@ -20,7 +20,9 @@ gulp.task('watch', ['browserSync'], () => {
   gulp.watch('src/sass/**/*.scss', ['css']);
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/views/**/*.pug', ['views']);
-  gulp.watch('src/data/**/*.json', ['data']);
+  gulp.watch('src/module/**/*.scss', ['css-module']);
+  gulp.watch('src/module/**/*.js', ['js-module']);
+  gulp.watch('src/module/**/*.pug', ['view-module']);
 });
 
 gulp.task('min', ['css-min', 'js-min']);
@@ -89,9 +91,33 @@ gulp.task('views', () => {
   // .pipe($.notify("Compile Pug Complete!"))
 });
 
-gulp.task('data', () => {
-  gulp.src('src/data/**/*.json')
+gulp.task('module', ['css-module', 'js-module', 'view-module']);
+// modules
+gulp.task('css-module', () => {
+  gulp.src('src/module/**/*.scss')
     .pipe($.plumber())
-    .pipe(gulp.dest('dist/data'))
-    .pipe(browserSync.stream())
+    .pipe($.sass.sync({
+      outputStyle: 'compressed',
+      precision: 10,
+      includePath: ['.'],
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
+    .pipe(gulp.dest('dist/module'))
+    .pipe(browserSync.stream());
+});
+gulp.task('js-module', () => {
+  gulp.src('src/module/**/*.js')
+    .pipe($.plumber())
+    .pipe($.babel())
+    .pipe(gulp.dest('dist/module'))
+    .pipe(browserSync.stream());
+});
+gulp.task('view-module', () => {
+  gulp.src('src/module/**/*.pug')
+    .pipe($.plumber())
+    .pipe($.pug({
+      pretty: true,
+    }))
+    .pipe(gulp.dest('dist/module'))
+    .pipe(browserSync.stream());
 });

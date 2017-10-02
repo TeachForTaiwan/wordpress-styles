@@ -1,6 +1,6 @@
 script
-  include ../../js/data/core-team.js
-  include ../../js/data/board-of-directors.js
+  include ../data/core-team.js
+  include ../data/board-of-directors.js
 .tab-wrap
   input#tab1.tab(type="radio", name="tabGroup1", checked)
   label(for="tab1") 執行團隊
@@ -43,7 +43,7 @@ script
               .img-container.square
                 img.img(src="https://dummyimage.com/150x100/000/fff", alt="")
       .swiper-pagination
-script(src="js/tab-data-trans.js")
+script(src="tab-data-trans.js")
 script.
   const configMobile = {
     pagination: '.swiper-pagination',
