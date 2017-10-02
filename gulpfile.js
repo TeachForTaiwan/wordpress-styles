@@ -4,14 +4,14 @@ const browserSync = require('browser-sync').create(); // browser auto reload
 
 const $ = gulpLoadPlugins();
 
-gulp.task('default', ['css', 'js', 'views']);
+gulp.task('default', ['css', 'js', 'views', 'data']);
 
 gulp.task('browserSync', ['default'], () => {
   browserSync.init({
     notify: false,
     port: 8000,
     server: {
-      baseDir: 'dist'
+      baseDir: 'dist',
     },
   });
 });
@@ -20,6 +20,7 @@ gulp.task('watch', ['browserSync'], () => {
   gulp.watch('src/sass/**/*.scss', ['css']);
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/views/**/*.pug', ['views']);
+  gulp.watch('src/data/**/*.json', ['data']);
 });
 
 gulp.task('min', ['css-min', 'js-min']);
@@ -38,7 +39,7 @@ gulp.task('css', () => {
   // .pipe($.notify("Compile Sass Complete!"))
 });
 
-gulp.task('css-min', ()=>{
+gulp.task('css-min', () => {
   gulp.src('src/sass/**/*.scss')
     .pipe($.plumber())
     .pipe($.sass.sync({
@@ -86,4 +87,11 @@ gulp.task('views', () => {
     .pipe(gulp.dest('dist')) // output folder
     .pipe(browserSync.stream())
   // .pipe($.notify("Compile Pug Complete!"))
+});
+
+gulp.task('data', () => {
+  gulp.src('src/data/**/*.json')
+    .pipe($.plumber())
+    .pipe(gulp.dest('dist/data'))
+    .pipe(browserSync.stream())
 });
