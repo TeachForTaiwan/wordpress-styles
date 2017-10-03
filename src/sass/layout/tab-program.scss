@@ -18,6 +18,33 @@
   }
 }
 
+.tab-control--aside {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  flex-direction: column;
+  right: 0;
+  top: 50%;
+  margin: 1em;
+  color: $c-grey;
+  background: $c-base;
+  transform: translateY(-50%);
+  transition: .3s ease-in-out;
+  z-index: 999;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tab-button {
+    cursor: pointer;
+    padding: 1em 1.5em;
+    &:hover,
+    &.is-active {
+      color: $c-primary;
+    }
+  }
+}
+
 .tab-content-container {}
 
 .tab-content {
