@@ -440,12 +440,13 @@
         <div class="swiper-container">
           <div class="swiper-wrapper" id="core-team"></div>
           <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
       <div class="tab__content">
         <div class="swiper-container">
           <div class="swiper-wrapper" id="board"></div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="tab__content">
@@ -555,44 +556,6 @@
       </div>
     </div>
     <script src="tab-data-trans.js"></script>
-    <script>
-      const configMobile = {
-        pagination: '.swiper-pagination',
-        slidesPerView: 1,
-        slidesPerColumn: 2,
-        paginationClickable: true,
-        spaceBetween: 30,
-        grabCursor: true
-      };
-      const configTablet = {
-        pagination: '.swiper-pagination',
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        paginationClickable: true,
-        spaceBetween: 30,
-        grabCursor: true
-      };
-      const configDesktop = {
-        pagination: '.swiper-pagination',
-        slidesPerView: 4,
-        slidesPerColumn: 2,
-        slidesPerGroup: 4,
-        paginationClickable: true,
-        spaceBetween: 30,
-        grabCursor: true
-      };
-      const getSwiperConfig = (ww) => {
-        if(ww < 600){
-          return configMobile;
-        }
-        if(ww < 900){
-          return configTablet;
-        }
-        if(ww >= 900){
-          return configDesktop;
-        }
-      };
-      const swiper = new Swiper('.swiper-container', getSwiperConfig(window.innerWidth));
-    </script>
+    <script src="swiper-conf.js"></script>
   </body>
 </html>

@@ -1,6 +1,3 @@
-script
-  include ../data/core-team.js
-  include ../data/board-of-directors.js
 .tab-wrap
   input#tab1.tab(type="radio", name="tabGroup1", checked)
   label(for="tab1") 執行團隊
@@ -17,11 +14,13 @@ script
     .swiper-container
       .swiper-wrapper#core-team
       .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
   .tab__content
     //- 董事
     .swiper-container
       .swiper-wrapper#board
-      .swiper-pagination
+      //- .swiper-pagination
   .tab__content
     //- 老師
     h3 C
@@ -42,43 +41,3 @@ script
                 .name 夥伴
               .img-container.square
                 img.img(src="https://dummyimage.com/150x100/000/fff", alt="")
-      .swiper-pagination
-script(src="tab-data-trans.js")
-script.
-  const configMobile = {
-    pagination: '.swiper-pagination',
-    slidesPerView: 1,
-    slidesPerColumn: 2,
-    paginationClickable: true,
-    spaceBetween: 30,
-    grabCursor: true
-  };
-  const configTablet = {
-    pagination: '.swiper-pagination',
-    slidesPerView: 3,
-    slidesPerColumn: 2,
-    paginationClickable: true,
-    spaceBetween: 30,
-    grabCursor: true
-  };
-  const configDesktop = {
-    pagination: '.swiper-pagination',
-    slidesPerView: 4,
-    slidesPerColumn: 2,
-    slidesPerGroup: 4,
-    paginationClickable: true,
-    spaceBetween: 30,
-    grabCursor: true
-  };
-  const getSwiperConfig = (ww) => {
-    if(ww < 600){
-      return configMobile;
-    }
-    if(ww < 900){
-      return configTablet;
-    }
-    if(ww >= 900){
-      return configDesktop;
-    }
-  };
-  const swiper = new Swiper('.swiper-container', getSwiperConfig(window.innerWidth));

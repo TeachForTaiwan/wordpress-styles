@@ -40,5 +40,6 @@ const obj2HTML = (obj, type) => {
 //     coreTeamWrapper.innerHTML = obj2HTML(json);
 //   });
 
+/* global coreTeam, boardOfDirectors */
 coreTeamWrapper.innerHTML = obj2HTML(coreTeam, 'team');
 boardWrapper.innerHTML = obj2HTML(boardOfDirectors, 'board');
