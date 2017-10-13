@@ -1,35 +1,42 @@
 /* module/button */
 
 .btn {
-    border: none!important;
-    background-color: $c-base;
-    color: $c-grey;
-    text-shadow: none;
+  border: none!important;
+  background-color: $c-base;
+  color: $c-grey;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 15px;
+  transition: .1s ease-in-out;
+  &:hover {
+    border: none;
     box-shadow: none;
-    border-radius: 15px;
-    transition: .1s ease-in-out;
+  }
+  &.btn--round {
+    border-radius: 50%;
+  }
+  &.btn--square {
+    border-radius: 0;
+  }
+  &.btn--red {
+    background-color: $c-red;
+    color: $c-base;
     &:hover {
-        border: none;
-        box-shadow: none;
+      background-color: lighten($c-red, 10%);
     }
-    &.btn--round {
-        border-radius: 50%;
+  }
+  &.btn--yellow {
+    background-color: $c-yellow;
+    color: $c-grey;
+    &:hover {
+      background-color: lighten($c-yellow, 10%);
     }
-    &.btn--square {
-        border-radius: 0;
+  }
+  &.btn--green {
+    background-color: $c-green;
+    color: $c-grey;
+    &:hover {
+      background-color: lighten($c-green, 10%);
     }
-    &.btn--red {
-        background-color: $c-red!important;
-        color: $c-base!important;
-        &:hover {
-            background-color: lighten($c-red, 10%)!important;
-        }
-    }
-    &.btn--yellow {
-        background-color: $c-yellow!important;
-        color: $c-grey!important;
-        &:hover {
-            background-color: lighten($c-yellow, 10%)!important;
-        }
-    }
+  }
 }

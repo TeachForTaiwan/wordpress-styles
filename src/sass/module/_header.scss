@@ -64,6 +64,7 @@ body {
     transition: .7s ease-in-out;
     overflow: auto;
     max-height: calc(100vh - 71px);
+    padding-bottom: 20px;
     @include for-tablet-landscape-up {
       position: relative;
       overflow: visible;
@@ -109,6 +110,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     padding: 20px;
+    margin: 0 15px;
     z-index: 999;
     border-radius: 0;
     @include for-tablet-landscape-up {
@@ -150,8 +152,9 @@ body {
           .search-box {
             background: transparent;
             transition: .3s ease-in-out;
+            display: flex;
+            align-items: center;
             .input-search {
-              transform: translateY(2px);
               font-size: .8em;
               border-radius: 5px;
             }
@@ -169,9 +172,15 @@ body {
     @include for-tablet-landscape-up {
       flex-direction: row;
     }
+    @include for-desktop-up {
+      justify-content: center;
+    }
+    @media all and (min-width:1200px) and (max-width:1299px) {
+      justify-content: flex-start;
+    }
     .item {
       width: 100%;
-      text-align: center;
+      text-align: left;
       position: relative;
       &:hover:not(.item--logo) {
         background-color: $c-red;
@@ -184,6 +193,7 @@ body {
       }
       @include for-tablet-landscape-up {
         width: auto;
+        text-align: center;
       }
       .link {
         display: block;
@@ -288,7 +298,10 @@ body {
   .menu-funcs {
     display: flex;
     transition: .3s ease-in-out;
+    flex-direction: column;
+    background-color: $c-base;
     @include for-tablet-landscape-up {
+      flex-direction: row;
       position: absolute;
       top: -100%;
       right: 1em;
@@ -297,20 +310,30 @@ body {
       top: 0;
     }
     .item {
-      width: 50%;
+      width: 100%;
+      @include for-tablet-landscape-up {
+        width: 33%;
+        width: calc(100% / 3);
+        margin: .2rem;
+      }
     }
     .btn {
       width: 100%;
       border-radius: 0;
       border: 1px solid $c-base;
       font-size: 1em;
-      padding: .8em 0;
+      text-align: left;
+      padding: .8em 2em;
+      line-height: inherit;
       @include for-tablet-landscape-up {
         font-size: .8em;
         padding: .8em 1.4em;
         letter-spacing: 1.6px;
+        line-height: 1;
         border-radius: 15px;
         margin: 0 .5em;
+        text-align: center;
+        padding: .8em 0;
       }
       &--donate {
         @include for-tablet-landscape-up {
@@ -322,22 +345,60 @@ body {
           width: 8em;
         }
       }
+      &--red {
+        background-color: inherit;
+        color: $c-red;
+        &:hover {
+          background: $c-red;
+          color: $c-base;
+        }
+        @include for-tablet-landscape-up {
+          background-color: $c-red;
+          color: $c-base;
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
+      &--green {
+        background-color: inherit;
+        color: $c-green;
+        &:hover {
+          background: $c-green;
+          color: $c-base;
+        }
+        @include for-tablet-landscape-up {
+          background-color: $c-green;
+          color: $c-base;
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
     }
   }
   .menu-secondary {
-    font-size: .8em;
     background-color: $c-grey--light-2;
     display: flex;
+    font-size: 1em;
     flex-wrap: wrap;
     height: 100%;
     justify-content: center;
     align-items: center;
     transition: .7s ease-in-out;
+    flex-direction: column;
     @include for-tablet-landscape-up {
       display: none;
+      font-size: .8em;
+      flex-direction: row;
     }
     .item {
       text-align: center;
+      width: 100%;
+      text-align: left;
+      @include for-tablet-landscape-up {
+        width: auto;
+      }
       .link {
         display: block;
         padding: .8em 2em;
@@ -359,10 +420,12 @@ body {
       border-radius: 0;
       border: 1px solid $c-grey--light;
       background-color: transparent;
+      margin-right: 2em;
     }
     .search-box {
       flex: 1;
       overflow: hidden;
+      padding: 0 2em;
       .input-search {
         width: 100%;
       }
