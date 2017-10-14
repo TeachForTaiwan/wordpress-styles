@@ -1,0 +1,51 @@
+#core-value {
+  font-family: "Noto Sans TC", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif!important;
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+#core-value .g .content {
+  opacity: 0;
+  transition: .3s .5s ease-in-out;
+}
+
+#core-value .g .bar {
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+  transition: 1s ease-in-out;
+}
+
+#core-value .g:nth-of-type(-n+2) .bar {
+  stroke-dasharray: -300;
+  stroke-dashoffset: -300;
+}
+
+#core-value .block {
+  transition: .3s;
+  cursor: pointer;
+}
+
+#core-value .g-block~.bar {
+  stroke: #9F3753;
+  transition: all 1s ease-in-out, stroke .7s ease-in-out;
+}
+
+#core-value .g-block:hover .block,
+#core-value .g-block:focus .block,
+#core-value .g-block.is-active .block {
+  fill: #9F3753;
+}
+
+#core-value .g-block:hover~.content,
+#core-value .g-block:focus~.content,
+#core-value .g-block:focus.is-active~.content {
+  opacity: 1;
+}
+
+#core-value .g-block:hover~.bar,
+#core-value .g-block:focus~.bar,
+#core-value .g-block.is-active~.bar {
+  stroke-dashoffset: 0;
+  stroke: #9F3753;
+}
