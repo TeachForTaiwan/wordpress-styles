@@ -1,0 +1,77 @@
+@import '../../sass/variable';
+.m-timeline {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  .sets {
+    display: flex;
+  }
+  .set {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 125px;
+    &.is-active {
+      .timeline {
+        &__point {
+          background: $c-red;
+        }
+        &__content {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .timeline {
+    &__wrap {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      white-space: nowrap;
+    }
+    &__line {
+      display: inline-block;
+      height: 2px;
+      background-color: $c-grey;
+      margin: 50px auto;
+      padding-left: 50%;
+    }
+    &__date {
+      color: $c-red;
+      >span:not(:empty) {
+        &:after {
+          content: '.';
+        }
+      }
+    }
+    &__point {
+      width: 12px;
+      height: 12px;
+      border: 2px solid $c-grey;
+      border-radius: 50%;
+      background: $c-base;
+      cursor: pointer;
+      transform: translate(0, -50%);
+      &:hover {
+        background-color: $c-red;
+      }
+    }
+    &__content {
+      visibility: hidden;
+      opacity: 0;
+      border: 2px solid $c-grey;
+      border-radius: 3px;
+      color: $c-grey;
+      min-width: 20%;
+      max-width: 85%;
+      position: absolute;
+      left: 50%;
+      padding: 1em;
+      background: #FFF;
+      transform: translate(-50%, 50px);
+      transition: .5s ease-in-out;
+    }
+  }
+}
