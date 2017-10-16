@@ -54,7 +54,7 @@ const timelineData = [
       m: '08',
       d: '',
     },
-    content: '・舉辦大型公開展覽「你拿幸運做什麼」・與國北教合作之創新師培專班開始・團隊至澳洲與 Teach For Australia 參訪交流',
+    content: '・舉辦大型公開展覽「你拿幸運做什麼」<br>・與國北教合作之創新師培專班開始<br>・團隊至澳洲與 Teach For Australia 參訪交流',
   },
   {
     date: {
