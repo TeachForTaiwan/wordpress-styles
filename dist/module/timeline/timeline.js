@@ -2,11 +2,11 @@
 
 /* global timelineData */
 var createTimeSet = function createTimeSet(timePoint) {
-  var year = timePoint.year || '2013';
-  var month = timePoint.month || '02';
-  var day = timePoint.day || '';
+  var y = timePoint.date.y || '2013';
+  var m = timePoint.date.m || '02';
+  var d = timePoint.date.d || '';
   var content = timePoint.content || 'test';
-  return '\n    <div class="set">\n\n      <div class="timeline__point"></div>\n\n      <div class="timeline__content">\n        <div class="timeline__date">\n          <span class="year">' + year + '</span>\n          <span class="month">' + month + '</span>\n          <span class="dat">' + day + '</span>\n        </div>\n        <div class="content">' + content + '</div>\n      </div>\n\n    </div>\n  ';
+  return '\n    <div class="set">\n\n      <div class="timeline__point"></div>\n\n      <div class="timeline__content">\n        <div class="timeline__date">\n          <span class="y">' + y + '</span>\n          <span class="m">' + m + '</span>\n          <span class="d">' + d + '</span>\n        </div>\n        <div class="content">' + content + '</div>\n      </div>\n\n    </div>\n  ';
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,14 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var wrap = timeline.querySelector('.timeline__wrap');
   var setContainer = timeline.querySelector('.sets');
   timelineData.forEach(function (point) {
-    console.log(point);
     setContainer.innerHTML += createTimeSet(point);
   });
-
-  // console.log(timelineData);
-  // timelineData.forEach((point) => {
-  //   console.log(point);
-  // });
 
   var cancelActive = function cancelActive(listEl) {
     listEl.forEach(function (item) {
