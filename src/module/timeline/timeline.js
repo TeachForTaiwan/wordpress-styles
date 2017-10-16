@@ -1,4 +1,4 @@
-/* global timelineData */
+/* global timelineData, Velocity */
 let nowYear;
 
 const createTimeSet = (timePoint) => {
@@ -73,17 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const getHeight = el => el.getBoundingClientRect().height;
-  const updateTimelineHeight = (el, tH, duration) => {
-    if (duration <= 0) return;
-    const nowH = getHeight(el);
-    const diff = tH - nowH;
-    const perTick = (diff / duration) * 2;
-
-    setTimeout(() => {
-      timeline.style.height = `${nowH + perTick}px`;
-      updateTimelineHeight(el, tH, duration - 2);
-    }, 30);
-  };
 
   window.addEventListener('load', () => {
     const sets = timeline.querySelectorAll('.sets .set');
@@ -94,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentContent = e.currentTarget.parentNode.querySelector('.timeline__content');
         cancelActive(sets);
         timelineScroll(e.currentTarget);
-        updateTimelineHeight(currentContent, getHeight(currentContent) + 150, 100);
+        Velocity(timeline, { height: getHeight(currentContent) + 150 }, { duration: 1000 });
         setTimeout(() => {
           set.classList.add('is-active');
         }, 500);

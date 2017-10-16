@@ -1,6 +1,6 @@
 'use strict';
 
-/* global timelineData */
+/* global timelineData, Velocity */
 var nowYear = void 0;
 
 var createTimeSet = function createTimeSet(timePoint) {
@@ -58,17 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var getHeight = function getHeight(el) {
     return el.getBoundingClientRect().height;
   };
-  var updateTimelineHeight = function updateTimelineHeight(el, tH, duration) {
-    if (duration <= 0) return;
-    var nowH = getHeight(el);
-    var diff = tH - nowH;
-    var perTick = diff / duration * 2;
-
-    setTimeout(function () {
-      timeline.style.height = nowH + perTick + 'px';
-      updateTimelineHeight(el, tH, duration - 2);
-    }, 30);
-  };
 
   window.addEventListener('load', function () {
     var sets = timeline.querySelectorAll('.sets .set');
@@ -79,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var currentContent = e.currentTarget.parentNode.querySelector('.timeline__content');
         cancelActive(sets);
         timelineScroll(e.currentTarget);
-        updateTimelineHeight(currentContent, getHeight(currentContent) + 150, 100);
+        Velocity(timeline, { height: getHeight(currentContent) + 150 }, { duration: 1000 });
         setTimeout(function () {
           set.classList.add('is-active');
         }, 500);

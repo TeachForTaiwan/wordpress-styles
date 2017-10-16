@@ -58,10 +58,33 @@
       }
     }
     &__date {
+      display: flex;
       color: $c-red;
-      >span:not(:empty) {
+      font-weight: bold;
+      padding: 0;
+      margin-bottom: .5em;
+      justify-content: flex-start;
+      >span {
+        position: relative;
+        margin-right: 1.4em;
         &:after {
-          content: '.';
+          position: absolute;
+          right: -1.1em;
+        }
+      }
+      >.y:not(:empty) {
+        &:after {
+          content: '年';
+        }
+      }
+      >.m:not(:empty) {
+        &:after {
+          content: '月';
+        }
+      }
+      >.d:not(:empty) {
+        &:after {
+          content: '日';
         }
       }
     }
