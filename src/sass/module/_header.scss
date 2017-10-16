@@ -69,6 +69,7 @@ body {
       position: relative;
       overflow: visible;
       z-index: 999;
+      padding-bottom: 0;
     }
     &.is-active {
       transform: translateY(100%);
@@ -305,6 +306,7 @@ body {
       position: absolute;
       top: -100%;
       right: 1em;
+      background-color: transparent;
     }
     @include for-desktop-up {
       top: 0;
