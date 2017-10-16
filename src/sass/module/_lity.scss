@@ -1,43 +1,43 @@
 .lity {
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.7)!important;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7)!important;
 }
 
 .lity-wrap {
-    position: absolute;
-    padding: 100px 5% 100px;
-    overflow: auto;
-    @include for-tablet-landscape-up {
-        padding: 100px 10% 100px;
-    }
+  position: absolute;
+  padding: 100px 5% 100px;
+  overflow: auto;
+  @include for-tablet-landscape-up {
+    padding: 100px 10% 100px;
+  }
 }
 
 .lity-container {
-    max-width: 100%!important;
-    @include for-tablet-landscape-up {
-        max-width: 80%!important;
-    }
+  max-width: 100%!important;
+  @include for-tablet-landscape-up {
+    max-width: 80%!important;
+  }
 }
 
 .lity-content {
-    .content-container {
-        max-height: none!important;
-        background: $c-base;
-        padding: 2em 2em 4em;
-        margin-bottom: 4em;
-        .c-primary {
-            color: $c-primary;
-        }
+  .content-container {
+    max-height: none!important;
+    background: $c-base;
+    padding: 2em 2em 4em;
+    margin-bottom: 4em;
+    .c-primary {
+      color: $c-primary;
     }
-    .img-container {
-        &.full {
-            margin: -2em -2em 2em;
-            img {
-                width: 100%;
-            }
-        }
+  }
+  .img-container {
+    &.full {
+      margin: -2em -2em 2em;
+      img {
+        width: 100%;
+      }
     }
-    p {
-        margin-bottom: 2em;
-    }
+  }
+  p {
+    margin-bottom: 2em;
+  }
 }

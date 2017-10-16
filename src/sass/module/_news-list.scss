@@ -1,103 +1,103 @@
 .post {
-    margin: 0 auto 4em!important;
-    max-width: 1024px;
-    padding: 0 1.4em;
-    &:first-of-type {
-        padding-top: 2em!important;
-    }
-    @include for-tablet-landscape-up {
-        padding: 0;
-    }
+  margin: 0 auto 4em!important;
+  max-width: 1024px;
+  padding: 0 1.4em;
+  &:first-of-type {
+    padding-top: 2em!important;
+  }
+  @include for-tablet-landscape-up {
+    padding: 0;
+  }
 }
 
 // 標題
 .entry-title {
-    color: $c-primary;
-    .link {
-        &:hover {
-            color: darken($c-primary, 10%);
-        }
+  color: $c-primary;
+  .link {
+    &:hover {
+      color: darken($c-primary, 10%);
     }
+  }
 }
 
 .entry-summary {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .excerpt-image-left .archive-post-wrap .entry-meta {
-    color: #999;
-    font-size: .8em;
+  color: #999;
+  font-size: .8em;
 }
 
 // Read More
 .more-link {
-    border-radius: 15px;
-    color: $c-base!important;
-    background-color: $c-primary;
-    margin: 1em 0;
-    font-size: .8em;
-    padding: 6px 10px;
-    display: block;
-    max-width: 10em;
-    transition: .1s ease-in-out;
-    &:hover {
-        background-color: lighten($c-primary, 10%);
-    }
+  border-radius: 15px;
+  color: $c-base!important;
+  background-color: $c-primary;
+  margin: 1em 0;
+  font-size: .8em;
+  padding: 6px 10px;
+  display: block;
+  max-width: 10em;
+  transition: .1s ease-in-out;
+  &:hover {
+    background-color: lighten($c-primary, 10%);
+  }
 }
 
 .page-header {
-    padding: 1em 1.4em 0;
-    margin: 0 auto;
-    max-width: 1024px;
-    .page-title {
-        display: inline-block;
-        border: 1px solid #d6d6d6;
-        border-radius: 4px;
-        color: #a3a3a3;
-        padding: .3em .5em;
-        margin: 5px 0;
-        transition: .1s ease-in-out;
-    }
+  padding: 1em 1.4em 0;
+  margin: 0 auto;
+  max-width: 1024px;
+  .page-title {
+    display: inline-block;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    color: #a3a3a3;
+    padding: .3em .5em;
+    margin: 5px 0;
+    transition: .1s ease-in-out;
+  }
 }
 
 .archive-post-wrap,
 .page-header .page-title {
-    // 分隔線
-    margin: 0 auto;
-    margin-bottom: 3em;
-    font-size: 1em;
-    max-width: 1024px;
+  // 分隔線
+  margin: 0 auto;
+  margin-bottom: 3em;
+  font-size: 1em;
+  max-width: 1024px;
 }
 
 .archive-post-wrap {
-    border-bottom: none;
-    @include for-tablet-landscape-up {
-        padding: 0 1.4em;
-    }
-    .entry-title {
-        font-size: 22px;
-    }
+  border-bottom: none;
+  @include for-tablet-landscape-up {
+    padding: 0 1.4em;
+  }
+  .entry-title {
+    font-size: 22px;
+  }
 }
 
 #nav-below {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding-left: 1.4em;
-    padding-right: 1.4em;
-    margin-bottom: 4em;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+  margin-bottom: 4em;
 }
 
 .nav-previous,
 .nav-next {
-    a {
-        border: 1px solid #d6d6d6;
-        border-radius: 4px;
-        color: #a3a3a3;
-        padding: .3em .5em;
-        margin: 5px 0;
-        transition: .1s ease-in-out;
-        &:hover {
-            color: $c-grey;
-        }
+  a {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    color: #a3a3a3;
+    padding: .3em .5em;
+    margin: 5px 0;
+    transition: .1s ease-in-out;
+    &:hover {
+      color: $c-grey;
     }
+  }
 }

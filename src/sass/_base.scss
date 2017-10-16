@@ -1,24 +1,24 @@
 body {
-    font-family: $ff-base;
-    letter-spacing: 1.15px;
-    max-width: 3840px;
-    margin: 0 auto;
+  font-family: $ff-base;
+  letter-spacing: 1.15px;
+  max-width: 3840px;
+  margin: 0 auto;
 }
 
 ::selection {
-    background-color: $c-grey--light;
-    color: $c-grey--dark;
+  background-color: $c-grey--light;
+  color: $c-grey--dark;
 }
 
 a {
+  color: inherit;
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
     color: inherit;
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-        color: inherit;
-        text-decoration: none!important;
-    }
+    text-decoration: none!important;
+  }
 }
 
 h1,
@@ -27,20 +27,20 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $ff-base;
+  font-family: $ff-base;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    color: $c-green;
-    padding: 10px 0;
+  color: $c-green;
+  padding: 10px 0;
 }
 
 button,
 input,
 select,
 textarea {
-    font-family: $ff-base;
+  font-family: $ff-base;
 }

@@ -1,4 +1,4 @@
-// 我們怎麼做 TAB funcstions
+// 我們怎麼做 TAB functions
 const getPosition = (element) => {
   let xPosition = 0;
   let yPosition = 0;

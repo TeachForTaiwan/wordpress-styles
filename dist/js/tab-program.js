@@ -1,6 +1,6 @@
 'use strict';
 
-// 我們怎麼做 TAB funcstions
+// 我們怎麼做 TAB functions
 var getPosition = function getPosition(element) {
   var xPosition = 0;
   var yPosition = 0;

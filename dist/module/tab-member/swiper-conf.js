@@ -48,6 +48,7 @@ var getSwiperConfig = function getSwiperConfig(ww) {
 };
 
 /* eslint no-unused-vars:0 */
+/* global Swiper */
 var swiper = new Swiper('.swiper-container', _extends({}, getSwiperConfig(window.innerWidth), {
   onAfterResize: function onAfterResize(s) {
     swiper.params = getSwiperConfig(window.innerWidth);

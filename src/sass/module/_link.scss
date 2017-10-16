@@ -1,21 +1,21 @@
 .link {
-    transition: .3s ease-in-out;
-    &:hover {
-        &.link--red {
-            color: $c-red;
-        }
+  transition: .3s ease-in-out;
+  &:hover {
+    &.link--red {
+      color: $c-red;
     }
+  }
 }
 
 .link-list {
-    &.link--red {
-        .sow-features-feature {
-            transition: .3s ease-in-out;
-            &:hover {
-                a {
-                    color: $c-red!important;
-                }
-            }
+  &.link--red {
+    .sow-features-feature {
+      transition: .3s ease-in-out;
+      &:hover {
+        a {
+          color: $c-red!important;
         }
+      }
     }
+  }
 }

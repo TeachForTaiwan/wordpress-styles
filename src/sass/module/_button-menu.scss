@@ -1,22 +1,22 @@
 .btn-menu {
-    position: relative;
-    max-width: 40px;
-    height: 40px;
-    .line {
-        position: absolute;
-        left: 10%;
-        top: 0;
-        width: 80%;
-        background-color: $c-red;
-        height: 2px;
-        &:nth-child(1) {
-            transform: translateY(15px);
-        }
-        &:nth-child(2) {
-            transform: translateY(20px);
-        }
-        &:nth-child(3) {
-            transform: translateY(25px);
-        }
+  position: relative;
+  max-width: 40px;
+  height: 40px;
+  .line {
+    position: absolute;
+    left: 10%;
+    top: 0;
+    width: 80%;
+    background-color: $c-red;
+    height: 2px;
+    &:nth-child(1) {
+      transform: translateY(15px);
     }
+    &:nth-child(2) {
+      transform: translateY(20px);
+    }
+    &:nth-child(3) {
+      transform: translateY(25px);
+    }
+  }
 }

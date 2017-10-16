@@ -44,6 +44,7 @@ const getSwiperConfig = (ww) => {
 };
 
 /* eslint no-unused-vars:0 */
+/* global Swiper */
 const swiper = new Swiper('.swiper-container', {
   ...getSwiperConfig(window.innerWidth),
   onAfterResize(s) {
