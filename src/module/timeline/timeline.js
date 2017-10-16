@@ -1,4 +1,4 @@
-/* global timelineData, Velocity */
+/* global timelineData, jQuery */
 let nowYear;
 
 const createTimeSet = (timePoint) => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentContent = e.currentTarget.parentNode.querySelector('.timeline__content');
         cancelActive(sets);
         timelineScroll(e.currentTarget);
-        Velocity(timeline, { height: getHeight(currentContent) + 150 }, { duration: 1000 });
+        jQuery.Velocity(timeline, { height: getHeight(currentContent) + 150 }, { duration: 1000 });
         setTimeout(() => {
           set.classList.add('is-active');
         }, 500);
