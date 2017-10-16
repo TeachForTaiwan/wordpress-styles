@@ -1,6 +1,8 @@
 @import '../../sass/variable';
+@import '../../sass/mixin/breakpoint';
 .m-timeline {
   width: 100%;
+  min-height: 120px;
   height: 250px;
   overflow: hidden;
   position: relative;
@@ -12,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 125px;
     &.is-active {
       .timeline {
         &__point {
@@ -39,6 +40,23 @@
       margin: 50px auto;
       padding-left: 50%;
     }
+    &__now-year {
+      color: $c-red;
+      font-weight: bold;
+      position: relative;
+      transform: translate(-15px, -30px);
+      margin-left: 30px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(0px, 13px);
+        background: $c-grey;
+        width: 2px;
+        height: 8px;
+      }
+    }
     &__date {
       color: $c-red;
       >span:not(:empty) {
@@ -55,6 +73,7 @@
       background: $c-base;
       cursor: pointer;
       transform: translate(0, -50%);
+      margin: 0 30px;
       &:hover {
         background-color: $c-red;
       }
@@ -65,14 +84,20 @@
       border: 2px solid $c-grey;
       border-radius: 3px;
       color: $c-grey;
-      min-width: 20%;
-      max-width: 85%;
+      min-width: 200px;
+      max-width: 800px;
       position: absolute;
       left: 50%;
       padding: 1em;
       background: #FFF;
-      transform: translate(-50%, 50px);
       transition: .5s ease-in-out;
+      transform: translate(-50%, 50px);
+      pointer-events: none;
+      .content {
+        position: relative;
+        white-space: normal;
+        @include for-phone-only {}
+      }
     }
   }
 }

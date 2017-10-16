@@ -1,13 +1,26 @@
 /* global timelineData */
-const createTimeSet = (
-  timePoint,
-) => {
+let nowYear;
+
+const createTimeSet = (timePoint) => {
+  const createTimelineYear = (year) => {
+    const tY = year;
+    return `
+      <div class="timeline__now-year">${tY}</div>
+    `;
+  };
   const y = timePoint.date.y || '2013';
   const m = timePoint.date.m || '02';
   const d = timePoint.date.d || '';
   const content = timePoint.content || 'test';
+  let nowYearText = '';
+  if (!nowYear || nowYear !== y) {
+    nowYear = y;
+    nowYearText = createTimelineYear(nowYear);
+  }
   return `
     <div class="set">
+
+      ${nowYearText}
 
       <div class="timeline__point"></div>
 
@@ -24,9 +37,20 @@ const createTimeSet = (
   `;
 };
 
+/* eslint no-param-reassign:0 */
+const timelineScrollTo = (el, to, duration) => {
+  if (duration <= 0) return;
+  const difference = to - el.scrollLeft;
+  const perTick = (difference / duration) * 2;
+
+  setTimeout(() => {
+    el.scrollLeft += perTick;
+    timelineScrollTo(el, to, duration - 2);
+  }, 10);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const timeline = document.querySelector('.m-timeline');
-  // const line = timeline.querySelector('.timeline__line');
   const wrap = timeline.querySelector('.timeline__wrap');
   const setContainer = timeline.querySelector('.sets');
   timelineData.forEach((point) => {
@@ -39,13 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const autoScroll = (toPoint) => {
-    const pointRect = toPoint.getBoundingClientRect();
-    const setRect = toPoint.parentNode.getBoundingClientRect();
-    const toPointLeft = pointRect.left + (setRect.width / 2);
-    const middle = toPointLeft - (timeline.offsetWidth / 2);
-    wrap.scrollTo(middle, 0);
-    scrollTo(wrap, middle, 500);
+  const timelineScroll = (toPoint) => {
+    const tWrapMiddle = wrap.getBoundingClientRect().width / 2;
+    const tWrapLeft = wrap.scrollLeft;
+    const pLeft = toPoint.getBoundingClientRect().left || toPoint.getBoundingClientRect().x;
+    const diff = pLeft - tWrapMiddle; // point 和中心點的距離
+    const middle = diff + tWrapLeft;
+    timelineScrollTo(wrap, middle, 100);
+  };
+
+  const getHeight = el => el.getBoundingClientRect().height;
+  const updateTimelineHeight = (el, tH, duration) => {
+    if (duration <= 0) return;
+    const nowH = getHeight(el);
+    const diff = tH - nowH;
+    const perTick = (diff / duration) * 2;
+
+    setTimeout(() => {
+      timeline.style.height = `${nowH + perTick}px`;
+      updateTimelineHeight(el, tH, duration - 2);
+    }, 30);
   };
 
   window.addEventListener('load', () => {
@@ -54,9 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const point = set.querySelector('.timeline__point');
       // 按下 timepoint
       point.addEventListener('click', (e) => {
+        const currentContent = e.currentTarget.parentNode.querySelector('.timeline__content');
         cancelActive(sets);
-        cancelActive(sets);
-        autoScroll(e.currentTarget);
+        timelineScroll(e.currentTarget);
+        updateTimelineHeight(currentContent, getHeight(currentContent) + 150, 100);
         setTimeout(() => {
           set.classList.add('is-active');
         }, 500);
