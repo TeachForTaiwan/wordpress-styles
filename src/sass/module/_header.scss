@@ -295,6 +295,15 @@ body {
         }
       }
     }
+    &.is-fixed {
+      .sub-menu {
+        left: auto;
+        right: 0;
+        .item {
+          text-align: right;
+        }
+      }
+    }
   }
   .menu-funcs {
     display: flex;
