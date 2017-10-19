@@ -1,6 +1,8 @@
 'use strict';
 
 // 我們怎麼做 TAB functions
+/* global Stickyfill, jQuery */
+
 // const getPosition = (element) => {
 //   let xPosition = 0;
 //   let yPosition = 0;
@@ -16,41 +18,31 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   var tabControl = document.querySelector('.tab-control');
-  var tabButtons = document.querySelectorAll('.tab-control .tab-button');
+  var tabButtons = tabControl.querySelectorAll('.tab-button');
   var tabContents = document.querySelectorAll('.tab-content');
-  var stickyChild = document.querySelector('.sticky-child');
+  var stickyChilds = document.querySelectorAll('.sticky-child');
   var docEl = document.documentElement || document.body;
   // let tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 80;
-  var hideAll = function hideAll() {
-    tabContents.forEach(function (content) {
-      content.classList.remove('is-active');
-    });
-  };
-  var switchButtonActive = function switchButtonActive() {
-    tabButtons.forEach(function (btn) {
-      btn.classList.remove('is-active');
-    });
+  var removeActive = function removeActive(el) {
+    el.classList.remove('is-active');
   };
   var switchTab = function switchTab(e) {
-    var targetContentClass = e.currentTarget.dataset.for;
-    var targetContent = document.querySelector('.' + targetContentClass);
-    hideAll();
+    var targetContent = document.querySelector('.' + e.currentTarget.dataset.for);
+    tabContents.forEach(removeActive);
     targetContent.classList.add('is-active');
   };
-  var addStickyEl = function addStickyEl(childEl) {
-    childEl.parentNode.classList.add('sticky');
-  };
 
-  window.addEventListener('load', function () {
-    // tabControlOffsetTop = getPosition(tabControl).y + 125 || 0;
-    // tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 120;
+  // window.addEventListener('load', () => {
+  // tabControlOffsetTop = getPosition(tabControl).y + 125 || 0;
+  // tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 120;
+  // });
+  stickyChilds.forEach(function (child) {
+    child.parentNode.classList.add('sticky');
   });
-  /* global Stickyfill, jQuery */
-  addStickyEl(stickyChild);
   var stickyElems = document.querySelectorAll('.sticky');
   Stickyfill.add(stickyElems);
 
-  // change tabControl(sticky) bg style
+  // hard code to change tabControl(sticky)'s bgColor
   tabControl.parentNode.parentNode.style.backgroundColor = 'rgba(255,255,255,.85)';
 
   tabButtons.forEach(function (btn) {
@@ -59,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var activeBtn = document.querySelector('.tab-button[data-for=' + currentFor + ']');
 
       switchTab(e);
-      switchButtonActive();
+      tabButtons.forEach(removeActive);
       activeBtn.classList.add('is-active');
-      jQuery.Velocity(docEl, 'scroll', { offset: 800 }, 1000);
+      jQuery.Velocity(docEl, 'scroll', { offset: 650 }, 1000);
     });
   });
 });

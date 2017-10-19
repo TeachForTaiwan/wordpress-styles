@@ -1,4 +1,6 @@
 // 我們怎麼做 TAB functions
+/* global Stickyfill, jQuery */
+
 // const getPosition = (element) => {
 //   let xPosition = 0;
 //   let yPosition = 0;
@@ -14,41 +16,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabControl = document.querySelector('.tab-control');
-  const tabButtons = document.querySelectorAll('.tab-control .tab-button');
+  const tabButtons = tabControl.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
-  const stickyChild = document.querySelector('.sticky-child');
+  const stickyChilds = document.querySelectorAll('.sticky-child');
   const docEl = document.documentElement || document.body;
   // let tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 80;
-  const hideAll = () => {
-    tabContents.forEach((content) => {
-      content.classList.remove('is-active');
-    });
-  };
-  const switchButtonActive = () => {
-    tabButtons.forEach((btn) => {
-      btn.classList.remove('is-active');
-    });
+  const removeActive = (el) => {
+    el.classList.remove('is-active');
   };
   const switchTab = (e) => {
-    const targetContentClass = e.currentTarget.dataset.for;
-    const targetContent = document.querySelector(`.${targetContentClass}`);
-    hideAll();
+    const targetContent = document.querySelector(`.${e.currentTarget.dataset.for}`);
+    tabContents.forEach(removeActive);
     targetContent.classList.add('is-active');
   };
-  const addStickyEl = (childEl) => {
-    childEl.parentNode.classList.add('sticky');
-  };
 
-  window.addEventListener('load', () => {
-    // tabControlOffsetTop = getPosition(tabControl).y + 125 || 0;
-    // tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 120;
+  // window.addEventListener('load', () => {
+  // tabControlOffsetTop = getPosition(tabControl).y + 125 || 0;
+  // tabControlOffsetTop = (tabControl.getBoundingClientRect().top + window.scrollY) - 120;
+  // });
+  stickyChilds.forEach((child) => {
+    child.parentNode.classList.add('sticky');
   });
-  /* global Stickyfill, jQuery */
-  addStickyEl(stickyChild);
   const stickyElems = document.querySelectorAll('.sticky');
   Stickyfill.add(stickyElems);
 
-  // change tabControl(sticky) bg style
+  // hard code to change tabControl(sticky)'s bgColor
   tabControl.parentNode.parentNode.style.backgroundColor = 'rgba(255,255,255,.85)';
 
   tabButtons.forEach((btn) => {
@@ -57,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeBtn = document.querySelector(`.tab-button[data-for=${currentFor}]`);
 
       switchTab(e);
-      switchButtonActive();
+      tabButtons.forEach(removeActive);
       activeBtn.classList.add('is-active');
-      jQuery.Velocity(docEl, 'scroll', { offset: 800 }, 1000);
+      jQuery.Velocity(docEl, 'scroll', { offset: 650 }, 1000);
     });
   });
 });
