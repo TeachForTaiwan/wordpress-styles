@@ -1,5 +1,57 @@
 'use strict';
 
+/* global faqData */
+var data2FAQ = function data2FAQ(data) {
+  var getBricks = function getBricks(bricks) {
+    var html = '';
+    bricks.forEach(function (brick) {
+      html += '\n        <div class="brick" data-type="' + brick.type + '">' + brick.title + '</div>\n      ';
+    });
+    return '\n    <div class="faq-bricks">\n      ' + html + '\n    </div>\n  ';
+  };
+
+  var getTypeContents = function getTypeContents(obj) {
+    var getTypeContent = function getTypeContent(groups) {
+      var contents = groups.contents;
+      var html = '';
+      contents.forEach(function (content) {
+        html += '\n          <div class="faq-group">\n            <div class="title-container">\n              <h3 class="q-title">' + content.q + '</h3>\n            </div>\n            <div class="content-container">\n              <p>' + content.a + '</p>\n            </div>\n          </div>\n        ';
+      });
+      return '\n        <div class="faq-type-container" id="faq-' + groups.type + '">\n          ' + html + '\n        </div>\n      ';
+    };
+    var html = '';
+    obj.forEach(function (groups) {
+      html += '\n        ' + getTypeContent(groups) + '\n      ';
+    });
+    return html;
+  };
+  var FAQBricks = [];
+  var FAQGroups = [];
+
+  data.forEach(function (dc) {
+    var contents = [];
+
+    dc.contents.forEach(function (content) {
+      contents.push({
+        q: content.q,
+        a: content.a
+      });
+    });
+
+    FAQBricks.push({
+      title: dc.title,
+      type: dc.type
+    });
+
+    FAQGroups.push({
+      type: dc.type,
+      contents: contents
+    });
+  });
+
+  return '\n    ' + (getBricks(FAQBricks) + getTypeContents(FAQGroups)) + '\n  ';
+};
+
 var closeFAQs = function closeFAQs() {
   var faqTypeContainers = document.querySelectorAll('.faq-type-container');
   faqTypeContainers.forEach(function (item) {
@@ -9,6 +61,7 @@ var closeFAQs = function closeFAQs() {
 
 document.addEventListener('DOMContentLoaded', function () {
   var faq = document.querySelector('#faq');
+  faq.innerHTML = data2FAQ(faqData);
   var faqBricks = faq.querySelectorAll('.brick');
   var faqTitles = faq.querySelectorAll('.faq-group .title-container');
 
