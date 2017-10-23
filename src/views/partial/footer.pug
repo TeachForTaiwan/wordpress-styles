@@ -1,31 +1,43 @@
-<footer class="footer">
-  <div class="footer__block">
-    <ul class="social-list">
-      <li class="list-item">
-        <a href="https://www.facebook.com/teach4taiwan" target="_blank" rel="noopener"><button class="btn btn--round btn--red btn--no-text"><i class="fa fa-facebook"></i></button></a>
-      </li>
-      <li class="list-item">
-        <a href="https://www.instagram.com/teach4taiwan/" target="_blank" rel="noopener"><button class="btn btn--round btn--red btn--no-text"><i class="fa fa-instagram"></i></button></a>
-      </li>
-      <li class="list-item">
-        <a href="https://www.youtube.com/channel/UCfreYo1mnqLN4Iz66nno1oA" target="_blank" rel="noopener"><button class="btn btn--round btn--red btn--no-text"><i class="fa fa-youtube-play"></i></button></a>
-      </li>
-      <li class="list-item">
-        <a href="https://teach4taiwan.wordpress.com/" target="_blank" rel="noopener"><button class="btn btn--red"><i class="fa fa-bookmark-o"></i><span>教師故事棧</span></button></a>
-      </li>
-      <li class="list-item">
-        <a href="http://beta.teach4taiwan.org/?page_id=152" target="_blank" rel="noopener"><button class="btn btn--red"><i class="fa fa-envelope"></i><span>訂閱電子報</span></button></a>
-      </li>
-    </ul>
-    <ul class="contact-list">
-      <li class="list-item">電子信箱 | <a href="mailto:tft@teach4taiwan.org">tft@teach4taiwan.org</a></li>
-      <li class="list-item">聯絡電話 | <a href="tel:+886-2-23456225">02-2345-6225</a></li>
-    </ul>
-    <ul class="address-list">
-      <li class="list-item">聯絡地址 | <a href="https://goo.gl/GQenv2" target="_blank" rel="noopener">110台北市信義區忠孝東路四段512號11樓之四</a></li>
-    </ul>
-  </div>
-  <div class="copyright">
-    <span class="text">Copyright © 2017. All Rights Reserved. | 財團法人為台灣而教教育基金會</span>
-  </div>
-</footer>
+footer.footer
+  .footer__row
+    .footer__block.f-2
+      .footer__content.img-container
+        img.image(src="https://dummyimage.com/220x50/000/fff", alt="Logo")
+    .footer__block.f-3
+      .block__title 了解更多
+      ul.footer__content
+        li.item.basis-50
+          a(href="/?page_id=278") 常見問題
+        li.item.basis-50
+          a(href="/?page_id=152") 訂閱電子報
+        li.item.basis-50
+          a(href="https://teach4taiwan.wordpress.com/", target="_blank", rel="noopener") TFT故事棧
+        li.item.basis-50
+          a(href="/?page_id=118#annual-report") 年度報告
+    .footer__block.f-3
+      .block__title 聯絡我們
+      ul.footer__content
+        li.item.basis-100
+          a(href="mailto:tft@teach4taiwan.org") tft@teach4taiwan.org
+        li.item.basis-100
+          a(href="tel:+886223456225") 02-2345-6225
+      .footer__content.block__title
+        a(href="https://goo.gl/GQenv2", target="_blank", rel="noopener") 110台北市信義區忠孝東路四段512號11樓之四
+  .footer__row
+    .footer__block.f-3
+      .footer__content
+        .text.basis-100 立案字號：新北教社字第1060339602號
+        .text.basis-100 公益勸募許可字號：衛部救字第1061363453號
+      .footer__content
+        .copyright.basis-100 Copyright © 2017. All Rights Reserved. | 財團法人為台灣而教教育基金會
+    .footer__block.f-1
+      ul.footer__content.social-list
+        li.item.f-1
+          a(href="https://www.facebook.com/teach4taiwan", target="_blank", rel="noopener")
+            i.fa.fa-instagram
+        li.item.f-1
+          a(href="https://www.facebook.com/teach4taiwan", target="_blank", rel="noopener")
+            i.fa.fa-facebook
+        li.item.f-1
+          a(href="https://www.facebook.com/teach4taiwan", target="_blank", rel="noopener")
+            i.fa.fa-youtube-play

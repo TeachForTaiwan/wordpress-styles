@@ -1,7 +1,9 @@
 /* module/button */
 
 .btn {
-  border: none!important;
+  border: 1px solid;
+  border-color: inherit;
+  border-radius: 90px;
   background-color: $c-base;
   color: $c-grey;
   text-shadow: none;
@@ -9,34 +11,30 @@
   border-radius: 15px;
   transition: .1s ease-in-out;
   &:hover {
-    border: none;
     box-shadow: none;
+    border-color: inherit;
   }
-  &.btn--round {
+  &--round {
     border-radius: 50%;
   }
-  &.btn--square {
+  &--square {
     border-radius: 0;
   }
-  &.btn--red {
-    background-color: $c-red;
-    color: $c-base;
+  &--no-border {
+    border-color: transparent;
     &:hover {
-      background-color: lighten($c-red, 10%);
+      border-color: transparent;
     }
   }
-  &.btn--yellow {
-    background-color: $c-yellow;
-    color: $c-grey;
-    &:hover {
-      background-color: lighten($c-yellow, 10%);
-    }
-  }
-  &.btn--green {
-    background-color: $c-green;
-    color: $c-grey;
-    &:hover {
-      background-color: lighten($c-green, 10%);
+  $colorList: ( 'red': $c-red, 'yellow': $c-yellow, 'green': $c-green);
+  @each $key,
+  $value in $colorList {
+    &--#{$key} {
+      color: $value;
+      &:hover {
+        background-color: $value;
+        color: $c-base;
+      }
     }
   }
 }
