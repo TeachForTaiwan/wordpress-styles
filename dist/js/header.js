@@ -69,16 +69,17 @@ if (btnMenu) {
 }
 
 window.addEventListener('scroll', function () {
+  var headerHeight = header.offsetHeight;
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
   if (window.innerWidth >= 900) {
-    if (scrollTop > 100) {
+    if (scrollTop > headerHeight) {
       fixMenuPrimary();
     } else {
       unfixMenuPrimary();
     }
     return;
   }
-  if (scrollTop > 100) {
+  if (scrollTop > headerHeight) {
     fixHeader();
   } else {
     unfixHeader();
