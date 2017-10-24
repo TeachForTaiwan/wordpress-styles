@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   faqTitles.forEach((title) => {
     title.addEventListener('click', (e) => {
       const targetContent = e.currentTarget.nextElementSibling || e.currentTarget.nextSibling;
+      title.classList.toggle('is-active');
       targetContent.classList.toggle('is-active');
     });
   });

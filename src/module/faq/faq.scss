@@ -9,37 +9,34 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2em;
+  border-bottom: 1px solid $c-grey--light;
   .brick {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     min-height: 3.5em;
-    border: 2px solid $c-base;
-    border-radius: 15px;
     font-weight: bold;
-    font-size: calc(2vw + 6px);
-    letter-spacing: 1.2px;
+    font-size: 14px;
+    letter-spacing: 3.2px;
     text-align: center;
     cursor: pointer;
-    transition: .3s ease-in-out;
-    background-color: $c-grey--light;
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
     color: $c-grey;
+    transition: .3s ease-in-out;
     padding: .5em;
     &:hover,
     &.is-active {
-      background-color: $c-primary;
-      color: $c-base;
-      border-color: $c-base;
+      color: $c-primary;
+      border-bottom: 1px solid $c-primary;
     }
     @include for-tablet-portrait-up {
-      width: calc(100% / 3);
-      font-size: 1em;
+      font-size: 18px;
     }
     @include for-desktop-up {
       width: calc(100% / 5);
-      font-size: 1em;
     }
   }
 }
@@ -47,12 +44,12 @@
 .faq-type-container {
   visibility: hidden;
   opacity: 0;
-  transition: .7s ease-in-out, height 0s; // height: 0;
+  transition: .7s ease-in-out, height 0s;
   max-height: 0;
   overflow: hidden;
   &.is-active {
     visibility: visible;
-    opacity: 1; // height: auto;
+    opacity: 1;
     max-height: 9999px;
   }
   &#faq-main {}
@@ -65,8 +62,12 @@
 
 .faq-group {
   border-bottom: 1px solid;
-  border-color: $c-grey--light;
+  border-color: $c-grey--light-2;
   margin: 1em;
+  padding: 0 0 5px;
+  @include for-tablet-portrait-up {
+    padding: 10px 0 20px;
+  }
   .title-container {
     position: relative;
     padding-left: 1.4em;
@@ -74,16 +75,35 @@
     cursor: pointer;
     text-align: justify;
     &:before {
-      content: "\f1db";
+      content: '';
       position: absolute;
-      font: normal normal normal 14px/1 FontAwesome;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      opacity: .6;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #979797;
+      border-radius: 50%;
+      transition: .1s ease-in-out;
     }
     .q-title {
       color: $c-grey;
+      font-size: 18px;
+      padding-left: 1em;
+      transition: .1s ease-in-out;
+      letter-spacing: 1.8px;
+      @include for-tablet-portrait-up {
+        font-size: 22px;
+      }
+    }
+    &.is-active {
+      &:before {
+        background-color: $c-green;
+        border-color: $c-green;
+      }
+      .q-title {
+        font-weight: bold;
+      }
     }
   }
   .content-container {
@@ -92,12 +112,19 @@
     transform-origin: top;
     transition: .1s ease-in-out, .3s transform ease-in-out;
     height: 0;
-    text-align: justify; // padding-top: .5em;
+    text-align: justify;
+    font-size: 16px;
+    @include for-tablet-portrait-up {
+      padding-left: 45px;
+    }
     &.is-active {
       opacity: 1;
       transform: scaleY(1);
       height: auto;
-      padding-bottom: 20px;
+      padding: 10px 0 20px;
+      @include for-tablet-portrait-up {
+        padding-left: 45px;
+      }
     }
   }
 }

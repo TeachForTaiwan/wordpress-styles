@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   faqTitles.forEach(function (title) {
     title.addEventListener('click', function (e) {
       var targetContent = e.currentTarget.nextElementSibling || e.currentTarget.nextSibling;
+      title.classList.toggle('is-active');
       targetContent.classList.toggle('is-active');
     });
   });
