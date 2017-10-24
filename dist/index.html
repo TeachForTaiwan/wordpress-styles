@@ -12,18 +12,19 @@
   <body>
     <header class="header" id="header">
       <div class="header-container">
-        <nav class="nav-desktop">
-          <ul class="menu-secondary--desktop">
+        <nav class="nav nav--base">
+          <ul class="nav__list funcs-container for-desktop">
             <li class="item"><a class="link" href="https://web.npois.com.tw/npopay/tft/periodic.asp" target="_blank" rel="noopener">
                 <button class="btn btn--recruit btn--red">支持我們</button></a></li>
             <li class="item"><a class="link" href="http://apply.teach4taiwan.org/" target="_blank" rel="noopener">
                 <button class="btn btn--teacher btn--red">申請TFT計畫</button></a></li>
+          </ul>
+          <ul class="nav__list logo-container"><a class="link" href="/"><img class="logo" src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_350px.png" alt="logo"/></a></ul>
+          <ul class="nav__list funcs-container for-desktop">
             <li class="item"><a class="link" href="/?cat=21">
                 <div class="text">最新消息</div></a></li>
             <li class="item"><a class="link" href="/?page_id=278">
                 <div class="text">常見問題</div></a></li>
-          </ul>
-          <ul class="menu-secondary--func">
             <li class="item item--funcs">
               <div class="search-box">
                 <form class="search" id="search" role="search" method="get" action="//beta.teach4taiwan.org/">
@@ -35,11 +36,10 @@
               </div>
             </li>
           </ul>
+          <button class="btn btn-menu btn--no-border" id="btn-menu"><span class="line"></span><span class="line"></span><span class="line"></span></button>
         </nav>
-        <div class="logo-container"><a class="link" href="/"><img class="logo" src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_350px.png" alt="logo"/></a></div>
-        <button class="btn btn-menu btn--no-border" id="btn-menu"><span class="line"></span><span class="line"></span><span class="line"></span></button>
-        <nav class="nav" id="nav-menu">
-          <ul class="menu-primary" id="menu-primary">
+        <nav class="nav nav--menu" id="nav-menu">
+          <ul class="nav__list menu-primary" id="menu-primary">
             <li class="item item--logo"><a class="link" href="/"><img class="logo" src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo-long400px.png" alt="logo"/></a></li>
             <li class="item"><a class="link has-sub" href="/?page_id=118">關於我們</a></li>
             <li class="item"><a class="link" href="/?page_id=111">我們要解決的問題</a></li>
@@ -48,8 +48,8 @@
             <li class="item"><a class="link has-sub" href="javascript:;">
                 <div class="text">加入我們　<i class="fa fa-angle-down" aria-hidden="true"></i></div></a>
               <ul class="sub-menu">
-                <li class="item"><a class="link" href="/?page_id=194">申請TFT計畫</a></li>
-                <li class="item"><a class="link" href="/?page_id=564">加入執行團隊</a></li>
+                <li class="item"><a class="link" href="/?page_id=194">申請為台灣而教計畫</a></li>
+                <li class="item"><a class="link" href="/?page_id=2835">加入執行團隊</a></li>
                 <li class="item"><a class="link" href="/?page_id=281">成為志工</a></li>
                 <li class="item"><a class="link" href="/?page_id=564">成為企業夥伴</a></li>
                 <li class="item"><a class="link" href="/?page_id=576">成為教育志工</a></li>
@@ -57,13 +57,11 @@
               </ul>
             </li>
           </ul>
-          <ul class="menu-funcs">
-            <li class="item"><a class="link" href="https://web.npois.com.tw/npopay/tft/periodic.asp" target="_blank" rel="noopener">
-                <button class="btn btn--recruit btn--red">支持我們</button></a></li>
-            <li class="item"><a class="link" href="/?page_id=194">
-                <button class="btn btn--teacher btn--red">申請TFT計畫</button></a></li>
+          <ul class="nav__list menu-funcs for-mobile">
+            <li class="item for-mobile"><a class="link" href="https://web.npois.com.tw/npopay/tft/periodic.asp" target="_blank" rel="noopener">支持我們</a></li>
+            <li class="item for-mobile"><a class="link" href="/?page_id=194">申請TFT計畫</a></li>
           </ul>
-          <ul class="menu-secondary">
+          <ul class="nav__list menu-secondary">
             <li class="item"><a class="link" href="/?cat=21">最新消息</a></li>
             <li class="item"><a class="link" href="/?page_id=278">常見問題</a></li>
             <li class="item item--funcs">

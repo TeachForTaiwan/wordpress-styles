@@ -47,22 +47,26 @@ var removeLink = function removeLink(className) {
 };
 
 // search button
-btnSearch.addEventListener('click', function (e) {
-  if (e.currentTarget.classList.contains('is-active')) {
-    return searchInput.value !== '' ? submitSearch() : toggleSearchBox();
-  }
-  setTimeout(function () {
-    focusElem(searchInput);
-  }, 300);
-  toggleSearchBox();
-  return true;
-});
+if (btnSearch) {
+  btnSearch.addEventListener('click', function (e) {
+    if (e.currentTarget.classList.contains('is-active')) {
+      return searchInput.value !== '' ? submitSearch() : toggleSearchBox();
+    }
+    setTimeout(function () {
+      focusElem(searchInput);
+    }, 300);
+    toggleSearchBox();
+    return true;
+  });
+}
 
 // 手機版 menu button
-btnMenu.addEventListener('click', function () {
-  toggleMenu();
-  toggleMask();
-});
+if (btnMenu) {
+  btnMenu.addEventListener('click', function () {
+    toggleMenu();
+    toggleMask();
+  });
+}
 
 window.addEventListener('scroll', function () {
   var scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;

@@ -45,22 +45,26 @@ const removeLink = (className) => {
 };
 
 // search button
-btnSearch.addEventListener('click', (e) => {
-  if (e.currentTarget.classList.contains('is-active')) {
-    return (searchInput.value !== '') ? submitSearch() : toggleSearchBox();
-  }
-  setTimeout(() => {
-    focusElem(searchInput);
-  }, 300);
-  toggleSearchBox();
-  return true;
-});
+if (btnSearch) {
+  btnSearch.addEventListener('click', (e) => {
+    if (e.currentTarget.classList.contains('is-active')) {
+      return (searchInput.value !== '') ? submitSearch() : toggleSearchBox();
+    }
+    setTimeout(() => {
+      focusElem(searchInput);
+    }, 300);
+    toggleSearchBox();
+    return true;
+  });
+}
 
 // 手機版 menu button
-btnMenu.addEventListener('click', () => {
-  toggleMenu();
-  toggleMask();
-});
+if (btnMenu) {
+  btnMenu.addEventListener('click', () => {
+    toggleMenu();
+    toggleMask();
+  });
+}
 
 window.addEventListener('scroll', () => {
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;

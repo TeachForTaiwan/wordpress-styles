@@ -1,20 +1,23 @@
 header#header.header
   .header-container
-    nav.nav-desktop
-      ul.menu-secondary--desktop
+    nav.nav.nav--base
+      ul.nav__list.funcs-container.for-desktop
         li.item
           a.link(href="https://web.npois.com.tw/npopay/tft/periodic.asp", target="_blank", rel="noopener")
             button.btn.btn--recruit.btn--red 支持我們
         li.item
           a.link(href="http://apply.teach4taiwan.org/", target="_blank", rel="noopener")
             button.btn.btn--teacher.btn--red 申請TFT計畫
+      ul.nav__list.logo-container
+        a.link(href="/")
+          img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_350px.png", alt="logo")
+      ul.nav__list.funcs-container.for-desktop
         li.item
           a.link(href="/?cat=21")
             .text 最新消息
         li.item
           a.link(href="/?page_id=278")
             .text 常見問題
-      ul.menu-secondary--func
         li.item.item--funcs
           .search-box
             form#search.search(role="search", method="get", action="//beta.teach4taiwan.org/")
@@ -22,15 +25,12 @@ header#header.header
                 input#input-search.input-search(name="s", type="search", placeholder="TFT教師", )
                 button.btn.btn-search.btn--transparent.btn--no-border
                   i.fa.fa-search
-    .logo-container
-      a.link(href="/")
-        img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_350px.png", alt="logo")
-    button#btn-menu.btn.btn-menu.btn--no-border
-      span.line
-      span.line
-      span.line
-    nav#nav-menu.nav
-      ul#menu-primary.menu-primary
+      button#btn-menu.btn.btn-menu.btn--no-border
+        span.line
+        span.line
+        span.line
+    nav#nav-menu.nav.nav--menu
+      ul.nav__list#menu-primary.menu-primary
         li.item.item--logo
           a.link(href="/")
             img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo-long400px.png", alt="logo")
@@ -49,9 +49,9 @@ header#header.header
               i.fa.fa-angle-down(aria-hidden="true")
           ul.sub-menu
             li.item
-              a.link(href="/?page_id=194") 申請TFT計畫
+              a.link(href="/?page_id=194") 申請為台灣而教計畫
             li.item
-              a.link(href="/?page_id=564") 加入執行團隊
+              a.link(href="/?page_id=2835") 加入執行團隊
             li.item
               a.link(href="/?page_id=281") 成為志工
             li.item
@@ -60,14 +60,12 @@ header#header.header
               a.link(href="/?page_id=576") 成為教育志工
             li.item
               a.link(href="/?page_id=539") 成為合作學校
-      ul.menu-funcs
-        li.item
-          a.link(href="https://web.npois.com.tw/npopay/tft/periodic.asp", target="_blank", rel="noopener")
-            button.btn.btn--recruit.btn--red 支持我們
-        li.item
-          a.link(href="/?page_id=194")
-            button.btn.btn--teacher.btn--red 申請TFT計畫
-      ul.menu-secondary
+      ul.nav__list.menu-funcs.for-mobile
+        li.item.for-mobile
+          a.link(href="https://web.npois.com.tw/npopay/tft/periodic.asp", target="_blank", rel="noopener") 支持我們
+        li.item.for-mobile
+          a.link(href="/?page_id=194") 申請TFT計畫
+      ul.nav__list.menu-secondary
         li.item
           a.link(href="/?cat=21") 最新消息
         li.item
@@ -80,4 +78,5 @@ header#header.header
                 button.btn.btn-search.btn--transparent.btn--no-border
                   i.fa.fa-search
   #menu-mask.mask
+
 script(src="js/header.js")
