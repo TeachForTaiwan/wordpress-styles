@@ -1,0 +1,27 @@
+$defaultBanner: 'http://beta.teach4taiwan.org/wp-content/uploads/2017/08/banner2.jpg';
+$darken: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+.banner {
+  width: 100%;
+  height: 156px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $c-grey--light;
+  padding: 16px;
+  background-image: $darken, url($defaultBanner);
+  background-position: center;
+  background-size: cover;
+  >.title--banner {
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    @include for-tablet-landscape-up {
+      text-align: left;
+    }
+  }
+}

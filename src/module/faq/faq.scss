@@ -65,6 +65,9 @@
   border-color: $c-grey--light-2;
   margin: 1em;
   padding: 0;
+  @include for-desktop-up {
+    margin: 1em 0;
+  }
   .title-container {
     position: relative;
     padding-left: 1.4em;
