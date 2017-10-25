@@ -2,6 +2,22 @@
 html(lang="en")
   head
     include partial/head
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css", integrity="sha256-r2glH03VUY1R1G+7PwWdfL/NaTKpbInwaZFGiohbo4A=", crossorigin="anonymous")
   body
     include partial/header
+    #fullpage
+      .section section1
+      .section section2
+      .section section3
+      .section section4
     include partial/footer
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js", integrity="sha256-r80qU2FgO31x7HtK2BQxYOQxPb45x+eKKhzA0OrepyM=", crossorigin="anonymous")
+    script.
+      jQuery(document).ready(function() {
+        jQuery('#fullpage').fullpage({
+          autoScrolling: false,
+          fitToSection:true,
+          fitToSectionDelay:500,
+          css3: true});
+      });
