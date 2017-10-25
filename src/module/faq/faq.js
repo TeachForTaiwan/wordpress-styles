@@ -82,6 +82,10 @@ const closeFAQs = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const faq = document.querySelector('#faq');
+  // 可指定預設開啟的選項
+  const order = faq.getAttribute('order');
+  if (!faq) return;
+
   faq.innerHTML = data2FAQ(faqData);
   const faqBricks = faq.querySelectorAll('.brick');
   const faqTitles = faq.querySelectorAll('.faq-group .title-container');
@@ -107,4 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
       targetContent.classList.toggle('is-active');
     });
   });
+
+  if (order) {
+    faqBricks[+order].click();
+  }
 });
