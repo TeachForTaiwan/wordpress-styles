@@ -18,9 +18,13 @@ jQuery(document).ready(function () {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth <= 900) {
-      jQuery.fn.fullpage.destroy('all');
+      if (jQuery.fn.fullpage.destroy) {
+        jQuery.fn.fullpage.destroy('all');
+      }
     } else {
-      jQuery.fn.fullpage.destroy('all');
+      if (jQuery.fn.fullpage.destroy) {
+        jQuery.fn.fullpage.destroy('all');
+      }
       jQuery('#fullpage').fullpage(fpConfig);
     }
   });
