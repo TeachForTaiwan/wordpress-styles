@@ -1,8 +1,12 @@
 body {
+  color: $c-text;
+  font-size: 15px;
+  font-weight: 300;
   font-family: $ff-base;
-  letter-spacing: 1.15px;
   max-width: 3840px;
   margin: 0 auto;
+  letter-spacing: .5px;
+  line-height: 1.6;
 }
 
 ::selection {

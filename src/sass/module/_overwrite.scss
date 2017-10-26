@@ -34,18 +34,29 @@
   line-height: 2!important;
 }
 
+// banner(hero)
 .sow-slider-image-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 2rem!important;
+  h1,
   h2 {
     font-size: calc(4vw + 10px)!important;
     text-align: justify!important;
+    text-shadow: none!important;
     @include for-tablet-portrait-up {
-      font-size: 4rem!important;
+      font-size: 50px!important;
+      font-weight: 800!important;
+      letter-spacing: 3px!important;
     }
+  }
+  h6 {
+    font-size: 18px!important;
+    font-weight: 200!important;
+    letter-spacing: 1px!important;
+    text-shadow: none!important;
   }
 }
 
