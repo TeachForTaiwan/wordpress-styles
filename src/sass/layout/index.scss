@@ -13,49 +13,89 @@
     font-weight: bold;
   }
   .section {
-    position: relative; // border: 5px solid yellow;
+    position: relative;
+    border: 5px solid yellow;
     .content {
       position: relative;
-      padding: 70px;
+      padding: 0;
       z-index: 2;
+      @include for-tablet-landscape-up {
+        padding: 70px
+      }
       &__title {
         font-size: 30px;
         letter-spacing: 3px;
-        margin: 20px auto 40px;
+        margin: 20px 0 40px;
       }
       &__content {
         p {
-          margin-bottom: 2em;
+          margin-bottom: 1.2em;
+          @include for-tablet-landscape-up {
+            margin-bottom: 2em;
+          }
         }
       }
       &__blocks {}
     }
     &--normal {
+      background-color: $c-grey--light-2;
+      >.fp-tableCell {
+        display: flex;
+        flex-direction: column;
+        @include for-tablet-landscape-up {
+          flex-direction: row;
+        }
+      }
       .img-container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        text-align: right;
-        padding: 70px;
-        padding-bottom: 0;
+        position: relative;
+        @include for-tablet-landscape-up {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: right;
+          padding: 70px;
+          padding-bottom: 0;
+          max-width: 800px;
+          margin: 0 auto;
+          margin-right: 0;
+        }
       }
       .content {
+        padding: 30px 20px;
+        margin: 0 auto;
+        @include for-tablet-landscape-up {
+          width: 900px;
+        }
         &__content {
           max-width: 570px;
         }
       }
     }
     &--col-2 {
-      padding: 30px 20px;
+      padding: 0;
+      @include for-tablet-landscape-up {
+        padding: 30px 20px;
+      }
       >.fp-tableCell {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
+        @include for-tablet-landscape-up {
+          flex-direction: row;
+        }
       }
       .img-container {
-        width: 50%;
-        height: 100%;
+        height: auto;
+        position: relative;
+        @include for-tablet-landscape-up {
+          position: absolute;
+          height: 100%;
+          max-height: 600px;
+          width: 50%;
+          position: relative;
+          margin: 20px 10px;
+        }
         img {
           object-fit: cover;
           width: 100%;
@@ -63,11 +103,24 @@
         }
       }
       .content {
-        width: 50%;
+        background-color: $c-grey--light-2;
+        padding: 20px;
+        @include for-tablet-landscape-up {
+          height: 100%;
+          width: 50%;
+          max-height: 600px;
+          margin: 20px 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 30px 20px;
+        }
       }
       &--reverse {
         >.fp-tableCell {
-          flex-direction: row-reverse;
+          @include for-tablet-landscape-up {
+            flex-direction: row-reverse;
+          }
         }
         .content {
           &__title {
@@ -79,6 +132,7 @@
     }
     &--bg-full {
       color: white;
+      padding: 30px 20px;
       .img-container {
         position: absolute;
         top: 0;
@@ -94,42 +148,83 @@
       .content {
         &__content {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: space-between;
+          @include for-tablet-landscape-up {
+            flex-direction: row;
+          }
           p {
-            padding: 20px 16px;
             flex: 1;
+            padding: 0;
+            @include for-tablet-landscape-up {
+              padding: 20px 16px;
+            }
+            &:first-of-type {
+              padding-left: 0;
+            }
+            &:empty {
+              display: none;
+              @include for-tablet-landscape-up {
+                display: block;
+              }
+            }
           }
         }
       }
     }
     &--wide {
+      >.fp-tableCell {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        padding: 30px 20px;
+        @include for-tablet-landscape-up {
+          flex-direction: row;
+          margin-top: 90px;
+        }
         &__title {
           flex: 1;
+          @include for-tablet-landscape-up {
+            white-space: nowrap;
+            margin: 0;
+          }
         }
         &__content {
           display: flex;
-          flex-direction: row;
           flex: 3;
-          column-count: 2;
+          flex-direction: column;
+          @include for-tablet-landscape-up {
+            flex-direction: row;
+          }
           p {
-            padding: 0 15px;
-            flex: 1;
+            padding: 0;
+            @include for-tablet-landscape-up {
+              padding: 0 15px;
+              flex: 1;
+            }
           }
         }
       }
       .img-container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        text-align: center;
+        position: relative;
+        @include for-tablet-landscape-up {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto;
+        }
       }
     }
-    &--cards {}
+    &--cards {
+      padding: 30px 20px;
+    }
     .blocks {
       display: flex;
       flex-wrap: wrap;

@@ -2,12 +2,28 @@
 
 /* global jQuery */
 jQuery(document).ready(function () {
-  jQuery('#fullpage').fullpage({
+  var fpConfig = {
     autoScrolling: false,
     fitToSection: false,
     fitToSectionDelay: 100,
-    // paddingTop: '10px',
-    // paddingBottom: '20px',
+    paddingTop: '43px',
+    // paddingBottom: '43px',
+    normalScrollElements: 'footer',
+    offsetSections: true,
     css3: true
+    // scrollOverflow: true,
+  };
+
+  if (window.innerWidth > 900) {
+    jQuery('#fullpage').fullpage(fpConfig);
+  }
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth <= 900) {
+      jQuery.fn.fullpage.destroy('all');
+    } else {
+      jQuery.fn.fullpage.destroy('all');
+      jQuery('#fullpage').fullpage(fpConfig);
+    }
   });
 });
