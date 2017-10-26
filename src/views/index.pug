@@ -8,7 +8,7 @@ html(lang="en")
     include partial/header
     .slider(style="height: 540px;background-color:rgba(0,0,0,.8)")
     #fullpage
-      .section.section--normal
+      .section.section--normal.fp-auto-height
         .content
           .content__title
             span 在台灣，
@@ -17,11 +17,11 @@ html(lang="en")
           .content__content
             p 台灣正面臨嚴重的教育不平等，孩子的教育成就與他的社經條件高度相關。社經條件較弱勢的孩子，相較同齡環境較優勢的孩子，學習表現甚至落後七年之多。
         .img-container
-          img(src="https://dummyimage.com/900x512/000/fff", alt="")
+          img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home_1.png", alt="")
       //-
       .section.section--col-2
         .img-container
-          img(src="https://dummyimage.com/1000x1000/000/fff", alt="")
+          img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home-2.jpg", alt="")
         .content
           .content__title
             span 改善教育不平等，
@@ -33,7 +33,8 @@ html(lang="en")
             p 串聯他們的力量，從學校、家庭、社區、政策等不同的面向對教育發揮影響力，教育不平等的問題才能真正被解決。
       .section.section--bg-full
         .img-container
-          img.bg(src="https://dummyimage.com/1920x1000/000/fff")
+          .img-mask
+          img.bg(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home_2.png")
         .content
           .content__title
             span 成為領導者，
@@ -46,26 +47,26 @@ html(lang="en")
       //-
       .section.section--col-2
         .img-container
-          img(src="https://dummyimage.com/1000x1000/000/fff", alt="")
+          img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home_3-1.png", alt="")
         .content
           .content__title
             span.strong 看見改變持續發生
           .content__content
-            p 要改變教育這麼龐大的問題不容易，但改變從來就不是0或1，而是從0到1漸進的過程。一路走來，TFT 不間斷地訪校、拓點，讓對的人投入到有需要的地方，也真實看見改變從孩子身上開始一點一滴的發生。
+            p 要改變教育這麼龐大的問題不容易，但改變從來就不是 0 或 1，而是從 0 到 1 漸進的過程。一路走來，TFT 不間斷地訪校、拓點，讓對的人投入到有需要的地方，也真實看見改變從孩子身上開始一點一滴的發生。
       //-
       .section.section--col-2.section--col-2--reverse
         .img-container
-          img(src="https://dummyimage.com/1000x1000/000/fff", alt="")
+          img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home-5.jpg", alt="")
         .content
           .content__title
-            span.strong 影響力
+            span.strong 我們的成果
           .content__blocks.blocks
             .blocks__block
               .value 4
-              .desc 縣市
+              .desc 服務縣市
             .blocks__block
               .value 38
-              .desc 鄉鎮
+              .desc 服務鄉鎮
             .blocks__block
               .value 43
               .desc 合作小學
@@ -74,7 +75,7 @@ html(lang="en")
               .desc TFT教師
             .blocks__block
               .value 2800
-              .desc 偏鄉學童
+              .desc 服務學童
       //-
       .section.section--wide
         .content
@@ -89,7 +90,7 @@ html(lang="en")
             p 在這個使命裡，如果沒有老師、督導、志工們身體力行的參與，沒有捐款人、學校、企業強而有力的支持，所有的改變，或許都不會發生。
             p 改變不是一個人付出很多，而是每個人努力一點點。
         .img-container
-          img(src="https://dummyimage.com/900x400/000/fff", alt="")
+          img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/home_6-1.png", alt="")
       //-
       .section.section--cards
         .content
@@ -103,23 +104,23 @@ html(lang="en")
             a(href="#", title="捐款支持")
               .cards__card
                 .cards__card__icon
-                  img(src="https://dummyimage.com/100x100/000/fff", alt="")
+                  img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/join-04.png", alt="")
                 .cards__card__title 捐款支持
             a(href="#", title="成為教師")
               .cards__card
                 .cards__card__icon
-                  img(src="https://dummyimage.com/100x100/000/fff", alt="")
+                  img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/join-01.png", alt="")
                 .cards__card__title 成為教師
           .row
             a(href="#", title="成為志工")
               .cards__card
                 .cards__card__icon
-                  img(src="https://dummyimage.com/100x100/000/fff", alt="")
+                  img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/join-03.png", alt="")
                 .cards__card__title 成為志工
             a(href="#", title="成為合作學校")
               .cards__card
                 .cards__card__icon
-                  img(src="https://dummyimage.com/100x100/000/fff", alt="")
+                  img(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/10/join-02.png", alt="")
                 .cards__card__title 成為合作學校
     include partial/footer
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")

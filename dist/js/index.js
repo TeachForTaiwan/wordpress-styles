@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
     autoScrolling: false,
     fitToSection: false,
     fitToSectionDelay: 100,
-    paddingTop: '43px',
+    // paddingTop: '43px',
     // paddingBottom: '43px',
     normalScrollElements: 'footer',
     offsetSections: true,

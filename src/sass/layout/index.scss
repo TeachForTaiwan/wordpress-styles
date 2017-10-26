@@ -7,6 +7,7 @@
   letter-spacing: .8px;
   color: $c-grey;
   background-color: $c-base;
+  overflow: hidden;
   img {
     max-width: 100%;
   }
@@ -15,7 +16,9 @@
   }
   .section {
     position: relative;
-    border: 5px solid yellow;
+    @include for-tablet-landscape-up {
+      min-height: 500px;
+    }
     .content {
       position: relative;
       padding: 0;
@@ -41,6 +44,7 @@
     }
     &--normal {
       background-color: $c-grey--light-2;
+      background-image: linear-gradient(96deg, #fbfbfb, #efefef);
       >.fp-tableCell {
         display: flex;
         flex-direction: column;
@@ -50,6 +54,8 @@
       }
       .img-container {
         position: relative;
+        display: flex;
+        align-items: flex-end;
         @include for-tablet-landscape-up {
           position: absolute;
           left: 0;
@@ -91,7 +97,9 @@
       .img-container {
         height: auto;
         position: relative;
+        display: none;
         @include for-tablet-landscape-up {
+          display: inherit;
           position: absolute;
           height: 100%;
           max-height: 600px;
@@ -117,6 +125,9 @@
           justify-content: center;
           padding: 30px 20px;
         }
+        @include for-desktop-up {
+          padding: 30px 65px;
+        }
       }
       &--reverse {
         >.fp-tableCell {
@@ -126,6 +137,9 @@
         }
         .content {
           padding: 50px 20px;
+          @include for-desktop-up {
+            padding: 30px 65px;
+          }
           &__title {
             padding: 20px 0;
             border-bottom: 1px solid #DDD;
@@ -144,6 +158,14 @@
         left: 0;
         bottom: 0;
         right: 0;
+        .img-mask {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(99deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
         .bg {
           object-fit: cover;
           width: 100%;
@@ -178,10 +200,13 @@
       }
     }
     &--wide {
+      border-radius: 7px;
+      padding: 30px 20px;
       >.fp-tableCell {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        box-shadow: 0 16px 23px 0 rgba(0, 0, 0, 0.09);
       }
       .content {
         display: flex;
@@ -224,6 +249,8 @@
           text-align: center;
           max-width: 800px;
           margin: 0 auto;
+          display: flex;
+          align-items: flex-end;
         }
       }
     }
@@ -307,5 +334,11 @@
         }
       }
     }
+  }
+  .pb-0 {
+    padding-bottom: 0;
+  }
+  .pt-0 {
+    padding-top: 0;
   }
 }
