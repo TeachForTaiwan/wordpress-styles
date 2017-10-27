@@ -1,0 +1,11 @@
+.mobile-hide {
+  @include for-phone-only {
+    display: none!important;
+  }
+}
+
+.desktop-hide {
+  @include for-tablet-portrait-up {
+    display: none!important;
+  }
+}
