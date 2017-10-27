@@ -201,12 +201,18 @@
     }
     &--wide {
       border-radius: 7px;
-      padding: 30px 20px;
+      padding: 0;
+      @include for-tablet-landscape-up {
+        padding: 30px 20px;
+      }
       >.fp-tableCell {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 0 16px 23px 0 rgba(0, 0, 0, 0.09);
+        @include for-tablet-landscape-up {
+          min-height: 550px;
+        }
       }
       .content {
         display: flex;
@@ -221,20 +227,19 @@
           @include for-tablet-landscape-up {
             white-space: nowrap;
             margin: 0;
+            margin-left: 70px;
           }
         }
         &__content {
           display: flex;
-          flex: 3;
+          flex: 2;
           flex-direction: column;
-          @include for-tablet-landscape-up {
-            flex-direction: row;
-          }
           p {
             padding: 0;
             @include for-tablet-landscape-up {
               padding: 0 15px;
-              flex: 1;
+              margin-bottom: .5em;
+              max-width: 60em;
             }
           }
         }
