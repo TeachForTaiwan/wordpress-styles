@@ -38,8 +38,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: $c-green;
   padding: 10px 0;
+}
+
+h3 {
+  &.h-reason {
+    font-size: 42px;
+    @include for-tablet-landscape-up {
+      font-size: 90px;
+    }
+  }
 }
 
 button,
