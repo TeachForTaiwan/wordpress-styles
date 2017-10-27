@@ -14,20 +14,40 @@ jQuery(document).ready(function () {
     // scrollOverflow: true,
   };
 
+  var destoryFullpage = function destoryFullpage() {
+    if (jQuery.fn.fullpage.destroy) {
+      jQuery.fn.fullpage.destroy('all');
+    }
+  };
+
+  var initFullpage = function initFullpage() {
+    if (jQuery.fn.fullpage.destroy) {
+      jQuery.fn.fullpage.destroy('all');
+    }
+    jQuery('#fullpage').fullpage(fpConfig);
+  };
+
+  var ww = window.innerWidth;
+  var limit = 900; // screen width: 900
+
+  // only refresh when resize between the limit width
+  var refresh = function refresh() {
+    ww = window.innerWidth;
+    var w = ww < limit // eslint-disable-line
+    ? destoryFullpage : ww > limit ? initFullpage : ww = limit;
+    return w;
+  };
+
   if (window.innerWidth > 900) {
     jQuery('#fullpage').fullpage(fpConfig);
   }
 
+  var tOut = void 0;
   window.addEventListener('resize', function () {
-    if (window.innerWidth <= 900) {
-      if (jQuery.fn.fullpage.destroy) {
-        jQuery.fn.fullpage.destroy('all');
-      }
-    } else {
-      if (jQuery.fn.fullpage.destroy) {
-        jQuery.fn.fullpage.destroy('all');
-      }
-      jQuery('#fullpage').fullpage(fpConfig);
+    var resW = window.innerWidth;
+    clearTimeout(tOut);
+    if (ww > limit && resW < limit || ww < limit && resW > limit) {
+      tOut = setTimeout(refresh, 100);
     }
   });
 });
