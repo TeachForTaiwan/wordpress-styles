@@ -89,5 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
       });
     });
+    // active first timepoint by default
+    if (sets[0].querySelector('.timeline__point')) {
+      sets[0].querySelector('.timeline__point').click();
+    }
   });
 });
