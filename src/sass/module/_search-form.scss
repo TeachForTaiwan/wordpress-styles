@@ -1,0 +1,18 @@
+#m-search {
+  .search-submit {
+    border: 1px solid $c-primary;
+    color: $c-primary;
+    background: transparent;
+    padding: 0.6em 1.2em;
+    box-shadow: none;
+    font-weight: normal;
+    letter-spacing: 1.2px;
+    transition: .3s ease-in-out;
+    &:hover {
+      background: $c-primary;
+      ;
+      border-color: transparent;
+      color: #fff;
+    }
+  }
+}
