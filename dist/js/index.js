@@ -1,7 +1,9 @@
 'use strict';
 
-/* global jQuery */
+/* global jQuery, flexibility */
 jQuery(document).ready(function () {
+  // flexbox polyfill for IE
+  flexibility(document.documentElement);
   var fpConfig = {
     autoScrolling: false,
     fitToSection: false,
