@@ -23,6 +23,7 @@ body {
   object-fit: contain;
   width: 280px;
   max-width: 80%;
+  min-height: 35px;
   @include for-phone-only {
     padding: 5px 10px;
   }
@@ -192,8 +193,11 @@ body {
     background: $c-base;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    @include for-tablet-landscape-up {
+      justify-content: center;
+    }
     .link {
       padding-top: 10px;
       @include for-tablet-portrait-up {
@@ -267,6 +271,7 @@ body {
           .logo {
             display: inherit;
             height: 40px;
+            margin-left: 15px;
           }
         }
       }

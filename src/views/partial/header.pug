@@ -10,7 +10,13 @@ header#header.header
             button.btn.btn--teacher.btn--red 報名TFT計畫
       ul.nav__list.logo-container
         a.link(href="/")
-          img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo_350px.png", alt="logo")
+          //- img.logo(src="/wp-content/uploads/2017/07/logo_350px.png", alt="logo")
+          picture.logo
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            source(srcset="http://www.teach4taiwan.org/wp-content/uploads/assets/logo-desktop.svg", media="(min-width: 900px)")
+            source(srcset="http://www.teach4taiwan.org/wp-content/uploads/assets/logo-mobile.svg")
+            img.logo(src="http://www.teach4taiwan.org/wp-content/uploads/assets/logo-desktop.svg", alt="logo")
+            <!--[if IE 9]></video><![endif]-->
       ul.nav__list.funcs-container.for-desktop
         li.item
           a.link(href="/?cat=21")
@@ -20,7 +26,7 @@ header#header.header
             .text 常見問題
         li.item.item--funcs
           .search-box
-            form#search.search(role="search", method="get", action="//beta.teach4taiwan.org/")
+            form#search.search(role="search", method="get", action="//www.teach4taiwan.org/")
               label.label(for="s")
                 input#input-search.input-search(name="s", type="search", placeholder="TFT教師", )
                 button.btn.btn-search.btn--transparent.btn--no-border
@@ -33,7 +39,7 @@ header#header.header
       ul.nav__list#menu-primary.menu-primary
         li.item.item--logo
           a.link(href="/")
-            img.logo(src="http://beta.teach4taiwan.org/wp-content/uploads/2017/07/logo-long400px.png", alt="logo")
+            img.logo(src="http://www.teach4taiwan.org/wp-content/uploads/assets/logo-mobile.svg", alt="logo")
         li.item
           a.link.has-sub(href="/?page_id=118") 關於我們
         li.item
