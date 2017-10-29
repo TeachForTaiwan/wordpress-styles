@@ -8,7 +8,8 @@
   color: $c-grey;
   background-color: $c-base;
   overflow: hidden;
-  img {
+  img,
+  picture {
     max-width: 100%;
   }
   .strong {
@@ -128,6 +129,10 @@
           flex-direction: column;
           justify-content: center;
           padding: 30px 20px;
+          // IE only
+          @media all and (-ms-high-contrast: none) {
+            height: auto;
+          }
         }
         @include for-desktop-up {
           padding: 30px 65px;
@@ -242,6 +247,8 @@
           display: flex;
           flex: 2;
           flex-direction: column;
+          flex-wrap: wrap;
+          flex-direction: row;
           p {
             padding: 0;
             @include for-tablet-landscape-up {
