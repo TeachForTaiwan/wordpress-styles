@@ -75,16 +75,51 @@
   }
 }
 
+// navigation pager
 #nav-below {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   padding-left: 1.4em;
   padding-right: 1.4em;
+  padding-top: 50px;
   margin-bottom: 4em;
 }
 
+.nav {
+  &-count {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    padding: 0 1.4em;
+    &__post,
+    &__page {
+      padding: 0 .5em;
+    }
+  }
+  &-previous {
+    flex: 1;
+    text-align: left;
+  }
+  &-first,
+  &-last {
+    flex: 1;
+    text-align: center;
+  }
+  &-next {
+    flex: 1;
+    text-align: right;
+  }
+}
+
 .nav-previous,
-.nav-next {
+.nav-next,
+.nav-first,
+.nav-last {
   a {
     border: 1px solid transparent;
     color: $c-primary;
