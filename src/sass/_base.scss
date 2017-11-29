@@ -57,6 +57,10 @@ textarea {
   font-family: $ff-base;
 }
 
+hr {
+  background-color: $c-grey;
+}
+
 img {
   &:after {
     content: '\f127' ' 圖片連結失效 ';
