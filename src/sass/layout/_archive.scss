@@ -143,6 +143,10 @@
     flex-direction: column;
   }
   .featured-image {
+    transition: opacity .3s ease-in-out;
+    &:hover {
+      opacity: .7;
+    }
     @include for-phone-only {
       float: none!important;
       width: 100%!important;
