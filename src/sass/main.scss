@@ -1,4 +1,4 @@
-/*! 2017-12-12 */
+/*! 2017-12-24 */
 @import 'variable';
 
 // fonts
@@ -24,6 +24,8 @@
 @import 'layout/404';
 @import 'layout/content-none';
 @import 'layout/archive'; // 最新消息, 故事棧 等 archive 列表頁
+@import 'layout/category-news';
+@import 'layout/category-story';
 
 // modules
 @import 'module/header';
